@@ -68,46 +68,76 @@ jobs:
         }
         
         function parseMarkdownToHtml(text) {
-          return text
-            // 换行处理
-            .replace(/\r\n/g, '\n')
-            .replace(/\r/g, '\n')
+          if (!text) return '';
+          
+          // 先转义HTML字符
+          let html = text
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+          
+          // 标准化换行符
+          html = html.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+          
+          // 处理代码块 (``` 包围的多行代码)
+          html = html.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+          
+          // 处理行内代码
+          html = html.replace(/`([^`\n]+)`/g, '<code>$1</code>');
+          
+          // 处理标题
+          html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+          html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+          html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+          
+          // 处理粗体和斜体
+          html = html.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+          html = html.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
+          
+          // 处理链接
+          html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
+          
+          // 处理列表
+          const lines = html.split('\n');
+          const result = [];
+          let inList = false;
+          
+          for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            const listMatch = line.match(/^[\s]*[-*+]\s(.+)$/);
             
-            // 标题处理
-            .replace(/^### (.*$)/gm, '<h3>$1</h3>')
-            .replace(/^## (.*$)/gm, '<h2>$1</h2>')
-            .replace(/^# (.*$)/gm, '<h1>$1</h1>')
-            
-            // 粗体和斜体
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*(.*?)\*/g, '<em>$1</em>')
-            
-            // 代码块
-            .replace(/`([^`]+)`/g, '<code>$1</code>')
-            
-            // 链接
-            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
-            
-            // 列表项
-            .replace(/^[\s]*[-*+]\s(.*)$/gm, '<li>$1</li>')
-            .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
-            
-            // 换行转换为<br>
-            .replace(/\n\n/g, '</p><p>')
-            .replace(/\n/g, '<br>')
-            
-            // 包裹段落
-            .replace(/^(.)/gm, '<p>$1')
-            .replace(/(.)$/gm, '$1</p>')
-            
-            // 清理多余的段落标签
-            .replace(/<p><\/p>/g, '')
-            .replace(/<p>(<h[1-6]>)/g, '$1')
-            .replace(/(<\/h[1-6]>)<\/p>/g, '$1')
-            .replace(/<p>(<ul>)/g, '$1')
-            .replace(/(<\/ul>)<\/p>/g, '$1')
-            .replace(/<p>(<li>)/g, '$1')
-            .replace(/(<\/li>)<\/p>/g, '$1');
+            if (listMatch) {
+              if (!inList) {
+                result.push('<ul>');
+                inList = true;
+              }
+              result.push('<li>' + listMatch[1] + '</li>');
+            } else {
+              if (inList) {
+                result.push('</ul>');
+                inList = false;
+              }
+              
+              // 处理普通行
+              if (line.trim() === '') {
+                result.push('<br>');
+              } else if (!line.match(/^<(h[1-6]|pre|ul|li)/)) {
+                // 不是标题、代码块、列表的行，包装为段落
+                result.push('<p>' + line + '</p>');
+              } else {
+                result.push(line);
+              }
+            }
+          }
+          
+          // 如果最后还在列表中，关闭列表
+          if (inList) {
+            result.push('</ul>');
+          }
+          
+          return result.join('\n');
         }
         
         async function main() {
