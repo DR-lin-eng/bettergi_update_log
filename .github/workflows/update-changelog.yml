@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write
-      id-token: write
     
     steps:
     - name: Checkout repository
@@ -212,9 +210,25 @@ jobs:
         
     - name: Generate static files
       run: node generate.js
+      
+    - name: Check generated files
+      run: |
+        echo "检查生成的文件:"
+        ls -la docs/
+        echo "JSON文件大小:"
+        wc -l docs/changelog.json
         
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add docs/
+        
+        # 检查是否有变化
+        if git diff --staged --quiet; then
+          echo "没有变化，跳过提交"
+        else
+          git commit -m "Auto update: BGI changelog $(date +'%Y-%m-%d %H:%M:%S')"
+          git push
+          echo "✅ 文件已提交到仓库"
+        fi
