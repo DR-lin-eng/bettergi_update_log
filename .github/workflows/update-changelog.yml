@@ -67,6 +67,49 @@ jobs:
             .replace(/'/g, '&#039;');
         }
         
+        function parseMarkdownToHtml(text) {
+          return text
+            // 换行处理
+            .replace(/\r\n/g, '\n')
+            .replace(/\r/g, '\n')
+            
+            // 标题处理
+            .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+            .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+            .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+            
+            // 粗体和斜体
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+            
+            // 代码块
+            .replace(/`([^`]+)`/g, '<code>$1</code>')
+            
+            // 链接
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+            
+            // 列表项
+            .replace(/^[\s]*[-*+]\s(.*)$/gm, '<li>$1</li>')
+            .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+            
+            // 换行转换为<br>
+            .replace(/\n\n/g, '</p><p>')
+            .replace(/\n/g, '<br>')
+            
+            // 包裹段落
+            .replace(/^(.)/gm, '<p>$1')
+            .replace(/(.)$/gm, '$1</p>')
+            
+            // 清理多余的段落标签
+            .replace(/<p><\/p>/g, '')
+            .replace(/<p>(<h[1-6]>)/g, '$1')
+            .replace(/(<\/h[1-6]>)<\/p>/g, '$1')
+            .replace(/<p>(<ul>)/g, '$1')
+            .replace(/(<\/ul>)<\/p>/g, '$1')
+            .replace(/<p>(<li>)/g, '$1')
+            .replace(/(<\/li>)<\/p>/g, '$1');
+        }
+        
         async function main() {
           try {
             console.log('正在获取发布数据...');
@@ -85,6 +128,17 @@ jobs:
                 prerelease: release.prerelease
               }));
             
+            // 为JSON/TXT/MD格式创建不包含下载链接的版本
+            const processedReleasesNoDownload = processedReleases.map(release => ({
+              version: release.version,
+              name: release.name,
+              publishedAt: release.publishedAt,
+              publishedAtFormatted: release.publishedAtFormatted,
+              body: release.body,
+              htmlUrl: release.htmlUrl,
+              prerelease: release.prerelease
+            }));
+            
             // 确保docs目录存在
             if (!fs.existsSync('docs')) {
               fs.mkdirSync('docs');
@@ -93,48 +147,42 @@ jobs:
             const now = new Date();
             const timeStr = now.toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai'});
             
-            // 生成JSON
+            // 生成JSON (不包含下载链接)
             const jsonData = {
               lastUpdated: now.toISOString(),
               lastUpdatedFormatted: timeStr,
-              totalReleases: processedReleases.length,
-              releases: processedReleases
+              totalReleases: processedReleasesNoDownload.length,
+              releases: processedReleasesNoDownload
             };
             fs.writeFileSync('docs/changelog.json', JSON.stringify(jsonData, null, 2));
             
-            // 生成TXT
+            // 生成TXT (不包含下载链接)
             let txtContent = 'Better Genshin Impact 版本更新日志\n';
             txtContent += '最后更新: ' + timeStr + '\n';
             txtContent += '数据来源: https://github.com/babalae/better-genshin-impact/releases\n\n';
             txtContent += '================================================================================\n\n';
             
-            processedReleases.forEach(release => {
+            processedReleasesNoDownload.forEach(release => {
               txtContent += '版本: ' + release.version + '\n';
               txtContent += '发布时间: ' + release.publishedAtFormatted + '\n';
               txtContent += '状态: ' + (release.prerelease ? '预发布版本' : '正式版本') + '\n';
               txtContent += '更新内容:\n' + release.body + '\n';
-              if (release.downloadUrl) {
-                txtContent += '下载链接: ' + release.downloadUrl + '\n';
-              }
               txtContent += 'GitHub页面: ' + release.htmlUrl + '\n\n';
               txtContent += '================================================================================\n\n';
             });
             
             fs.writeFileSync('docs/changelog.txt', txtContent);
             
-            // 生成Markdown
+            // 生成Markdown (不包含下载链接)
             let mdContent = '# Better Genshin Impact 版本更新日志\n\n';
             mdContent += '> 最后更新: ' + timeStr + '\n';
             mdContent += '> 数据来源: [GitHub Releases](https://github.com/babalae/better-genshin-impact/releases)\n\n';
             
-            processedReleases.forEach(release => {
+            processedReleasesNoDownload.forEach(release => {
               mdContent += '## ' + release.name + (release.prerelease ? ' (预发布)' : '') + '\n\n';
               mdContent += '**版本:** `' + release.version + '`\n';
               mdContent += '**发布时间:** ' + release.publishedAtFormatted + '\n';
               mdContent += '**GitHub页面:** [查看详情](' + release.htmlUrl + ')\n';
-              if (release.downloadUrl) {
-                mdContent += '**下载链接:** [点击下载](' + release.downloadUrl + ')\n';
-              }
               mdContent += '\n### 更新内容\n\n```\n' + release.body + '\n```\n\n---\n\n';
             });
             
@@ -160,7 +208,19 @@ jobs:
             htmlContent += '.meta{font-size:0.9em;color:#666;margin-top:10px}\n';
             htmlContent += '.version{background:#e3f2fd;padding:4px 8px;border-radius:4px;color:#1976d2;margin-right:15px}\n';
             htmlContent += '.body{padding:20px;background:white}\n';
-            htmlContent += '.body pre{white-space:pre-wrap;word-wrap:break-word;font-family:Consolas,Monaco,monospace;font-size:0.9em;background:#f8f9fa;padding:15px;border-radius:4px;border:1px solid #e0e0e0}\n';
+            htmlContent += '.changelog{line-height:1.6;color:#333}\n';
+            htmlContent += '.changelog h1,.changelog h2,.changelog h3{color:#2c5aa0;margin:15px 0 10px 0}\n';
+            htmlContent += '.changelog h1{font-size:1.4em}\n';
+            htmlContent += '.changelog h2{font-size:1.2em}\n';
+            htmlContent += '.changelog h3{font-size:1.1em}\n';
+            htmlContent += '.changelog p{margin:10px 0}\n';
+            htmlContent += '.changelog ul{margin:10px 0;padding-left:20px}\n';
+            htmlContent += '.changelog li{margin:5px 0}\n';
+            htmlContent += '.changelog code{background:#f0f0f0;padding:2px 4px;border-radius:3px;font-family:Consolas,Monaco,monospace;font-size:0.9em}\n';
+            htmlContent += '.changelog strong{color:#333;font-weight:600}\n';
+            htmlContent += '.changelog a{color:#2196f3;text-decoration:none}\n';
+            htmlContent += '.changelog a:hover{text-decoration:underline}\n';
+            htmlContent += '.changelog pre{background:#f8f9fa;padding:15px;border-radius:4px;border:1px solid #e0e0e0;overflow-x:auto}\n';
             htmlContent += '.download{padding:15px 20px;background:#f0f7ff;border-top:1px solid #e0e0e0}\n';
             htmlContent += '.download a{display:inline-block;background:#4caf50;color:white;padding:8px 16px;text-decoration:none;border-radius:4px}\n';
             htmlContent += '</style>\n</head>\n<body>\n';
