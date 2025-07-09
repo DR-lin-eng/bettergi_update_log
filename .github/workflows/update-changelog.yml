@@ -3,8 +3,8 @@ name: Update BGI Changelog
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # 每天UTC 8点运行
-  workflow_dispatch:  # 允许手动触发
+    - cron: '0 8 * * *'
+  workflow_dispatch:
   push:
     branches: [ main ]
 
@@ -25,105 +25,41 @@ jobs:
       with:
         node-version: '18'
         
-    - name: Create docs directory
-      run: mkdir -p docs
-        
-    - name: Fetch BGI releases data
+    - name: Create generate script
       run: |
-        curl -H "Accept: application/vnd.github.v3+json" \
-             -H "User-Agent: BGI-Changelog-Generator" \
-             "https://api.github.com/repos/babalae/better-genshin-impact/releases" \
-             -o releases.json
-        
-    - name: Generate static files
-      run: |
-        cat > generate.js << 'SCRIPT_END'
+        cat > generate.js << 'EOF'
         const fs = require('fs');
+        const https = require('https');
         
-        const releases = JSON.parse(fs.readFileSync('releases.json', 'utf8'));
+        function fetchReleases() {
+          return new Promise((resolve, reject) => {
+            const options = {
+              hostname: 'api.github.com',
+              path: '/repos/babalae/better-genshin-impact/releases',
+              method: 'GET',
+              headers: {
+                'User-Agent': 'BGI-Changelog-Generator',
+                'Accept': 'application/vnd.github.v3+json'
+              }
+            };
+            
+            const req = https.request(options, (res) => {
+              let data = '';
+              res.on('data', (chunk) => data += chunk);
+              res.on('end', () => {
+                try {
+                  resolve(JSON.parse(data));
+                } catch (e) {
+                  reject(e);
+                }
+              });
+            });
+            
+            req.on('error', reject);
+            req.end();
+          });
+        }
         
-        const processedReleases = releases
-          .filter(release => !release.draft)
-          .map(release => ({
-            version: release.tag_name,
-            name: release.name || release.tag_name,
-            publishedAt: release.published_at,
-            publishedAtFormatted: new Date(release.published_at).toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai'}),
-            body: release.body || '无更新说明',
-            htmlUrl: release.html_url,
-            downloadUrl: release.assets.length > 0 ? release.assets[0].browser_download_url : null,
-            prerelease: release.prerelease
-          }));
-        
-        // 生成JSON文件
-        const jsonData = {
-          lastUpdated: new Date().toISOString(),
-          lastUpdatedFormatted: new Date().toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai'}),
-          totalReleases: processedReleases.length,
-          releases: processedReleases
-        };
-        
-        fs.writeFileSync('docs/changelog.json', JSON.stringify(jsonData, null, 2));
-        
-        // 生成纯文本版本
-        const textLines = [
-          'Better Genshin Impact 版本更新日志',
-          '最后更新: ' + new Date().toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai'}),
-          '数据来源: https://github.com/babalae/better-genshin-impact/releases',
-          '',
-          '=' * 80,
-          ''
-        ];
-        
-        processedReleases.forEach(release => {
-          textLines.push('版本: ' + release.version);
-          textLines.push('发布时间: ' + release.publishedAtFormatted);
-          textLines.push('状态: ' + (release.prerelease ? '预发布版本' : '正式版本'));
-          textLines.push('更新内容:');
-          textLines.push(release.body);
-          if (release.downloadUrl) {
-            textLines.push('下载链接: ' + release.downloadUrl);
-          }
-          textLines.push('GitHub页面: ' + release.htmlUrl);
-          textLines.push('');
-          textLines.push('=' * 80);
-          textLines.push('');
-        });
-        
-        fs.writeFileSync('docs/changelog.txt', textLines.join('\n'));
-        
-        // 生成Markdown
-        const mdLines = [
-          '# Better Genshin Impact 版本更新日志',
-          '',
-          '> 最后更新: ' + new Date().toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai'}),
-          '> 数据来源: [GitHub Releases](https://github.com/babalae/better-genshin-impact/releases)',
-          ''
-        ];
-        
-        processedReleases.forEach(release => {
-          mdLines.push('## ' + release.name + (release.prerelease ? ' (预发布)' : ''));
-          mdLines.push('');
-          mdLines.push('**版本:** `' + release.version + '`');
-          mdLines.push('**发布时间:** ' + release.publishedAtFormatted);
-          mdLines.push('**GitHub页面:** [查看详情](' + release.htmlUrl + ')');
-          if (release.downloadUrl) {
-            mdLines.push('**下载链接:** [点击下载](' + release.downloadUrl + ')');
-          }
-          mdLines.push('');
-          mdLines.push('### 更新内容');
-          mdLines.push('');
-          mdLines.push('```');
-          mdLines.push(release.body);
-          mdLines.push('```');
-          mdLines.push('');
-          mdLines.push('---');
-          mdLines.push('');
-        });
-        
-        fs.writeFileSync('docs/changelog.md', mdLines.join('\n'));
-        
-        // 生成HTML
         function escapeHtml(text) {
           return text
             .replace(/&/g, '&amp;')
@@ -133,77 +69,149 @@ jobs:
             .replace(/'/g, '&#039;');
         }
         
-        const html = `<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Better Genshin Impact - 版本更新日志</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; margin: 0; padding: 20px; }
-        .container { max-width: 1000px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 30px; }
-        .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
-        .header h1 { color: #2c5aa0; margin-bottom: 10px; font-size: 2.2em; }
-        .header p { color: #666; font-size: 1.1em; }
-        .info { background: #e3f2fd; padding: 15px; border-radius: 8px; margin-bottom: 30px; border-left: 4px solid #2196f3; }
-        .release { margin-bottom: 30px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
-        .release.prerelease { border-color: #ff9800; background-color: #fff8e1; }
-        .release-header { background: #f8f9fa; padding: 20px; border-bottom: 1px solid #e0e0e0; }
-        .release-header h2 { margin-bottom: 10px; font-size: 1.4em; }
-        .release-header h2 a { color: #2c5aa0; text-decoration: none; }
-        .prerelease-badge { background: #ff9800; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.7em; margin-left: 10px; }
-        .meta { font-size: 0.9em; color: #666; margin-top: 10px; }
-        .version { background: #e3f2fd; padding: 4px 8px; border-radius: 4px; color: #1976d2; margin-right: 15px; }
-        .body { padding: 20px; background: white; }
-        .body pre { white-space: pre-wrap; word-wrap: break-word; font-family: Consolas, Monaco, monospace; font-size: 0.9em; background: #f8f9fa; padding: 15px; border-radius: 4px; border: 1px solid #e0e0e0; }
-        .download { padding: 15px 20px; background: #f0f7ff; border-top: 1px solid #e0e0e0; }
-        .download a { display: inline-block; background: #4caf50; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Better Genshin Impact</h1>
-            <p>版本更新日志 - 静态页面</p>
-        </div>
-        <div class="info">
-            <strong>最后更新:</strong> ${new Date().toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai'})} | 
-            <strong>版本数:</strong> ${processedReleases.length} | 
-            <a href="changelog.json">JSON</a> | 
-            <a href="changelog.txt">TXT</a> | 
-            <a href="changelog.md">MD</a>
-        </div>
-        <div class="releases">
-            ${processedReleases.map(release => `
-                <div class="release ${release.prerelease ? 'prerelease' : ''}">
-                    <div class="release-header">
-                        <h2>
-                            <a href="${release.htmlUrl}" target="_blank">${escapeHtml(release.name)}</a>
-                            ${release.prerelease ? '<span class="prerelease-badge">预发布</span>' : ''}
-                        </h2>
-                        <div class="meta">
-                            <span class="version">版本: ${release.version}</span>
-                            <span>发布: ${release.publishedAtFormatted}</span>
-                        </div>
-                    </div>
-                    <div class="body">
-                        <pre>${escapeHtml(release.body)}</pre>
-                    </div>
-                    ${release.downloadUrl ? `<div class="download"><a href="${release.downloadUrl}" target="_blank">下载此版本</a></div>` : ''}
-                </div>
-            `).join('')}
-        </div>
-    </div>
-</body>
-</html>`;
+        async function main() {
+          try {
+            console.log('正在获取发布数据...');
+            const releases = await fetchReleases();
+            
+            const processedReleases = releases
+              .filter(release => !release.draft)
+              .map(release => ({
+                version: release.tag_name,
+                name: release.name || release.tag_name,
+                publishedAt: release.published_at,
+                publishedAtFormatted: new Date(release.published_at).toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai'}),
+                body: release.body || '无更新说明',
+                htmlUrl: release.html_url,
+                downloadUrl: release.assets.length > 0 ? release.assets[0].browser_download_url : null,
+                prerelease: release.prerelease
+              }));
+            
+            // 确保docs目录存在
+            if (!fs.existsSync('docs')) {
+              fs.mkdirSync('docs');
+            }
+            
+            const now = new Date();
+            const timeStr = now.toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai'});
+            
+            // 生成JSON
+            const jsonData = {
+              lastUpdated: now.toISOString(),
+              lastUpdatedFormatted: timeStr,
+              totalReleases: processedReleases.length,
+              releases: processedReleases
+            };
+            fs.writeFileSync('docs/changelog.json', JSON.stringify(jsonData, null, 2));
+            
+            // 生成TXT
+            let txtContent = 'Better Genshin Impact 版本更新日志\n';
+            txtContent += '最后更新: ' + timeStr + '\n';
+            txtContent += '数据来源: https://github.com/babalae/better-genshin-impact/releases\n\n';
+            txtContent += '================================================================================\n\n';
+            
+            processedReleases.forEach(release => {
+              txtContent += '版本: ' + release.version + '\n';
+              txtContent += '发布时间: ' + release.publishedAtFormatted + '\n';
+              txtContent += '状态: ' + (release.prerelease ? '预发布版本' : '正式版本') + '\n';
+              txtContent += '更新内容:\n' + release.body + '\n';
+              if (release.downloadUrl) {
+                txtContent += '下载链接: ' + release.downloadUrl + '\n';
+              }
+              txtContent += 'GitHub页面: ' + release.htmlUrl + '\n\n';
+              txtContent += '================================================================================\n\n';
+            });
+            
+            fs.writeFileSync('docs/changelog.txt', txtContent);
+            
+            // 生成Markdown
+            let mdContent = '# Better Genshin Impact 版本更新日志\n\n';
+            mdContent += '> 最后更新: ' + timeStr + '\n';
+            mdContent += '> 数据来源: [GitHub Releases](https://github.com/babalae/better-genshin-impact/releases)\n\n';
+            
+            processedReleases.forEach(release => {
+              mdContent += '## ' + release.name + (release.prerelease ? ' (预发布)' : '') + '\n\n';
+              mdContent += '**版本:** `' + release.version + '`\n';
+              mdContent += '**发布时间:** ' + release.publishedAtFormatted + '\n';
+              mdContent += '**GitHub页面:** [查看详情](' + release.htmlUrl + ')\n';
+              if (release.downloadUrl) {
+                mdContent += '**下载链接:** [点击下载](' + release.downloadUrl + ')\n';
+              }
+              mdContent += '\n### 更新内容\n\n```\n' + release.body + '\n```\n\n---\n\n';
+            });
+            
+            fs.writeFileSync('docs/changelog.md', mdContent);
+            
+            // 生成HTML
+            let htmlContent = '<!DOCTYPE html>\n<html lang="zh-CN">\n<head>\n';
+            htmlContent += '<meta charset="UTF-8">\n';
+            htmlContent += '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n';
+            htmlContent += '<title>Better Genshin Impact - 版本更新日志</title>\n';
+            htmlContent += '<style>\n';
+            htmlContent += 'body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.6;color:#333;background:#f5f5f5;margin:0;padding:20px}\n';
+            htmlContent += '.container{max-width:1000px;margin:0 auto;background:white;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);padding:30px}\n';
+            htmlContent += '.header{text-align:center;margin-bottom:30px;border-bottom:2px solid #eee;padding-bottom:20px}\n';
+            htmlContent += '.header h1{color:#2c5aa0;margin-bottom:10px;font-size:2.2em}\n';
+            htmlContent += '.info{background:#e3f2fd;padding:15px;border-radius:8px;margin-bottom:30px;border-left:4px solid #2196f3}\n';
+            htmlContent += '.release{margin-bottom:30px;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden}\n';
+            htmlContent += '.release.prerelease{border-color:#ff9800;background-color:#fff8e1}\n';
+            htmlContent += '.release-header{background:#f8f9fa;padding:20px;border-bottom:1px solid #e0e0e0}\n';
+            htmlContent += '.release-header h2{margin-bottom:10px;font-size:1.4em}\n';
+            htmlContent += '.release-header h2 a{color:#2c5aa0;text-decoration:none}\n';
+            htmlContent += '.prerelease-badge{background:#ff9800;color:white;padding:2px 8px;border-radius:12px;font-size:0.7em;margin-left:10px}\n';
+            htmlContent += '.meta{font-size:0.9em;color:#666;margin-top:10px}\n';
+            htmlContent += '.version{background:#e3f2fd;padding:4px 8px;border-radius:4px;color:#1976d2;margin-right:15px}\n';
+            htmlContent += '.body{padding:20px;background:white}\n';
+            htmlContent += '.body pre{white-space:pre-wrap;word-wrap:break-word;font-family:Consolas,Monaco,monospace;font-size:0.9em;background:#f8f9fa;padding:15px;border-radius:4px;border:1px solid #e0e0e0}\n';
+            htmlContent += '.download{padding:15px 20px;background:#f0f7ff;border-top:1px solid #e0e0e0}\n';
+            htmlContent += '.download a{display:inline-block;background:#4caf50;color:white;padding:8px 16px;text-decoration:none;border-radius:4px}\n';
+            htmlContent += '</style>\n</head>\n<body>\n';
+            htmlContent += '<div class="container">\n';
+            htmlContent += '<div class="header">\n<h1>Better Genshin Impact</h1>\n<p>版本更新日志 - 静态页面</p>\n</div>\n';
+            htmlContent += '<div class="info">\n';
+            htmlContent += '<strong>最后更新:</strong> ' + timeStr + ' | ';
+            htmlContent += '<strong>版本数:</strong> ' + processedReleases.length + ' | ';
+            htmlContent += '<a href="changelog.json">JSON</a> | <a href="changelog.txt">TXT</a> | <a href="changelog.md">MD</a>\n';
+            htmlContent += '</div>\n<div class="releases">\n';
+            
+            processedReleases.forEach(release => {
+              htmlContent += '<div class="release' + (release.prerelease ? ' prerelease' : '') + '">\n';
+              htmlContent += '<div class="release-header">\n';
+              htmlContent += '<h2><a href="' + release.htmlUrl + '" target="_blank">' + escapeHtml(release.name) + '</a>';
+              if (release.prerelease) {
+                htmlContent += '<span class="prerelease-badge">预发布</span>';
+              }
+              htmlContent += '</h2>\n';
+              htmlContent += '<div class="meta"><span class="version">版本: ' + release.version + '</span><span>发布: ' + release.publishedAtFormatted + '</span></div>\n';
+              htmlContent += '</div>\n';
+              htmlContent += '<div class="body"><pre>' + escapeHtml(release.body) + '</pre></div>\n';
+              if (release.downloadUrl) {
+                htmlContent += '<div class="download"><a href="' + release.downloadUrl + '" target="_blank">下载此版本</a></div>\n';
+              }
+              htmlContent += '</div>\n';
+            });
+            
+            htmlContent += '</div>\n</div>\n</body>\n</html>';
+            fs.writeFileSync('docs/index.html', htmlContent);
+            
+            console.log('✅ 所有文件生成完成!');
+            console.log('📁 生成的文件:');
+            console.log('   - docs/index.html (HTML页面)');
+            console.log('   - docs/changelog.json (JSON数据)');
+            console.log('   - docs/changelog.txt (纯文本)');
+            console.log('   - docs/changelog.md (Markdown)');
+            
+          } catch (error) {
+            console.error('❌ 错误:', error.message);
+            process.exit(1);
+          }
+        }
         
-        fs.writeFileSync('docs/index.html', html);
+        main();
+        EOF
         
-        console.log('静态文件生成完成!');
-        SCRIPT_END
-        
-        node generate.js
-        rm -f releases.json generate.js
+    - name: Generate static files
+      run: node generate.js
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
