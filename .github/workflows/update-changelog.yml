@@ -70,13 +70,7 @@ jobs:
         function parseMarkdownToHtml(text) {
           if (!text) return '';
           
-          // 先转义HTML字符
-          let html = text
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#039;');
+          let html = text;
           
           // 标准化换行符
           html = html.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
@@ -92,52 +86,59 @@ jobs:
           html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
           html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
           
-          // 处理粗体和斜体
-          html = html.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
-          html = html.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
+          // 处理粗体和斜体（先处理长的，避免冲突）
+          html = html.replace(/\*\*\*([^\*\n]+)\*\*\*/g, '<strong><em>$1</em></strong>');
+          html = html.replace(/\*\*([^\*\n]+)\*\*/g, '<strong>$1</strong>');
+          html = html.replace(/\*([^\*\n]+)\*/g, '<em>$1</em>');
           
           // 处理链接
           html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
           
-          // 处理列表
+          // 逐行处理
           const lines = html.split('\n');
           const result = [];
           let inList = false;
           
           for (let i = 0; i < lines.length; i++) {
             const line = lines[i];
-            const listMatch = line.match(/^[\s]*[-*+]\s(.+)$/);
+            const trimmed = line.trim();
             
-            if (listMatch) {
+            // 检查是否是列表项 (* 或 - 开头)
+            if (trimmed.match(/^[\*\-]\s/)) {
               if (!inList) {
                 result.push('<ul>');
                 inList = true;
               }
-              result.push('<li>' + listMatch[1] + '</li>');
+              const content = trimmed.replace(/^[\*\-]\s/, '');
+              result.push('<li>' + content + '</li>');
             } else {
+              // 不是列表项
               if (inList) {
                 result.push('</ul>');
                 inList = false;
               }
               
-              // 处理普通行
-              if (line.trim() === '') {
-                result.push('<br>');
-              } else if (!line.match(/^<(h[1-6]|pre|ul|li)/)) {
-                // 不是标题、代码块、列表的行，包装为段落
-                result.push('<p>' + line + '</p>');
-              } else {
+              if (trimmed === '') {
+                result.push('');
+              } else if (trimmed.startsWith('<h') || trimmed.startsWith('<pre') || trimmed.startsWith('<img') || trimmed.startsWith('<ul') || trimmed.startsWith('<li')) {
+                // 已经是HTML标签
                 result.push(line);
+              } else {
+                // 普通文本
+                result.push('<p>' + line + '</p>');
               }
             }
           }
           
-          // 如果最后还在列表中，关闭列表
+          // 关闭未闭合的列表
           if (inList) {
             result.push('</ul>');
           }
           
-          return result.join('\n');
+          // 处理连续的空行
+          const finalResult = result.join('\n').replace(/\n\n+/g, '\n').replace(/\n<\/p>\n<p>/g, '<br>');
+          
+          return finalResult;
         }
         
         async function main() {
