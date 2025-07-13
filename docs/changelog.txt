@@ -1,5 +1,5 @@
 Better Genshin Impact 版本更新日志
-最后更新: 2025/7/12 16:26:56
+最后更新: 2025/7/13 16:27:07
 数据来源: https://github.com/babalae/better-genshin-impact/releases
 
 ================================================================================
@@ -308,8 +308,8 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 
 #### ❤感谢 @FishmanTheMurloc 重构了自动钓鱼模块并添加了大量功能！
 
-* 支持**纳塔**鱼类的��别
-* 将全自动钓鱼拆分至独立任务，且能够被地图追踪、JS脚本调用
+* 支持**纳塔**鱼类的识别
+* 将全自动钓鱼拆分至独立任务，且能够被地图追踪、JS脚��调用
 * 全自动钓鱼支持自动切换日夜的时间
 * 针对假龙的自动抛竿进行优化
 
@@ -336,9 +336,9 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 * 添加使用Starward记录游戏时间的功能 @kndxhz #1164
 * 企业微信通知添加图片输出 @MisakaAldrich
 * 5.4新角色的识别支持
-* 修复部分功能���位无法作为改键的问题 #1131
+* 修复部分功能键位无法作为改键的问题 #1131
 * 文案与UI优化
-* 添加了首次运行的界面，只会出现一次
+* 添加了首次运���的界面，只会出现一次
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 
 ================================================================================
@@ -349,7 +349,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 更新内容:
 * **修复 5.4 版本地图UI变动导致传送失效的问题** @Scarlet1ssimo 
 * TP时扩展右上角的不可点击区域，适配新地图UI
-* **修复启动调度器时完全卡死的问题（只会在独占全屏时出现）**
+* **修复启动调度器时完全卡死的问���（只会在独占全屏时出现）**
 * **修复通知导致的截图失败报错提示**
 * 使 JS脚本 中的 keyDown(), keyUp(), keyPress() 方法 和 战斗策略脚本 中的 keydown(), keyup(), keypress() 方法 可以直接使用 虚拟键代码 来执行 鼠标操作 #1124 @2696791698
 * 5.4 七圣召唤卡牌元数据更新 @haokaiyang
@@ -363,7 +363,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.42
 更新内容:
 ## 通知功能 
 * 重构 @Scarlet1ssimo 
-* 新增windows通知、飞书��知
+* 新增windows通知、飞书通知
 * 新增企业微信通知 @MisakaAldrich 
 
 通知文档：https://bettergi.com/dev/webhook.html
@@ -389,7 +389,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.42
 * 修复 `bettergi://start/` 不生效的问题（胡桃工具箱联动启动失效问题）
 * 在程序安装到C盘且情况下，自动添加 Everyone 权限，修复脚本仓库报错 “Microsoft Edge 无法读取和写入其数据目录” 的问题 @Scighost
 * 启动时校验亮度、镜头灵敏度配置，非默认直接打印警告日志
-* ��动时校验微星小飞机，并打印相应警告日志
+* 启动时校验微星小飞机，并打印相应警告日志
 * 修复脚本订阅和配置组运行的提示框在高DPI显示屏下跑到屏幕外的问题
 * 修复切换队伍时，第五个队伍无法被选中的问题
 * 优化一条龙领取奖励时，橙色选项的识别率
@@ -403,7 +403,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 发布时间: 2025/1/26 22:19:14
 状态: 正式版本
 更新内容:
-**这��更新新增了新版本的安装程序与自动更新程序（自动更新程序下版本才会有用）。**
+**这次更新新增了新版本的安装程序与自动更新程序（自动更新程序下版本才会有用）。**
 
 **📥在线安装版【推荐】：[BetterGI.OnlineInst.exe](https://77.cocogoat.cn/dfs/bgi/BetterGI.OnlineInst.exe)**
 **📥离线安装版：[BetterGI.Install.exe](https://77.cocogoat.cn/dfs/bgi/BetterGI.Install.exe)**
@@ -423,7 +423,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 * 修复枫丹台成台成女角色容易跑过头的问题
 * **修复一条龙期间切换到其他界面会卡顿的问题**
 * 在未识别到配队选择页面时重试
-* 新增命令行： `.\BetterGI.exe startOneDragon`，支持在软件启动后直接启动一条龙 #998
+* 新增命令行： `.\BetterGI.exe startOneDragon`，支持在软件启动后直接启动一条�� #998
 
 ## 路径追踪
 * 路径追踪 action为 fight 的点位强制执行成 path 类型
@@ -587,7 +587,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.38
 * 联机情况下识别角色队伍时，修复错误识别房主的问题（会导致队伍识别出错） #777
 * 修复脚本仓库订阅所有路径追踪脚本存在的一些问题
 * JS脚本鼠标悬浮展示描述
-* JS脚本在传入JS的 `settings` 对象为空时提示
+* JS脚本在传入JS的 `settings` 对象��空时提示
 
 ### 路径追踪
 * 凌晨4点时候自动点击领取月卡
@@ -611,7 +611,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.37
 
 ### 调度器
 * 添加配置组设置功能，可以配置路径追踪队伍切换、使用盾、回血角色等
-* 添加连续执行的功能
+* 添加连续执行的���能
 
 ### 脚本仓库
 * 仓库订阅导入后会自动刷新界面
@@ -626,7 +626,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.37
 ### 路径追踪
 * 修复到目标点时不转动视角的问题
 * 在识别到卡死时，新增更好的避障逻辑 & 优化寻路逻辑 #711 @jbcaaa 
-* 新增 action，具体��[文档](https://bgi.huiyadan.com/feats/autos/pathing.html)
+* 新增 action，具体见[文档](https://bgi.huiyadan.com/feats/autos/pathing.html)
   * 水、雷、风元素力采集
   * 周边拾取 #721 @jbcaaa 
 * 修复调度器不支持三级以上路径追踪目录的选择
@@ -708,7 +708,7 @@ BetterGI 距离第一个版本 0.10.0 的发布刚好已经过去了一年时间
 * 启动页的启动参数，添加文档的跳转 @emako 
 * 添加了一些默认拾取黑名单
 * 界面UI优化 @emako ，重写了快捷键页面
-* 5.1 相关配置适配性更新
+* 5.1 相关配置适配性更��
 
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.35
 
@@ -726,7 +726,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.35
 > [!IMPORTANT]
 > **地图追踪功能**：自动传送到最近的锚点，然后根据小地图开始寻路。系统会根据任务文件的途径点和目标点进行导航。
 > **当前已实现自动采集功能，核心功能由 @lwh9346 参考 https://github.com/tignioj/minimap 开发完成**
-> **[minimap](https://github.com/tignioj/minimap) 是一个高精度原神自动采集工具，当然它的功能远不止这些，强烈推荐！！**
+> **[minimap](https://github.com/tignioj/minimap) 是一个高精度原神自动采集工具，当��它的功能远不止这些，强烈推荐！！**
 
 只支持最大的地表地图，不支持地底识别，也不支持渊下宫、层岩巨渊地底地图。由于自带了原神地图的全特征点文件，软件体积暴增。
 
@@ -928,7 +928,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.30
 
 为了实现 #95 做了底层重构，主要是为了在原来的基础上更好的支持高于1080P的分辨率，比如2k、4k。提高其处理性能。
 
-**此��动过大，未完整进行测试，如果出现部分功能不可用的情况，请提 Issue 告诉我。**
+**此改动过大，未完整进行测试，如果出现部分功能不可用的情况，请��� Issue 告诉我。**
 
 当前分辨率支持情况如下：
 
