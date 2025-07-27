@@ -1,5 +1,5 @@
 Better Genshin Impact 版本更新日志
-最后更新: 2025/7/26 16:28:30
+最后更新: 2025/7/27 16:28:21
 数据来源: https://github.com/babalae/better-genshin-impact/releases
 
 ================================================================================
@@ -336,7 +336,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 * 添加使用Starward记录游戏时间的功能 @kndxhz #1164
 * 企业微信通知添加图片输出 @MisakaAldrich
 * 5.4新角色的识别支持
-* 修复部分功能键位无法作为改键的问题 #1131
+* 修复部分功��键位无法作为改键的问题 #1131
 * 文案与UI优化
 * 添加了首次运行的界面，只会出现一次
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
@@ -349,7 +349,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 更新内容:
 * **修复 5.4 版本地图UI变动导致传送失效的问题** @Scarlet1ssimo 
 * TP时扩展右上角的不可点击区域，适配新地图UI
-* **修复启动调度器时完全卡死的��题（只会在独占全屏时出现）**
+* **修复启动调度器时完全卡死的问���（只会在独占全屏时出现）**
 * **修复通知导致的截图失败报错提示**
 * 使 JS脚本 中的 keyDown(), keyUp(), keyPress() 方法 和 战斗策略脚本 中的 keydown(), keyup(), keypress() 方法 可以直接使用 虚拟键代码 来执行 鼠标操作 #1124 @2696791698
 * 5.4 七圣召唤卡牌元数据更新 @haokaiyang
@@ -363,7 +363,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.42
 更新内容:
 ## 通知功能 
 * 重构 @Scarlet1ssimo 
-* 新增windows通知、飞���通知
+* 新增windows通知、飞书通知
 * 新增企业微信通知 @MisakaAldrich 
 
 通知文档：https://bettergi.com/dev/webhook.html
@@ -403,7 +403,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 发布时间: 2025/1/26 22:19:14
 状态: 正式版本
 更新内容:
-**���次更新新增了新版本的安装程序与自动更新程序（自动更新程序下版本才会有用）。**
+**这次更新新增了新版本的安装程序与自动更新程序（自动更新程序下版本才会有用）。**
 
 **📥在线安装版【推荐】：[BetterGI.OnlineInst.exe](https://77.cocogoat.cn/dfs/bgi/BetterGI.OnlineInst.exe)**
 **📥离线安装版：[BetterGI.Install.exe](https://77.cocogoat.cn/dfs/bgi/BetterGI.Install.exe)**
@@ -423,7 +423,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 * 修复枫丹台成台成女角色容易跑过头的问题
 * **修复一条龙期间切换到其他界面会卡顿的问题**
 * 在未识别到配队选择页面时重试
-* 新增命令行： `.\BetterGI.exe startOneDragon`，支持在软件启动后直接启动一条龙 #998
+* 新增命令行： `.\BetterGI.exe startOneDragon`，支持在软件启动后直接启动一条�� #998
 
 ## 路径追踪
 * 路径追踪 action为 fight 的点位强制执行成 path 类型
@@ -611,7 +611,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.37
 
 ### 调度器
 * 添加配置组设置功能，可以配置路径追踪队伍切换、使用盾、回血角色等
-* 添加连续执行��功能
+* 添加连续执行的功能
 
 ### 脚本仓库
 * 仓库订阅导入后会自动刷新界面
@@ -638,7 +638,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.37
 
 ## 优化
 * 修复后台自动剧情启用的情况下，自动领取探索奖励失效的问题
-* **队伍识别支持联机情况下的识��**
+* **队伍识别支持联机情况下的识别**
 * 重新训练了头像分类器，使其支持角色头像处于半透明情况下的识别（攀爬、跳跃的时候右侧头像会变半透明，切人带数字的情况仍不支持）
 * 修复后台自动剧情启用的情况下，自动领取探索奖励失效的问题
 * 界面UI更新
@@ -654,7 +654,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.36
 发布时间: 2024/10/14 01:23:29
 状态: 正式版本
 更新内容:
-BetterGI 距离第一个版本 0.10.0 的发布刚���已经过去了一年时间了，没想到能高强度开发一年，把 Github 的瓷砖都快刷全绿了。感谢各位开发者和群友们的帮助！
+BetterGI 距离第一个版本 0.10.0 的发布刚好已经过去了一年时间了，没想到能高强度开发一年，把 Github 的瓷砖都快刷全绿了。感谢各位开发者和群友们的帮助！
 
 ![73c1caf286ba3a866b2df2122d34498d](https://github.com/user-attachments/assets/bc08f288-2f60-492c-92b6-22e3e3163065)
 
@@ -668,7 +668,7 @@ BetterGI 距离第一个版本 0.10.0 的发布刚���已经过去了一年
 
 ## 全自动
 
-**添加了脚本仓库，在线版 [https://bgi.sh/](https://bgi.sh/) （感谢 @DR-lin-eng 友情提供的域名），BetterGI本地也内嵌了相同的网页。**
+**添加了脚本仓��，在线版 [https://bgi.sh/](https://bgi.sh/) （感谢 @DR-lin-eng 友情提供的域名），BetterGI本地也内嵌了相同的网页。**
 
 **感谢脚本作者们制作的大量采集路线！**
 
@@ -694,7 +694,7 @@ BetterGI 距离第一个版本 0.10.0 的发布刚���已经过去了一年
 * 修复局部特征匹配在每次地图追踪的时候没有重置的问题 #619
 * 路径记录器添加关闭日志 #631
 * 路径追踪添加强制以配置点位传送的能力 #630
-* 路径追踪支持战斗action #658 @iris10086
+* 路径追踪支持战���action #658 @iris10086
 * ~~战斗action支持识别战斗结束（模型还在炼制）~~
 * 路径追踪支持纳西达收集action
 * 优化路径追踪 @gqzcl 
@@ -772,7 +772,7 @@ BetterGI 通过 [ClearScript](https://github.com/microsoft/ClearScript) 内置 V
 
 ## 优化与改动
 
-- 键鼠脚本的录制与回放从相对时间修改为绝对时间，大幅提高精度，减少卡顿，**但是不兼容 0.33 版���前的键鼠脚本** @lwh9346 
+- 键鼠脚本的录制与回放从相对时间修改为绝对时间，大幅提高精度，减少卡顿，**但是不兼容 0.33 版本前的键鼠脚本** @lwh9346 
 - 启动时检查是否有关键文件缺失，缺失时提示 #468 @qhy040404 
 - 修复更新提示弹窗位置未适配高分屏DPI缩放 #446 @emako 
 - code clean up  @qhy040404 @Lightczx 
@@ -790,7 +790,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.33
 请调整时间间隔，参考： https://github.com/babalae/better-genshin-impact/issues/489 ，新版本已经强制最小时间间隔为1ms
 
 ## 程序升级到 .NET 8
-**[请下载 .NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime)**
+**[��下载 .NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime)**
 
 相关依赖包都进行了升级，wpfui也升级至了最新版
 
@@ -803,7 +803,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.33
 3. 尽量走平坦的路，每次碰撞都会出现不一样的结果
 4. 录制的距离越长，误差会更大
 
-分辨率比例相同的情况下，是可以互相分享并使用键鼠录制的脚本的。建议所有录制操作都�� 16:9 的比例下完成
+分辨率比例相同的情况下，是可以互相分享并使用键鼠录制的脚本的。建议所有录制操作都在 16:9 的比例下完成
 
 ## 4.8 适配
 * 4.8七圣召唤基础配置文件适配 @haokaiyang
@@ -847,7 +847,7 @@ Paddle 文字识别暂时不能切换（测试切换后效果非常差）。图�
 
 ## 自动剧情与邀约
 * 新增一种**后台点击模式**，开启时自动剧情和邀约可以在后台被点击。
-	* **但是请注意游戏不能最小化，切在后台选择选项时候鼠标仍旧会移动！自动剧情结束后鼠标会被吸附回游戏���，请按<kbd>Alt</kbd>+<kbd>Tab</kbd>键切回到游戏**
+	* **但是请注意游戏不能最小化，切在后台选择选项时候鼠标仍旧会移动！自动剧情结束后鼠标会被吸附回游戏中，请按<kbd>Alt</kbd>+<kbd>Tab</kbd>键切回到游戏**
 	* 如果你想要纯粹的后台，请参考 https://github.com/babalae/better-genshin-impact/issues/122	
 * 优化自动剧情OCR错误时，不点击选项的问题 https://github.com/babalae/better-genshin-impact/issues/422
 * 自动邀约支持延时选择选项 #440 
@@ -862,7 +862,7 @@ Paddle 文字识别暂时不能切换（测试切换后效果非常差）。图�
 * 自动战斗脚本支持 4.7 新角色
 
 ## 其他优化
-* 新增“切换日志窗口显示”功能快捷键设置 #366
+* 新增“切换日志窗口显示”功能快���键设置 #366
 * 修复凯瑟琳每日自动领取委托/自动重新派遣关闭功能无效的问题 https://github.com/babalae/better-genshin-impact/issues/417
 * 修复自动伐木OCR开启时，重复木头报错的问题
 * 快捷键支持配置为 <kbd>Space</kbd>
@@ -887,7 +887,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.31
 * 自动伐木功能会保持电脑屏幕不自动息屏
 
 ## 其他优化
-* **修复非16:9屏幕在 0.29 版本新出现的问题：无法正常使���部分功能、遮罩识别框位置不正确**
+* **修复非16:9屏幕在 0.29 版本新出现的问题：无法正常使用部分功能、遮罩识别框位置不正确**
 * **修复了遮罩窗口UID遮盖和东南西北显示不正确的问题（0.30.1版本）**
 * **WindowsGraphicsCapture 在 Windows 10 version 1903 以下版本中（不含）不再展示（因为系统不支持）** #394
 * 修复在自动战斗开始后，一键宏无法正常识别的问题 #396
@@ -913,7 +913,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.30
 
 **如果期望全连建议选择胡桃主题“疏影引蝶映梅红”，背景效果调整为1**
 
-如果你平时使用BitBlt截图模式无法正常使用BetterGI，且自动活动音游功能也无法使用，可以尝试此方法： https://github.com/babalae/better-genshin-impact/issues/92
+如果你平时使用BitBlt截图模式无法正常使用BetterGI，且自动活动音游功能���无法使用，可以尝试此方法： https://github.com/babalae/better-genshin-impact/issues/92
 
 ![image](https://github.com/babalae/better-genshin-impact/assets/15783049/eebdab6c-3af0-453e-838f-71599fb69c6b)
 
