@@ -1,5 +1,5 @@
 Better Genshin Impact 版本更新日志
-最后更新: 2025/8/12 16:30:20
+最后更新: 2025/8/13 16:31:10
 数据来源: https://github.com/babalae/better-genshin-impact/releases
 
 ================================================================================
@@ -10,7 +10,7 @@ Better Genshin Impact 版本更新日志
 更新内容:
 ## 5.8 适配性优化
 - 5.8新角色识别
-- 5.8��图特征更新
+- 5.8地��特征更新
 - 5.6-5.8新增传送点 @MisakaAldrich
 - 5.8七圣元数据更新 @haokaiyang
 - **自动幽境危战适配5.8，并加入一条龙中（注意当前无需在开启钥匙后的界面上启动本功能！）**
@@ -53,7 +53,7 @@ Better Genshin Impact 版本更新日志
 - 地图追踪接口修改成多实例，JS调用的实例和地图追踪调用的实例不同
 - 修复简易策略偶发性不执行的问题 @physligl
 - 删除这两个选项：是否就近七天神像恢复血量、传送到七天神像之后是否需要移动后回血
-- 修复���发调用小地图识别时识别错误的Bug，修改并增加暴露给JS的小地图识别函数 (#1911) @Limint
+- 修复并���调用小地图识别时识别错误的Bug，修改并增加暴露给JS的小地图识别函数 (#1911) @Limint
 - 修复地图追踪配置中获取材料名称的问题 (#1919) @kaedelcb
 - 地图追踪版本要求修改为强制
 - 优化地图追踪的距离过远判断
@@ -402,7 +402,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 * 新增shell类型的任务可供添加（**请不要执行看不懂的命令**）#1248 @Takaranoao
 
 ## 地图追踪
-* 地图追踪中当前配队无法满足简易策略脚本时，日志提示所需角色
+* 地图追踪中当前配队无��满足简易策略脚本时，日志提示所需角色
 * 地图追踪中异常场景处理添加 遇到 x 按钮时候 按下ESC返回主界面
 * 更多七天神像回血相关的配置 @physligl
 * 自动战斗后、传送前都会释放所有按键，尝试解决TP神像后持续往前走的问题
@@ -429,7 +429,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 更新内容:
 * **修复 5.4 版本地图UI变动导致传送失效的问题** @Scarlet1ssimo 
 * TP时扩展右上角的不可点击区域，适配新地图UI
-* **修复启动调度器时完���卡死的问题（只会在独占全屏时出现）**
+* **修复启动调度器时完全卡死的问题（只会在独占全屏时出现）**
 * **修复通知导致的截图失败报错提示**
 * 使 JS脚本 中的 keyDown(), keyUp(), keyPress() 方法 和 战斗策略脚本 中的 keydown(), keyup(), keypress() 方法 可以直接使用 虚拟键代码 来执行 鼠标操作 #1124 @2696791698
 * 5.4 七圣召唤卡牌元数据更新 @haokaiyang
@@ -442,7 +442,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.42
 状态: 正式版本
 更新内容:
 ## 通知功能 
-* 重�� @Scarlet1ssimo 
+* 重构 @Scarlet1ssimo 
 * 新增windows通知、飞书通知
 * 新增企业微信通知 @MisakaAldrich 
 
@@ -457,7 +457,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.42
 * 修复地图追踪任务无法直接在地图追踪页右键执行的问题
 * 修复秘境死亡时候无法传送到七天神像的问题
 * 修改了路径追踪中战斗结束的判定点 @Scarlet1ssimo
-* 修复路径追踪 `combat_script` 不设置角色名称仍会切人的问题 #1100
+* 修复路径追踪 `combat_script` 不设置角色名称���会切人的问题 #1100
 * 新增路径追踪 `pyro_collect` 火元素采集的功能
 * 新增路径点位 `orientation` 用于控制人物朝向 @Yang-z 
 * 路径追踪中自动跳过剧情的配置为强制跳过
@@ -503,7 +503,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 * 修复枫丹台成台成女角色容易跑过头的问题
 * **修复一条龙期间切换到其他界面会卡顿的问题**
 * 在未识别到配队选择页面时重试
-* 新增命��行： `.\BetterGI.exe startOneDragon`，支持在软件启动后直接启动一条龙 #998
+* 新增命令行： `.\BetterGI.exe startOneDragon`，支持在软件启动后直接启动一条龙 #998
 
 ## 路径追踪
 * 路径追踪 action为 fight 的点位强制执行成 path 类型
@@ -560,7 +560,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.40
 ![image](https://github.com/user-attachments/assets/e6e69637-f822-4db7-ab86-c7507d8456ba)
 
 
-## 5.3 适配性更新
+## 5.3 适��性更新
 
 * 七圣召唤更新 @haokaiyang
 * 支持新角色数据
@@ -600,7 +600,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.39
 ## 路径追踪
 
 > [!IMPORTANT]
-> **非常感谢 @Limint 贡献的��的相机视角识别算法，解决了路径追踪时视角晃动的问题**
+> **非常感谢 @Limint 贡献的新的相机视角识别算法，解决了路径追踪时视角晃动的问题**
 
 **现在已经存在部分挖矿、锄地脚本，但相关功能有待优化。**
 
@@ -611,7 +611,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.39
     * 完善并修复传送点数据，补充了地区属性
 * 完善自动战斗任务，添加了更多自定义参数，使自动锄地功能更加流畅 @mfkvfhpdx 
 * 添加路径追踪暂停功能，可配置快捷键 @mfkvfhpdx 
-* 优化路径追踪地图点位编辑器的功能（战斗策略管理、清空等） @mfkvfhpdx 
+* 优化路径追踪地图点位���辑器的功能（战斗策略管理、清空等） @mfkvfhpdx 
 * 调度器配置组添加重命名、清空能功能 @mfkvfhpdx 
 * 调度器添加地图路径追踪任务时候的ui优化，默认不展开，且添加筛选功能
 * 修复调度器连续执行配置组时无法停止的问题
@@ -664,7 +664,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.38
 
 ## 全自动
 
-* 联机情况下识别角色队伍时，修复错误识别房主的问题（会导致队伍识别出错） #777
+* 联机情况下识别角色队伍时，修复错误识别房主的问题（���导致队伍识别出错） #777
 * 修复脚本仓库订阅所有路径追踪脚本存在的一些问题
 * JS脚本鼠标悬浮展示描述
 * JS脚本在传入JS的 `settings` 对象为空时提示
@@ -713,7 +713,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.37
 * 针对 action 的角色需求进行校验，比如 纳西妲采集。
 * 残血、死亡时自动传送至七天神像
 * 恢复界面上单独执行任务的右键菜单
-* 添加路线重试机制、卡死脱离3次后放弃当前路径进入重试、卡死脱离添加超时时间
+* 添加路线重试机制、卡死脱离3次后放弃当前路径进入重试、卡死脱离添加超时时��
 * 新增路径追踪的队伍切换与角色使用的条件设置。
 
 ## 优化
