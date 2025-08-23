@@ -1,5 +1,5 @@
 Better Genshin Impact 版本更新日志
-最后更新: 2025/8/22 16:28:46
+最后更新: 2025/8/23 16:25:07
 数据来源: https://github.com/babalae/better-genshin-impact/releases
 
 ================================================================================
@@ -34,7 +34,7 @@ Better Genshin Impact 版本更新日志
 - 提高领取纪行奖励的鲁棒性（实际是V5 OCR识别的问题） #2019 @JamisHoo
 - 修复 5.8 传送点配置错误的问题 @MisakaAldrich
 - 程序支持 attach 控制台输出
-- 新增自动走向附近地脉花（宝箱图标��的Task，暂未对外 (#2073) @iris10086
+- 新增自动走向附近地脉花（宝箱图标）的Task，暂未对外 (#2073) @iris10086
 - JS脚本、地图追踪页面markdown文件加载修改为WPF原生的展示方式 (#2017) @Datouyu666
 - **修复B服登录无法使用的问题** (#2037) @zaodonganqi
 - 独立任务七圣召唤，支持 js 端传入自定义策略 #1972
@@ -80,7 +80,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.49
 - 修复配置组名称前半段有同名不显示的问题 (#1858) @kaedelcb
 - 调度器添加地图追踪文件时自动聚焦搜索框 (#1916) @Arkadegong
 - 调度器配置中增加执行成功任务跳过执行配置 (#1893) @mfkvfhpdx
-- ���决调度器为空时程序假死问题 (#1947) @Datouyu666
+- 解决调度器为空时程序假死问题 (#1947) @Datouyu666
 - 重构添加地图追踪任务页面的搜索功能，同时添加深度搜索功能。修复了搜索功能形同虚设，只能搜索最表面父文件夹的问题。 (#1980) @Datouyu666
 
 ## 地图追踪
@@ -97,7 +97,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.49
 - 修复地图追踪配置中获取材料名称的问题 (#1919) @kaedelcb
 - 地图追踪版本要求修改为强制
 - 优化地图追踪的距离过远判断
-- 修复地图追��中角色公转的场景，持续角度一直未在5度内时，直接强制等到转向到目标位置 #1644
+- 修复地图追���中角色公转的场景，持续角度一直未在5度内时，直接强制等到转向到目标位置 #1644
 
 ## 通知
 - 给telegramNotifier添加代理功能支持 (#1890) @xoipz
@@ -149,7 +149,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.48
 - 一条龙尘歌壶进入添加重试/UI微调/一条龙快捷键修复 #1750 #1752  @kaedelcb
 - 内嵌 VC++ 运行库 14.44.35208.0，**尝试彻底解决“Unable to load DLL 'onnxruntime'or one of its dependencies: 动态链接库(DLL)初始化例程失败” 的问题**
 - 缩短换队失败的判断时间 #1755 @physligl
-- 修复脚本仓库更新报错 repository path ' ' is not owned by current user #1746
+- 修复脚��仓库更新报错 repository path ' ' is not owned by current user #1746
 - 删除 “允许在jsScript脚本中使用此地图追踪配置” 和 “允许在此调度器中（一般在JS脚本中）调用自动战斗任务时，采用此追踪配置里的战斗策略” 配置。默认启用
 - 脚本仓库更新添加进度展示
 - 优化传送点点击的逻辑，增加退出重登的延时 (#1773) @physligl
@@ -175,7 +175,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.47
 
 
     * 解决方案：关掉后重试一次，手动运行BetterGl.update.exe（此时打开软件应该已经是最新版了）。如果还是不行，可以直接重新下载安装包安装。
-* 启动程序后出现报错：**Unable to load DLL 'onnxruntime'or one of its dependencies: 动态链接库(DLL)初始化例程失败。(0x8007045A)**。 
+* 启动��序后出现报错：**Unable to load DLL 'onnxruntime'or one of its dependencies: 动态链接库(DLL)初始化例程失败。(0x8007045A)**。 
 ![f4dc42c65d8902d2b1a01f08af05fa26](https://github.com/user-attachments/assets/0afdf0b9-e3b1-45ed-b0d3-3ab3f28b76e0)
 
 
@@ -218,7 +218,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 * 大剑挖矿策略修改，以及移除卡齐娜 @MisakaAldrich
 * 解决在回到主界面场景下卡复活界面的问题 @mfkvfhpdx 
 * 战斗后自动拾取优化 @Scarlet1ssimo
-* 将路径追踪相关的日��改为debug级别 (#1645) (#1684) @Patrick-Ze
+* 将路径追踪相关的日���改为debug级别 (#1645) (#1684) @Patrick-Ze
 
 ## 脚本仓库
 * 修改底层下载逻辑，下载源从CF更换为更多Git仓库
@@ -279,7 +279,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 ## 一条龙
 - 延长合成树脂的等待时间 #1432
 - **一条龙支持增加配置组** @kaedelcb
-- ���条龙内的自动秘境支持每周7天单独配置 @kaedelcb
+- 一条龙内的自动秘境支持每周7天单独配置 @kaedelcb
 - **新增自动前往领取尘歌壶奖励 (#1506)**  @iris10086
 
 ## 地图追踪
@@ -376,7 +376,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.44
 
 ## 自动秘境
 - 一条龙未选择要刷的秘境时，直接提示
-- 修复4K分辨率下秘���无法自动点击掉地脉异常的提示内容的问题 #460
+- 修复4K分辨率下秘境无法自动点击掉地脉异常的提示内容的问题 #460
 - 体力不足时，放弃继续进行自动秘境 #1008 #1134
 - 秘境走到最后领取奖励超时将会自动重试秘境 #1083 #1202 #1270 
 
@@ -401,7 +401,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.44
 - 自动钓鱼恢复 16:9 的支持，**与一些钓鱼功能的优化** @FishmanTheMurloc 
 - 一些UI界面上的变化
 - wpfui 更新至 4.0 (表层没啥变化，但是ui框架底层变动)
-- 修复自动拾取按文档指引改键无效 @Takaranoao #1262
+- 修��自动拾取按文档指引改键无效 @Takaranoao #1262
 - 修复自动秘境选择火本（无妄引咎密宫）后，无法正确进入秘境的问题 #1345
 
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.44
@@ -430,7 +430,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 
 * 支持**纳塔**鱼类的识别
 * 将全自动钓鱼拆分至独立任务，且能够被地图追踪、JS脚本调用
-* 全自动钓鱼支持��动切换日夜的时间
+* 全自动钓鱼支持自���切换日夜的时间
 * 针对假龙的自动抛竿进行优化
 
 ## 一条龙
@@ -523,9 +523,9 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 发布时间: 2025/1/26 22:19:14
 状态: 正式版本
 更新内容:
-**这次更新新增了新版本的安装程序与自动更新程序（自动更新程序下版本才会有用）。**
+**这次更新新增���新版本的安装程序与自动更新程序（自动更新程序下版本才会有用）。**
 
-**��在线安装版【推荐】：[BetterGI.OnlineInst.exe](https://77.cocogoat.cn/dfs/bgi/BetterGI.OnlineInst.exe)**
+**📥在线安装版【推荐】：[BetterGI.OnlineInst.exe](https://77.cocogoat.cn/dfs/bgi/BetterGI.OnlineInst.exe)**
 **📥离线安装版：[BetterGI.Install.exe](https://77.cocogoat.cn/dfs/bgi/BetterGI.Install.exe)**
 
 * 感谢 @xyToki 提供的自动更新程序与服务，项目 [kachina-installer](https://github.com/YuehaiTeam/kachina-installer) ！
@@ -547,7 +547,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 
 ## 路径追踪
 * 路径追踪 action为 fight 的点位强制执行成 path 类型
-* 路径追踪中战��策略日志打印修改，以防和自动战斗混淆
+* 路径追踪中战斗策略日志打印修改，以防和自动战斗混淆
 * 下落攻击触发的时候不再接近目标点
 * 新增 `dash` action 连续冲刺跑路
 * 添加 `log_output` 的 action 用于在指定点输出日志
@@ -572,7 +572,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 * 修复windows10 1909版本使用WGC会报错的问题 @masm611 #954
 * 更多傻瓜化日志提示
     * 自动战斗、秘境、队伍识别强制校验 16:9 分辨率
-    * 键鼠模拟被拦截提示修改为中文
+    * 键鼠��拟被拦截提示修改为中文
     * 战斗策略不存在则引导用户前往对应菜单进行配罟
 * **自动音游专辑支持所有难度都打满** #994 @atiasn
 * 安装包改成单层文件夹 #976  @Womsxd
@@ -644,8 +644,8 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.39
 
 **现在已经存在部分挖矿、锄地脚本，但相关功能有待优化。**
 
-* 修复tp时候，屏蔽左上角区域位置不正确的问题（屏蔽了但没完全屏蔽）
-* 新增在路径追踪期间使用小道具的���能
+* 修复tp时候，屏蔽左上角区��位置不正确的问题（屏蔽了但没完全屏蔽）
+* 新增在路径追踪期间使用小道具的功能
 * 重写 `pick_around` 动作 @Limint
 * 重构地图传送模块，解决部分场景下无法正常传送到目标的问题 @physligl 
     * 完善并修复传送点数据，补充了地区属性
@@ -671,7 +671,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.39
 * 补充自动拾取黑名单 @OPPO9008
 * 修复了若干问题（太多了不想写了）
 * 由于下版本会出现常驻音游活动，历史的自动音游功能也开放了
-* 自动秘境功能存在角色死亡后，如果设置了目标秘境，则会自动传送回去继续自动秘境
+* 自动秘境功能存���角色死亡后，如果设置了目标秘境，则会自动传送回去继续自动秘境
 * 自动秘境的转向功能完全基于bug正常运行，修复了这个问题
 * 自动秘境默认设置为行走去开启秘境
 * 重写自动开门的触发器，合并自动开门与领取月卡的配置
@@ -687,7 +687,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.38
 发布时间: 2024/11/23 19:54:47
 状态: 正式版本
 更新内容:
-## 5.2 适配性更新
+## 5.2 适配��更新
 
 * 七圣召唤更新@haokaiyang
 * 支持新角色数据
@@ -970,7 +970,7 @@ Paddle 文字识别暂时不能切换（测试切换后效果非常差）。图�
 	* **但是请注意游戏不能最小化，切在后台选择选项时候鼠标仍旧会移动！自动剧情结束后鼠标会被吸附回游戏中，请按<kbd>Alt</kbd>+<kbd>Tab</kbd>键切回到游戏**
 	* 如果你想要纯粹的后台，请参考 https://github.com/babalae/better-genshin-impact/issues/122	
 * 优化自动剧情OCR错误时，不点击选项的问题 https://github.com/babalae/better-genshin-impact/issues/422
-* 自动邀约支持延时选择选项 #440 
+* 自动邀约支持延时选择选�� #440 
 * 自动邀约支持自动点击跳过按钮 #335
 
 ## 自动拾取
@@ -1010,7 +1010,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.31
 * **修复非16:9屏幕在 0.29 版本新出现的问题：无法正常使用部分功能、遮罩识别框位置不正确**
 * **修复了遮罩窗口UID遮盖和东南西北显示不正确的问题（0.30.1版本）**
 * **WindowsGraphicsCapture 在 Windows 10 version 1903 以下版本中（不含）不再展示（因为系统不支持）** #394
-* 修复在自动战斗开始后，一键宏无法正常识别的问题 #396
+* 修复在自动���斗开始后，一键宏无法正常识别的问题 #396
 * 修复自动钓鱼在5个鱼饵情况下，鱼饵无法正确选中的问题 #399
 * 更换UI默认字体为 MiSans @emako
 * 彻底移除 H.InputSimulator #154 @emako
@@ -1038,7 +1038,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.30
 ![image](https://github.com/babalae/better-genshin-impact/assets/15783049/eebdab6c-3af0-453e-838f-71599fb69c6b)
 
 
-部分样式的曲目可以达�� 100% 完成率（2倍速也可以）
+部分样式的曲目可以达到 100% 完成率（2倍速也可以）
 
 ![image](https://github.com/babalae/better-genshin-impact/assets/15783049/921a63e5-3e9b-488c-8906-7d8efca98fc6)
 
@@ -1103,7 +1103,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.29
 
 ## 一键宏
 * `一键战斗宏` 改名为 `一键宏`，因为这个宏也不一定是用来战斗...
-* 队伍识别失败时，沿用上一次识别成功的队伍。（算是解决了切换��色 1s CD 的时候，由于头像虚化导致队伍无法识别的问题）
+* 队伍识别失败时，沿用上一次识别成功的队伍。（算是解决了切换角色 1s CD 的时候，由于头像虚化导致队伍无法识别的问题）
 * 配置修改后立即生效
 
 ## 4.6 适应性更新
@@ -1114,7 +1114,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.29
 ## 其他
 * 修复重启截图器后素材不重新加载的问题（0.27版本新增的BUG，会导致切换分辨率后报错边界溢出）
 * 修改游戏分辨率后自动重启截图器
-* 在启动状态下，切换截图模式将会自动重启截图器
+* 在启动状态下，切换截图模式��会自动重启截图器
 
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.28.0
 
@@ -1134,7 +1134,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.28
 
 ## 操控辅助
 * **一键战斗宏，按下后会识别当前出战角色，并根据配置执行对应的宏，比如：皇女滑步弓、胡桃A重跳**
-    * 暂不支持联机环境，切人cd时识别率会很差
+    * 暂不支持���机环境，切人cd时识别率会很差
     * 有兴趣可以在交流群联系我贡献更多的宏 https://docs.qq.com/sheet/DTGZqVVhkZk5SWEtn?tab=000001
 * 一键进出尘歌壶 #340 @Mr-Quin 
 * 一键确认/取消 #170 
@@ -1157,7 +1157,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.28
 ## 其他优化
 * Yap 自动拾取模型更新
 * 修复原神启动时，`config.ini` 不生效的问题（用了官B切换工具，但使用BetterGI启动时永远是官服）
-* 优��了内部模板匹配方法，使之支持所有模板匹配算法
+* 优���了内部模板匹配方法，使之支持所有模板匹配算法
 * 内部代码结构优化 @Lightczx 
 
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.27.0
@@ -1173,7 +1173,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.27
 **自动钓鱼使用了全新的抛竿算法，抛竿终于没那么智障了。**
 **感谢来自 [HutaoFisher](https://github.com/myHuTao-qwq/HutaoFisher) 优秀抛竿算法与高质量数据集 @myHuTao-qwq**
 
-##### 如果有时间和兴趣协助训练识别模型的，欢迎加入炼丹群：[863012276](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=YOyOxUzXKquJyUuO2z0W1Lrh4iX9ROme&authKey=tckwvC5AC4BuEAKOdxVPr8QsXR1AqwQuzIUiswo9JT%2FpnPniRCoyoEY6IGkljdAo&noverify=0&group_code=863012276)
+##### 如果有时间和兴趣协助训练���别模型的，欢迎加入炼丹群：[863012276](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=YOyOxUzXKquJyUuO2z0W1Lrh4iX9ROme&authKey=tckwvC5AC4BuEAKOdxVPr8QsXR1AqwQuzIUiswo9JT%2FpnPniRCoyoEY6IGkljdAo&noverify=0&group_code=863012276)
 
 
 
@@ -1196,7 +1196,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.27
 - 修复游戏安装路径中分隔符不统一的问题 #293 @Mr-Quin
 - 启动页的代码质量优化 #296 @qhy040404
 - 添加最小化至托盘的功能 #109 @Mr-Quin
-- 自动拾取黑白名单使用内置的JSON编辑���打开 #245 @emako 
+- 自动拾取黑白名单使用内置的JSON编辑��打开 #245 @emako 
 - ~~WPF-UI 更新至 3.0 正式版~~
 
 
@@ -1211,7 +1211,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.26
 **新增在联动启动原神后自动开门 #220  、自动领月卡 #237 的功能**
 
 ## 自动钓鱼
-* 全自动钓鱼已支持枫丹、须弥鱼类，感谢 @Mikachu2333 @vulkanparagon 的协助打标（自动���竿后续会继续重构）
+* 全自动钓鱼已支持枫丹、须弥鱼类，感谢 @Mikachu2333 @vulkanparagon 的协助打标（自动��竿后续会继续重构）
 * 修复“赤糜饵 经常无法选中的问题 #96 
 
 ## 其他优化
@@ -1241,7 +1241,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.25
 - **在键鼠监听模式下，长按快捷键再也不会停不下来了，龙王转圈也不会出现卡顿**
 
 ## 自动剧情
-- 添加OCR支持，当然消耗的性能也更多了 #149，可在 `User\AutoSkip` 下的配置文件中配�� “默认暂停”、“直接暂停”、“优先选择” 的选项文字。后续会添加配置 UI 。 #186
+- 添加OCR支持，当然消耗的性能也更多了 #149，可在 `User\AutoSkip` 下的配置文件中配置 “默认暂停”、“直接暂停”、“优先选择” 的选项文字。后续会添加配置 UI 。 #186
 - 自动剧情可以默认选择第一个选项了
 - 黄色感叹号图标、黄色文字将会优先选择 #232
 - 各类地图上带图标的NPC，比如铁匠、凯瑟琳、尘歌壶阿圆、声望等，自动剧情将不会跳过与他们的对话。
@@ -1253,7 +1253,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.25
 > 2. 遇到气泡图标进行OCR，OCR不到任何内容时，会直接点击气泡图标。
 > 3. 选项文字中包含任意 “优先选择” 配置（`\User\AutoSkip\select_options.json`）的内容，直接点击，推荐用户自己修改。
 > 4. 选项文字中包含任意 “直接暂停” 配置（`\User\AutoSkip\pause_options.json`）的内容，直接不点击，不会再往下判断。这个配置存在的意义是配置存在橙色文字，但是不想自动点击的场景（比如：卡牌商店的内容）。不推荐用户自己修改，希望能通过issue提交给我。
-> 5. 选项文字中存在橙色文字，直接点击（其中“每日委托”、“探索派遣”会触发特殊���辑，请不要将这两个关键词加入到任何配置中）
+> 5. 选项文字中存在橙色文字，直接点击（其中“每日委托”、“探索派遣”会触发特殊��辑，请不要将这两个关键词加入到任何配置中）
 > 6. 选项文字中包含任意 “默认暂停” 配置（`\User\AutoSkip\default_pause_options.json`）的内容，直接不点击，不会再往下判断。不推荐用户自己修改，希望能通过issue提交给我。
 
 ## 快速传送
@@ -1275,7 +1275,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.25
 
 ## 其他优化
 - 自动拾取的模型与黑名单更新到 4.4 @Alex-Beng 
-- 更友好的自动拾取黑白名单解析失���报错
+- 更友好的自动拾取黑白名单解析失��报错
 - **新增了手动选择窗口启动更好的原神的入口**，如果原神已经启动，但是提示窗口找不到，请使用这个功能
 - 未赋予管理员启动的情况下，提示需要管理员权限 #255
 - 添加启动后自动更好的原神启动的启动参数 `bettergi://start` or `BetterGI.exe start` #152
