@@ -1,5 +1,5 @@
 Better Genshin Impact 版本更新日志
-最后更新: 2025/8/30 16:24:24
+最后更新: 2025/8/31 16:24:26
 数据来源: https://github.com/babalae/better-genshin-impact/releases
 
 ================================================================================
@@ -34,7 +34,7 @@ Better Genshin Impact 版本更新日志
 - 提高领取纪行奖励的鲁棒性（实际是V5 OCR识别的问题） #2019 @JamisHoo
 - 修复 5.8 传送点配置错误的问题 @MisakaAldrich
 - 程序支持 attach 控制台输出
-- 新增自动走向附近地脉花（宝箱图标��的Task，暂未对外 (#2073) @iris10086
+- 新增自动走向附近地脉花（宝箱图标���的Task，暂未对外 (#2073) @iris10086
 - JS脚本、地图追踪页面markdown文件加载修改为WPF原生的展示方式 (#2017) @Datouyu666
 - **修复B服登录无法使用的问题** (#2037) @zaodonganqi
 - 独立任务七圣召唤，支持 js 端传入自定义策略 #1972
@@ -66,7 +66,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.49
 
 ## 独立任务
 - 自动秘境优化进入适配限时双倍 @kaedelcb
-- 新���开发用的截取物品图标独立任务 (#1856) @FishmanTheMurloc
+- 新增开发用的截取物品图标独立任务 (#1856) @FishmanTheMurloc
 - 自动秘境换队从在门口切换修改为在进门后切换；原粹识别优化 (#1866) @kaedelcb
 - **新增独立任务自动使用兑换码，自动识别剪切板中的兑换码** (#1895)
 - 检测战斗结束增加旋转寻找敌人实验性功能 (#1960) @kaedelcb
@@ -87,7 +87,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.49
 - 重构添加地图追踪任务页面的搜索功能，同时添加深度搜索功能。修复了搜索功能形同虚设，只能搜索最表面父文件夹的问题。 (#1980) @Datouyu666
 
 ## 地图追踪
-- **实现分层地图的识别，优��视角识别算法**@Limint
+- **实现分层地图的识别，优化视角识别算法**@Limint
 - 延长换队失败的判断时间 (#1792) @ddddng
 - 修改部分角色挖矿的方式 @RRRR623 @MisakaAldrich
 - 脚本仓库不再使用浅克隆，修复需要重置才能更新的问题
@@ -149,7 +149,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.48
 - 优化抽屉关闭后重新开启的体验
 - 一条龙页面添加自动秘境树脂选择弹窗 #1767 @kaedelcb
 - 优化调度器中根据文件夹删除任务卡顿的问题 @kaedelcb
-- 一条龙尘歌壶进入添加重试/UI微调/一条龙快捷键修复 #1750 #1752  @kaedelcb
+- 一条龙尘歌壶进入添加��试/UI微调/一条龙快捷键修复 #1750 #1752  @kaedelcb
 - 内嵌 VC++ 运行库 14.44.35208.0，**尝试彻底解决“Unable to load DLL 'onnxruntime'or one of its dependencies: 动态链接库(DLL)初始化例程失败” 的问题**
 - 缩短换队失败的判断时间 #1755 @physligl
 - 修复脚本仓库更新报错 repository path ' ' is not owned by current user #1746
@@ -182,7 +182,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.47
 ![f4dc42c65d8902d2b1a01f08af05fa26](https://github.com/user-attachments/assets/0afdf0b9-e3b1-45ed-b0d3-3ab3f28b76e0)
 
 
-    * 解决方案：请安装VC++运行库���官方下载地址： https://aka.ms/vs/17/release/vc_redist.x64.exe
+    * 解决方案：请安装VC++运行库，官方下载地址： https://aka.ms/vs/17/release/vc_redist.x64.exe
 
 
 ## 改动
@@ -216,7 +216,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 * 修复合成台打开后，等待时间过短导致合成失败的问题 
 
 ## 地图追踪
-* 通过点位配置，支持在未识别点位情况下，从大地图中���点来识别坐标。 #1526 @mfkvfhpdx
+* 通过点位配置，支持在未识别点位情况下，从大地图��心点来识别坐标。 #1526 @mfkvfhpdx
 * 挖矿策略修改为只执行一个角色
 * 大剑挖矿策略修改，以及移除卡齐娜 @MisakaAldrich
 * 解决在回到主界面场景下卡复活界面的问题 @mfkvfhpdx 
@@ -243,7 +243,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 * 安装器优化与集成 @xytoki
 * 添加 Mirror 酱 更新渠道，主程序更新推送支持灰度更新
 * 修复更新窗口色差以及白边的问题
-* ��复暂停后恢复异常bug，调度器设置增加周期配置，执行调度器任务增加继续执行功能 @mfkvfhpdx
+* 修复暂停后恢复异常bug，调度器设置增加周期配置，执行调度器任务增加继续执行功能 @mfkvfhpdx
 * 支持在命令行启动一条龙参数时选择配置，配置找不到就用界面指定的 #1586 @zzc-tongji
 * 修复bark notification group和sound配置不生效的问题 #1605  @stiffme
 * 修复自动秘境的文案错误 @Qian23333
@@ -276,7 +276,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 - 全局方法暴露鼠标滚动操作verticalScroll (#1450) @breadgrocery
 - 修复 JS 脚本内 log.debug 在 bettergi 覆盖层显示的日志级别不正确的问题 #1452
 - 添加异步目录读取 (#1472) @Hijiwos
-- 修复创建配置���添加js脚本后，首次编辑js脚本自定义配置时，组件无法正确绑定到setting.json中的默认值 (#1449) @breadgrocery
+- 修复创建配置组添加js脚本后，首次编辑js脚本自定义配置时，组件无法正确绑定到setting.json中的默认值 (#1449) @breadgrocery
 - 调用切换队伍方法后，清除队伍缓存
 
 ## 一条龙
@@ -289,7 +289,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 - 修复飞行过程中CPU飙升的问题
 - 修复4号位地图追踪时不切人的放技能的问题
 - **地图特征使用二进制文件存储，减小文件体积，大幅提升特征数据加载速度** @shatyuka
-- 为凌晨4点领取月卡的逻辑添加了更多触发点 @mfkvfhpdx
+- 为凌晨4点领取��卡的逻辑添加了更多触发点 @mfkvfhpdx
 - 打开地图时判断是否存在探索奖励，并自动领取（需要在设置中打开） @mfkvfhpdx 
 - 战斗后拾取逻辑小优化 @Scarlet1ssimo 
 - 识别选择队伍后队伍切换成功的场景，减少因为切换时间过长而引发的队伍切换失败的问题 #1457
@@ -341,7 +341,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.44
 状态: 正式版本
 更新内容:
 * 依赖库OpenCvSharp4、PaddleOCR版本更新 @Takaranoao
-* 修复 BitBlt 会崩溃的问题，以及 BitBlt 性能的极致优化 @Takaranoao
+* 修复 BitBlt 会崩溃的问题，以及 BitBlt 性能的极���优化 @Takaranoao
 * WGC帧率控制
 * WGC反复启停优化 @FishmanTheMurloc
 * JS脚本能力添加 @physligl
@@ -361,7 +361,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.44
 状态: 正式版本
 更新内容:
 > [!CAUTION]
-> 由于本次更新修改了底层截图器与任务调度，这并不是一个稳定的版本，请谨慎选择更新！
+> 由于本次更新修改了底层截图器与任务��度，这并不是一个稳定的版本，请谨慎选择更新！
 
 ## 截图器
 - **重构所有截图器的返回类型，减少一次内存拷贝，降低CPU消耗。**
@@ -396,7 +396,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.44
 
 ## 通知
 -  **新增 邮箱、Bark、xxtui、tg、钉钉、websocket 通知** @DR-lin-eng @wy3057 
-- 飞书通知时带有图片(需要配置app,并且在飞书后台增加上��图片权限) @niuhuan
+- 飞书通知时带有图片(需要配置app,并且在飞书后台增加上传图片权限) @niuhuan
 
 ## 其他
 - 新增关于页
@@ -445,7 +445,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 * 新增shell类型的任务可供添加（**请不要执行看不懂的命令**）#1248 @Takaranoao
 
 ## 地图追踪
-* 地图追踪中当前配队无法满足简易策略脚本时，日志提示所需角色
+* 地图追踪中���前配队无法满足简易策略脚本时，日志提示所需角色
 * 地图追踪中异常场景处理添加 遇到 x 按钮时候 按下ESC返回主界面
 * 更多七天神像回血相关的配置 @physligl
 * 自动战斗后、传送前都会释放所有按键，尝试解决TP神像后持续往前走的问题
@@ -542,7 +542,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 > 注意在安装了 0.40.0 及更高版本的安装程序后，0.39.1 以及更低版本的安装程序（BetterGI_Setup_v*.exe）未来将会无法覆盖安装。如果要降低版本请使用便携版本（BetterGI_v*.7z）！
 
 ## 一条龙
-* 把领取历练点任务改放在了领取奖励模块（在切换好感��之后） #955
+* 把领取历练点任务改放在了领取奖励模块（在切换好感队之后） #955
 * 修复枫丹台成台成女角色容易跑过头的问题
 * **修复一条龙期间切换到其他界面会卡顿的问题**
 * 在未识别到配队选择页面时重试
@@ -569,7 +569,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 ## 其他优化
 * 修复自动秘境在原神重启后不按w（或者冲刺一下不动）的问题
 * 领取历练点任务放在领取奖励的步骤中，并优化点击次数 #955
-* 独立任务一自动秘境下的目标秘境���以不选
+* 独立任务一自动秘境下的目标秘��可以不选
 * 触发器时间间隔禁止配置为0
 * 修复战斗策略部分校验提示不生效的问题 #988
 * 修复windows10 1909版本使用WGC会报错的问题 @masm611 #954
@@ -808,7 +808,7 @@ BetterGI 距离第一个版本 0.10.0 的发布刚好已经过去了一年时间
 * 添加实时任务相关配置
 * 添加独立任务的调用能力
 * **新增传送并执行自动秘境的脚本**
-* 配合脚本仓���的功能，移动了存储目录
+* 配合脚本仓库的功能，移动了存储目录
 * 新增了更多开放API, 具体使用方式见[文档](https://bgi.huiyadan.com/autos/jsscript.html)
 
 ### 路径追踪
@@ -851,7 +851,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.35
 > **当前已实现自动采集功能，核心功能由 @lwh9346 参考 https://github.com/tignioj/minimap 开发完成**
 > **[minimap](https://github.com/tignioj/minimap) 是一个高精度原神自动采集工具，当然它的功能远不止这些，强烈推荐！！**
 
-只支持最大的地表地图，不支持地底识别，也不��持渊下宫、层岩巨渊地底地图。由于自带了原神地图的全特征点文件，软件体积暴增。
+只支持最大的地表地图，不支持地底识别，也不支持渊下宫、层岩巨渊地底地图。由于自带了原神地图的全特征点文件，软件体积暴增。
 
 ## 新脚本： 自动跑狗粮
 
@@ -889,7 +889,7 @@ BetterGI 通过 [ClearScript](https://github.com/microsoft/ClearScript) 内置 V
 
 **自动晶蝶** 是内置的第一个脚本，调用了内部的大地图识别并传送的功能，然后执行键鼠脚本。
 
-由于键鼠脚本分���时，不同电脑存在很多影响变量，**测试发现存在大量无法正确重放的情况**。
+由于键鼠脚本分享时，不同电脑存在很多影响变量，**测试发现存在大量无法正确重放的情况**。
 
 所以，**自动晶蝶脚本并不是所有人都能够正常运行！**
 
@@ -900,7 +900,7 @@ BetterGI 通过 [ClearScript](https://github.com/microsoft/ClearScript) 内置 V
 - 修复更新提示弹窗位置未适配高分屏DPI缩放 #446 @emako 
 - code clean up  @qhy040404 @Lightczx 
 - 修复了一些配置不生效的问题
-- 优化内部地图匹配的代码
+- 优���内部地图匹配的代码
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.33
 
 ================================================================================
@@ -1010,7 +1010,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.31
 * 自动伐木功能会保持电脑屏幕不自动息屏
 
 ## 其他优化
-* **修复非16:9屏幕在 0.29 版本新出现的问题���无法正常使用部分功能、遮罩识别框位置不正确**
+* **修复非16:9屏幕在 0.29 版本新出现的问题：无法正常使用部分功能、遮罩识别框位置不正确**
 * **修复了遮罩窗口UID遮盖和东南西北显示不正确的问题（0.30.1版本）**
 * **WindowsGraphicsCapture 在 Windows 10 version 1903 以下版本中（不含）不再展示（因为系统不支持）** #394
 * 修复在自动战斗开始后，一键宏无法正常识别的问题 #396
@@ -1049,7 +1049,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.30
 
 ## 功能支持更多分辨率
 
-为了实现 #95 做了底层重构，主要是为了在原来的基础上更好的支持高于1080P的分辨率��比如2k、4k。提高其处理性能。
+为了实现 #95 做了底层重构，主要是为了在原来的基础上更好的支持高于1080P的分辨率，比如2k、4k。提高其处理性能。
 
 **此改动过大，未完整进行测试，如果出现部分功能不可用的情况，请提 Issue 告诉我。**
 
@@ -1092,7 +1092,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.29
 更新内容:
 > [!IMPORTANT]
 >  2.8 问题修复 20240505 更新：
-> * 邀约分支修复了 **珐露珊、五郎、凝光、重云、鹿野院平藏** 分支不正���的问题，需要手动覆盖配置文件起效
+> * 邀约分支修复了 **珐露珊、五郎、凝光、重云、鹿野院平藏** 分支不正确的问题，需要手动覆盖配置文件起效
 > * 战斗脚本使用角色官方名称 **“阿蕾奇诺”无法正常解析** 的问题，可以使用别名“仆人”替代，或者手动覆盖相关配置文件
 >
 > **如何更新邀约配置和角色配置可以参考 #386 的教程。**
@@ -1143,7 +1143,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.28
 * 一键确认/取消 #170 
 
 ## 自动战斗/秘境
-* **大幅优化在自动战斗/秘境中队伍角色的识别成功率，在头像未处于半透明情况下识别率非常高（使用新训练的分类器替代原有的OCR方案）**
+* **大幅优化在自动战斗/秘境中队伍角色的识别成功率，在头像未处于半透明情况下识别率非常高（使用新���练的分类器替代原有的OCR方案）**
 * 自动战斗/秘境支持自动选择合适的策略，无需手动切换策略
 
 ## 自动剧情
