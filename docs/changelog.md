@@ -1,6 +1,6 @@
 # Better Genshin Impact 版本更新日志
 
-> 最后更新: 2025/10/3 16:26:53
+> 最后更新: 2025/10/4 16:23:56
 > 数据来源: [GitHub Releases](https://github.com/babalae/better-genshin-impact/releases)
 
 ## 0.51 更多 6.0 适配
