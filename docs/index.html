@@ -43,7 +43,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <p>版本更新日志 - 静态页面</p>
 </div>
 <div class="info">
-<strong>最后更新:</strong> 2025/10/9 16:28:21 | <strong>版本数:</strong> 30 | <a href="changelog.json">JSON</a> | <a href="changelog.txt">TXT</a> | <a href="changelog.md">MD</a>
+<strong>最后更新:</strong> 2025/10/10 16:27:58 | <strong>版本数:</strong> 30 | <a href="changelog.json">JSON</a> | <a href="changelog.txt">TXT</a> | <a href="changelog.md">MD</a>
 </div>
 <div class="releases">
 <div class="release">
@@ -116,8 +116,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 当前活动已经结束，所以暂时没用了
 
 - 修复传送进入秘境等待时间过短的问题 #2031
-- 修改延时，减少���境危战进入时候可能识别队伍角色失败的问题
-- 修复打开活动一览操作可能提前的问题
+- 修改延时，减少幽境危战进入时候可能识别队伍角色失败的问题
+- 修复打开活动一览���作可能提前的问题
 - 修复幽境危战活动不在首位无法正常传送的问题 #2059 #2060
 - 修复一条龙中幽境危战自定义战斗策略不生效的问题
 
@@ -137,7 +137,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - JS脚本、地图追踪页面markdown文件加载修改为WPF原生的展示方式 (#2017) @Datouyu666
 - **修复B服登录无法使用的问题** (#2037) @zaodonganqi
 - 独立任务七圣召唤，支持 js 端传入自定义策略 #1972
-- JS脚本中 KeyPress 语法针对功能键也采取直接触发的方式 #2071
+- JS脚本中 KeyPress 语法针对功能键也采取��接触发的方式 #2071
 - 新增更多更新渠道，拆分原来的默认渠道，提升更新速度与稳定性
 
 🌩️ [Github 下载太慢？ 点我访问更多更新渠道](https://bettergi.com/download.html)
@@ -166,7 +166,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 自动秘境优化进入适配限时双倍 @kaedelcb
 - 新增开发用的截取物品图标独立任务 (#1856) @FishmanTheMurloc
 - 自动秘境换队从在门口切换修改为在进门后切换；原粹识别优化 (#1866) @kaedelcb
-- **新增独立任务自动使用兑换码，自动识别剪切板中的��换码** (#1895)
+- **新增独立任务自动使用兑换码，自动识别剪切板中的兑换码** (#1895)
 - 检测战斗结束增加旋转寻找敌人实验性功能 (#1960) @kaedelcb
 - 修复万叶长E拾取判断的CD计算错误 (#1958) @kaedelcb
 
@@ -190,7 +190,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 修改部分角色挖矿的方式 @RRRR623 @MisakaAldrich
 - 脚本仓库不再使用浅克隆，修复需要重置才能更新的问题
 - 降低飞行检测时间，自由落体后进入飞行再下落攻击 (#1837) @MisakaAldrich
-- 修复迷烟主成员非飞行状态下四叶印识别失败的Bug，模板匹配的置信度修改为数组 @Limint
+- 修复迷烟主成���非飞行状态下四叶印识别失败的Bug，模板匹配的置信度修改为数组 @Limint
 - 地图追踪接口修改成多实例，JS调用的实例和地图追踪调用的实例不同
 - 修复简易策略偶发性不执行的问题 @physligl
 - 删除这两个选项：是否就近七天神像恢复血量、传送到七天神像之后是否需要移动后回血
@@ -211,7 +211,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 规避 WPF 剪贴板卡顿，修复剪切不清除文本的问题 (#1839) @ABA2396
 - 调度器新增JS脚本界面支持搜索 @physligl
 - 调整设置游戏内时间的操作延迟 @jiegedabaobei
-- 优化自动重新登录针对B服的登录框的操作，支持5.8版本的新登录框 @zaodonganqi
+- 优化自动重���登录针对B服的登录框的操作，支持5.8版本的新登录框 @zaodonganqi
 - JS脚本暴露获取当前小地图角度和当前队伍角色的方法 (#1874)
 - 加入控制台日志输出
 - 脚本仓库更新支持自定义git地址 @Takaranoao
@@ -237,7 +237,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 ## 自动拾取
 * 优化文字识别功能，使用新的文字区域检测方式减少CPU消耗（**不会出现 100% CPU的情况了**）
 * 默认不开启拾取白名单机制，减少无用的OCR识别
-* 软��自带默认黑名单与用户配置黑名单拆分，不会再出现用户配置的黑名单被覆盖的情况了
+* 软件自带默认黑名单与用户配置黑名单拆分，不会再出现用户配置的黑名单被覆盖的情况了
 * 配置黑白名单可实时生效
 * 修复自动拾取展示文本可能缺失标点的问题
 * 更新自动拾取默认黑名单列表 @RRRR623 
@@ -283,7 +283,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 
 ## 改动
 * 修复非 1080P 窗口下（2K、4K等），自动秘境无法正常使用树脂的问题
-* 修复只���原粹树脂情况下，用尽树脂时无法正常退出秘境的问题
+* 修复��有原粹树脂情况下，用尽树脂时无法正常退出秘境的问题
 * 修复其他树脂存在，但是原粹树脂耗尽的情况下，会自动退出秘境的问题
 
 
@@ -315,7 +315,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 挖矿策略修改为只执行一个角色
 * 大剑挖矿策略修改，以及移除卡齐娜 @MisakaAldrich
 * 解决在回到主界面场景下卡复活界面的问题 @mfkvfhpdx 
-* 战斗后自动拾取优化 @Scarlet1ssimo
+* 战斗后自动拾���优化 @Scarlet1ssimo
 * 将路径追踪相关的日志改为debug级别 (#1645) (#1684) @Patrick-Ze
 
 ## 脚本仓库
@@ -396,7 +396,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 如果首个点是非TP点位，强制设置在这个点位附近优先做局部匹配，提升匹配速度
 
 ## 其他优化
-- 优化新版本更新日志窗口的背景显���(未完全解决) (#1413) @richex-cn
+- 优化新版本更新日志窗口的背景��示(未完全解决) (#1413) @richex-cn
 - 添加OneBot通知 (#1418) @Qian23333
 - 修复自动秘境超时的时候重试
 - 遮罩窗口UI优化支持缩放，日志窗口添加阴影 (#1477、#1478)  @shatyuka
@@ -470,7 +470,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 
 ## 自动秘境
 - 一条龙未选择要刷的秘境时，直接提示
-- 修复4K分辨率下秘境无法自动点击掉地脉异常的提示内���的问题 #460
+- 修复4K分辨率下秘境无法自动点击掉地脉异常的提示��容的问题 #460
 - 体力不足时，放弃继续进行自动秘境 #1008 #1134
 - 秘境走到最后领取奖励超时将会自动重试秘境 #1083 #1202 #1270 
 
@@ -508,7 +508,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <div class="body"><pre>* **修复全自动钓鱼导致机器内存占满的问题** @FishmanTheMurloc 
 * 修复自定义拾取按键不生效的问题 #1262 @Takaranoao
 * 修复地图追踪中的 up_down_grab_leaf 四叶印 action 不生效的问题
-* 修复调度器任务完��时候异常抛出错误的问题（但是不影响使用）</pre></div>
+* 修复调度器任务完成时候异常抛出错误的问题（但是不影响使用）</pre></div>
 <div class="download"><a href="https://github.com/babalae/better-genshin-impact/releases/download/0.43.1/BetterGI.Install.0.43.1.exe" target="_blank">下载此版本</a></div>
 </div>
 <div class="release">
@@ -523,7 +523,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 支持**纳塔**鱼类的识别
 * 将全自动钓鱼拆分至独立任务，且能够被地图追踪、JS脚本调用
 * 全自动钓鱼支持自动切换日夜的时间
-* 针对假龙的自动抛��进行优化
+* 针对假龙的自动抛竿进行优化
 
 ## 一条龙
 * 添加检查每日是否完成的通知
@@ -560,7 +560,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 </div>
 <div class="body"><pre>* **修复 5.4 版本地图UI变动导致传送失效的问题** @Scarlet1ssimo 
 * TP时扩展右上角的不可点击区域，适配新地图UI
-* **修复启动调度器时完全卡死的问题（只会在独占全屏时��现）**
+* **修复启动调度器时完全卡死的问题（只会在独占全屏时���现）**
 * **修复通知导致的截图失败报错提示**
 * 使 JS脚本 中的 keyDown(), keyUp(), keyPress() 方法 和 战斗策略脚本 中的 keydown(), keyup(), keypress() 方法 可以直接使用 虚拟键代码 来执行 鼠标操作 #1124 @2696791698
 * 5.4 七圣召唤卡牌元数据更新 @haokaiyang</pre></div>
@@ -573,7 +573,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 </div>
 <div class="body"><pre>## 通知功能 
 * 重构 @Scarlet1ssimo 
-* 新增windows通知、���书通知
+* 新增windows通知、飞书通知
 * 新增企业微信通知 @MisakaAldrich 
 
 通知文档：https://bettergi.com/dev/webhook.html
@@ -632,7 +632,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 修复枫丹台成台成女角色容易跑过头的问题
 * **修复一条龙期间切换到其他界面会卡顿的问题**
 * 在未识别到配队选择页面时重试
-* 新增命令行： `.\BetterGI.exe startOneDragon`，支持在软件启动后直接启动一条龙 #998
+* 新增命令行： `.\BetterGI.exe startOneDragon`，��持在软件启动后直接启动一条龙 #998
 
 ## 路径追踪
 * 路径追踪 action为 fight 的点位强制执行成 path 类型
@@ -660,7 +660,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 修复战斗策略部分校验提示不生效的问题 #988
 * 修复windows10 1909版本使用WGC会报错的问题 @masm611 #954
 * 更多傻瓜化日志提示
-    * 自动战斗、秘境、队伍识别强制校验 16:9 分辨率
+    * 自动战斗、秘境��队伍识别强制校验 16:9 分辨率
     * 键鼠模拟被拦截提示修改为中文
     * 战斗策略不存在则引导用户前往对应菜单进行配罟
 * **自动音游专辑支持所有难度都打满** #994 @atiasn
@@ -727,9 +727,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 ## 路径追踪
 
 &gt; [!IMPORTANT]
-&gt; **非常感谢 @Limint 贡献的新的相机视角识别算法，解决了路径追踪时视角晃动的问题**
+&gt; **非常感谢 @Limint 贡献的新的相机视角识别算法，解决了路径���踪时视角晃动的问题**
 
-**现在已经存在部分挖矿、锄地脚本，但相关功能有待���化。**
+**现在已经存在部分挖矿、锄地脚本，但相关功能有待优化。**
 
 * 修复tp时候，屏蔽左上角区域位置不正确的问题（屏蔽了但没完全屏蔽）
 * 新增在路径追踪期间使用小道具的功能
@@ -757,7 +757,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 
 * 补充自动拾取黑名单 @OPPO9008
 * 修复了若干问题（太多了不想写了）
-* 由于下版本会出现常驻音游活动，历史的���动音游功能也开放了
+* 由于下版本会出现常驻音游活动，历史的自动音游功能也开放了
 * 自动秘境功能存在角色死亡后，如果设置了目标秘境，则会自动传送回去继续自动秘境
 * 自动秘境的转向功能完全基于bug正常运行，修复了这个问题
 * 自动秘境默认设置为行走去开启秘境
@@ -791,7 +791,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 ## 全自动
 
 * 联机情况下识别角色队伍时，修复错误识别房主的问题（会导致队伍识别出错） #777
-* 修复脚本仓库订阅所有路径追踪脚本存在的一些问题
+* 修��脚本仓库订阅所有路径追踪脚本存在的一些问题
 * JS脚本鼠标悬浮展示描述
 * JS脚本在传入JS的 `settings` 对象为空时提示
 
@@ -830,7 +830,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 
 ### 路径追踪
 * 修复到目标点时不转动视角的问题
-* 在识别到卡死时，新增更好的��障逻辑 &amp; 优化寻路逻辑 #711 @jbcaaa 
+* 在识别到卡死时，新增更好的避障逻辑 &amp; 优化寻路逻辑 #711 @jbcaaa 
 * 新增 action，具体见[文档](https://bgi.huiyadan.com/feats/autos/pathing.html)
   * 水、雷、风元素力采集
   * 周边拾取 #721 @jbcaaa 
@@ -839,7 +839,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 残血、死亡时自动传送至七天神像
 * 恢复界面上单独执行任务的右键菜单
 * 添加路线重试机制、卡死脱离3次后放弃当前路径进入重试、卡死脱离添加超时时间
-* 新增路径追踪的队伍切换与角色使用的条件设置。
+* 新增路径追踪的队伍切换与��色使用的条件设置。
 
 ## 优化
 * 修复后台自动剧情启用的情况下，自动领取探索奖励失效的问题
@@ -881,7 +881,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * JS脚本、路径追踪添加刷新的右键菜单 #627
 * TP时，当前地图位置识别失败的情况下，会直接通过国家位置进行大地图定位
 * TP失败时加入重试机制
-* TP支持识别未激活传送点或者无传送点的位置
+* TP���持识别未激活传送点或者无传送点的位置
 * 补充遗漏传送点坐标  #603 #586 @HZYgrandma
 * 收缩传送区域（左上角也会不点击），防止点击到大地图周边的控件 #604
 
@@ -896,7 +896,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 更新保存路径文件的命名格式 #600
 * **添加地图路径点位编辑器**
 * 修复局部特征匹配在每次地图追踪的时候没有重置的问题 #619
-* 路径记录器添加���闭日志 #631
+* 路径记录器添加关闭日志 #631
 * 路径追踪添加强制以配置点位传送的能力 #630
 * 路径追踪支持战斗action #658 @iris10086
 * ~~战斗action支持识别战斗结束（模型还在炼制）~~
@@ -908,7 +908,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 
 * 修复了角色在自动秘境结束战斗时，若朝向正西方则无法自动转向古树的问题。 #608
 * 修复伐木上限配置无法突破2000的问题（荒泷一斗被动可以突破这个值）。 #606
-* 遮罩窗口中添加日志文件夹的快捷访问入口 #632
+* 遮罩窗口中添加日志文件��的快捷访问入口 #632
 * 启动页的启动参数，添加文档的跳转 @emako 
 * 添加了一些默认拾取黑名单
 * 界面UI优化 @emako ，重写了快捷键页面
@@ -927,7 +927,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 ## 新功能：自动采集
 
 &gt; [!IMPORTANT]
-&gt; **地图追踪功能**：自动传送到最近的锚点，然后根据小地图开始寻路。系统会根据任务文件的途径点和目标点进行导航。
+&gt; **地图追踪功能**：自动传送到最近的锚点，然后根据小地图开始寻路。系统会根据任务文件的途径���和目标点进行导航。
 &gt; **当前已实现自动采集功能，核心功能由 @lwh9346 参考 https://github.com/tignioj/minimap 开发完成**
 &gt; **[minimap](https://github.com/tignioj/minimap) 是一个高精度原神自动采集工具，当然它的功能远不止这些，强烈推荐！！**
 
@@ -968,7 +968,7 @@ BetterGI 通过 [ClearScript](https://github.com/microsoft/ClearScript) 内置 V
 
 **自动晶蝶** 是内置的第一个脚本，调用了内部的大地图识别并传送的功能，然后执行键鼠脚本。
 
-由于键鼠脚本分享时，不同电脑存在很多影响变量，**测试发现存在大量无法正确重放的情况**。
+由于键鼠脚本分享时，不同电脑存在很多影响变量，**测试发现���在大量无法正确重放的情况**。
 
 所以，**自动晶蝶脚本并不是所有人都能够正常运行！**
 
@@ -1013,7 +1013,7 @@ BetterGI 通过 [ClearScript](https://github.com/microsoft/ClearScript) 内置 V
 * 更新4.8基础角色信息
 
 ## 优化与改动
-* ~~遮罩窗口采取新的实现方式，可以完全跟随原神���口~~
+* ~~遮罩窗口采取新的实现方式，可以完全跟随原��窗口~~
 * 新增展示游戏 FPS 的功能，可在设置内开启 @emako 
 * **自动剧情更换识别标识图标** 现在用的这个图标：
 ![image](https://github.com/user-attachments/assets/570f05e5-b6d3-4edd-b062-02430809ad19)
@@ -1088,7 +1088,7 @@ Paddle 文字识别暂时不能切换（测试切换后效果非常差）。图�
 ## 其他优化
 * **修复非16:9屏幕在 0.29 版本新出现的问题：无法正常使用部分功能、遮罩识别框位置不正确**
 * **修复了遮罩窗口UID遮盖和东南西北显示不正确的问题（0.30.1版本）**
-* **WindowsGraphicsCapture 在 Windows 10 version 1903 以下版本中（不含）不再展示（因为系统不支持）** #394
+* **WindowsGraphicsCapture 在 Windows 10 version 1903 以下版本中（不含）不再展���（因为系统不支持）** #394
 * 修复在自动战斗开始后，一键宏无法正常识别的问题 #396
 * 修复自动钓鱼在5个鱼饵情况下，鱼饵无法正确选中的问题 #399
 * 更换UI默认字体为 MiSans @emako
@@ -1155,7 +1155,7 @@ Paddle 文字识别暂时不能切换（测试切换后效果非常差）。图�
 并且出现新增活动词汇也不会出现频繁识别变化的问题
 
 ## 其他
-更新���一些默认配置文件，拾取黑名单、邀约分支设置等
+更新了一些默认配置文件，拾取黑名单、邀约分支设置等
 </pre></div>
 <div class="download"><a href="https://github.com/babalae/better-genshin-impact/releases/download/0.29.0/BetterGI_Setup_v0.29.4.exe" target="_blank">下载此版本</a></div>
 </div>
@@ -1167,9 +1167,9 @@ Paddle 文字识别暂时不能切换（测试切换后效果非常差）。图�
 <div class="body"><pre>&gt; [!IMPORTANT]
 &gt;  2.8 问题修复 20240505 更新：
 &gt; * 邀约分支修复了 **珐露珊、五郎、凝光、重云、鹿野院平藏** 分支不正确的问题，需要手动覆盖配置文件起效
-&gt; * 战斗脚本使用角色官方名称 **“阿蕾奇诺”无法正常解析** 的问题，可以使用别名“仆人”替代，或者手动覆盖相关配置文件
+&gt; * 战斗脚本使用角色官方名称 **“阿蕾奇诺”无法正常解析** 的问题，��以使用别名“仆人”替代，或者手动覆盖相关配置文件
 &gt;
-&gt; **如何更新邀约配置��角色配置可以参考 #386 的教程。**
+&gt; **如何更新邀约配置和角色配置可以参考 #386 的教程。**
 
 ## 自动剧情/邀约
 * 自动邀约添加分支选择功能，感谢@wy3057与群友`癫誑`整理的全邀约分支数据！
@@ -1208,7 +1208,7 @@ Paddle 文字识别暂时不能切换（测试切换后效果非常差）。图�
 ## 新功能
 * **新增通知模块** @Mr-Quin 
 
-## 操控辅助
+## 操控辅���
 * **一键战斗宏，按下后会识别当前出战角色，并根据配置执行对应的宏，比如：皇女滑步弓、胡桃A重跳**
     * 暂不支持联机环境，切人cd时识别率会很差
     * 有兴趣可以在交流群联系我贡献更多的宏 https://docs.qq.com/sheet/DTGZqVVhkZk5SWEtn?tab=000001
@@ -1232,7 +1232,7 @@ Paddle 文字识别暂时不能切换（测试切换后效果非常差）。图�
 
 ## 其他优化
 * Yap 自动拾取模型更新
-* 修复原神启动时，`config.ini` 不生效的问题（用了官B切换工具，但使用BetterGI启动时永远是官服）
+* 修复原神启动时，`config.ini` 不生效的问题（用了官B切换���具，但使用BetterGI启动时永远是官服）
 * 优化了内部模板匹配方法，使之支持所有模板匹配算法
 * 内部代码结构优化 @Lightczx 
 </pre></div>
@@ -1248,7 +1248,7 @@ Paddle 文字识别暂时不能切换（测试切换后效果非常差）。图�
 **自动钓鱼使用了全新的抛竿算法，抛竿终于没那么智障了。**
 **感谢来自 [HutaoFisher](https://github.com/myHuTao-qwq/HutaoFisher) 优秀抛竿算法与高质量数据集 @myHuTao-qwq**
 
-##### 如果有时间和兴趣协助训练识别模型的，欢迎加��炼丹群：[863012276](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=YOyOxUzXKquJyUuO2z0W1Lrh4iX9ROme&amp;authKey=tckwvC5AC4BuEAKOdxVPr8QsXR1AqwQuzIUiswo9JT%2FpnPniRCoyoEY6IGkljdAo&amp;noverify=0&amp;group_code=863012276)
+##### 如果有时间和兴趣协助训练识别模型的，欢迎加入炼丹群：[863012276](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=YOyOxUzXKquJyUuO2z0W1Lrh4iX9ROme&amp;authKey=tckwvC5AC4BuEAKOdxVPr8QsXR1AqwQuzIUiswo9JT%2FpnPniRCoyoEY6IGkljdAo&amp;noverify=0&amp;group_code=863012276)
 
 
 
