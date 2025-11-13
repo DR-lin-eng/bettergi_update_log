@@ -1,5 +1,5 @@
 Better Genshin Impact 版本更新日志
-最后更新: 2025/11/12 16:30:38
+最后更新: 2025/11/13 16:29:44
 数据来源: https://github.com/babalae/better-genshin-impact/releases
 
 ================================================================================
@@ -565,7 +565,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 更新内容:
 ## **全自动钓鱼** 
 
-#### ❤感谢 @FishmanTheMurloc 重构了自动钓鱼模块并添加了大量���能！
+#### ❤感谢 @FishmanTheMurloc 重构了自动钓鱼模块并添加了大量功能！
 
 * 支持**纳塔**鱼类的识别
 * 将全自动钓鱼拆分至独立任务，且能够被地图追踪、JS脚本调用
@@ -581,7 +581,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 * 新增shell类型的任务可供添加（**请不要执行看不懂的命令**）#1248 @Takaranoao
 
 ## 地图追踪
-* 地图追踪中当前配队无法满足简易策略脚本时，日志提示所需角色
+* 地图追踪中当前配队无法满足简易策略脚本时，日志提示所���角色
 * 地图追踪中异常场景处理添加 遇到 x 按钮时候 按下ESC返回主界面
 * 更多七天神像回血相关的配置 @physligl
 * 自动战斗后、传送前都会释放所有按键，尝试解决TP神像后持续往前走的问题
@@ -594,7 +594,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 * 添加强制保持游戏窗口焦点的设置 @mfkvfhpdx
 * 添加使用Starward记录游戏时间的功能 @kndxhz #1164
 * 企业微信通知添加图片输出 @MisakaAldrich
-* 5.4新���色的识别支持
+* 5.4新角色的识别支持
 * 修复部分功能键位无法作为改键的问题 #1131
 * 文案与UI优化
 * 添加了首次运行的界面，只会出现一次
@@ -902,7 +902,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.37
 * 修复后台自动剧情启用的情况下，自动领取探索奖励失效的问题
 * 界面UI更新
 * **Win11启动软件后自动关闭游戏窗口化优化，以支持BitBlt！**
-* 一键进出尘歌壶，增加对多人联机下进入尘歌壶的支持 @FannieMC
+* 一键进出尘歌壶，增加对多人联机下进入尘歌壶���支持 @FannieMC
 
 
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.36
@@ -1172,7 +1172,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.30
 
 **如果期望全连建议选择胡桃主题“疏影引蝶映梅红”，背景效果调整为1**
 
-如果你平时使用BitBlt截图模式无法正常使用BetterGI，且自动活动音游功能也无法���用，可以尝试此方法： https://github.com/babalae/better-genshin-impact/issues/92
+如果你平时使用BitBlt截图模式无法正常使用BetterGI，且自动活动音游功能也无法使用，可以尝试此方法： https://github.com/babalae/better-genshin-impact/issues/92
 
 ![image](https://github.com/babalae/better-genshin-impact/assets/15783049/eebdab6c-3af0-453e-838f-71599fb69c6b)
 
@@ -1211,7 +1211,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.30
 
 ## 自动拾取新增OCR引擎
 
-为了解决自动拾取的高占用，新增了一个OCR识别引擎，识别速度稍慢但是占有低，并作为默认选项。解决此类卡顿问题：#383
+为了解决自动拾取的高占用，新增了一个OCR识别引擎，识别速度稍慢但是占有低，并作为默认选项。解决此类卡顿问题��#383
 
 并且出现新增活动词汇也不会出现频繁识别变化的问题
 
@@ -1229,7 +1229,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.29
 > [!IMPORTANT]
 >  2.8 问题修复 20240505 更新：
 > * 邀约分支修复了 **珐露珊、五郎、凝光、重云、鹿野院平藏** 分支不正确的问题，需要手动覆盖配置文件起效
-> * 战斗脚本使用角色官方名称 **“阿蕾奇诺”无法正常解析** 的问题，可以使用别名“仆人”替代，或者手动覆盖相关配置文件
+> * 战斗脚本使用角色官方名称 **“阿蕾奇诺”无法正常解析** 的问题，���以使用别名“仆人”替代，或者手动覆盖相关配置文件
 >
 > **如何更新邀约配置和角色配置可以参考 #386 的教程。**
 
@@ -1241,7 +1241,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.29
 * 黑屏点击功能频率延迟至1.2s一次
 
 ## 一键宏
-* `一键战斗���` 改名为 `一键宏`，因为这个宏也不一定是用来战斗...
+* `一键战斗宏` 改名为 `一键宏`，因为这个宏也不一定是用来战斗...
 * 队伍识别失败时，沿用上一次识别成功的队伍。（算是解决了切换角色 1s CD 的时候，由于头像虚化导致队伍无法识别的问题）
 * 配置修改后立即生效
 
