@@ -1,5 +1,5 @@
 Better Genshin Impact 版本更新日志
-最后更新: 2026/1/6 16:35:42
+最后更新: 2026/1/7 16:39:32
 数据来源: https://github.com/babalae/better-genshin-impact/releases
 
 ================================================================================
@@ -278,7 +278,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.49
 - 调度器-名称-添加鼠标悬浮显示文件夹 @qwecxzpoi
 - 修复配置组名称前半段有同名不显示的问题 (#1858) @kaedelcb
 - 调度器添加地图追踪文件时自动���焦搜索框 (#1916) @Arkadegong
-- 调度器配置中增加执行成功任务跳���执行配置 (#1893) @mfkvfhpdx
+- 调度器配置中增加执行成功任务跳过执行配置 (#1893) @mfkvfhpdx
 - 解决调度器为空时程序假死问题 (#1947) @Datouyu666
 - 重构添加地图追踪任务页面的搜索功能，同时添加深度搜索功能。修复了搜索功能形同虚设，只能搜索最表面父文件夹的问题。 (#1980) @Datouyu666
 
@@ -295,7 +295,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.49
 - 修复并发调用小地图识别时识别错误的Bug，修改并增加暴露给JS的小地图识别函数 (#1911) @Limint
 - 修复地图追踪配置中获取材料名称的问题 (#1919) @kaedelcb
 - 地图追踪版本要求修改为强制
-- 优化地图追踪的���离过远判断
+- 优化地图追踪的距离过远判断
 - 修复地图追踪中角色公转的场景，持续角度一直未在5度内时，直接强制等到转向到目标位置 #1644
 
 ## 通知
@@ -464,7 +464,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 * 修复WGC关闭时候报错 #1419
 
 ## 自动拾取
-- **拾取列表已满时候，滑动滚轮（��意这个变更会会导致拾取变成从下往上拾取，对于尘歌壶收菜有一定影响）**
+- **拾取列表已满时候，滑动滚轮（注��这个变更会会导致拾取变成从下往上拾取，对于尘歌壶收菜有一定影响）**
 - 修复拾取过程中文字识别错误 (#1496) @shatyuka
 - 支持配置使用G键进行自动拾取 (#1502) @Patrick-Ze
 
@@ -506,7 +506,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 - 自动剧情关闭弹出页前判断是否是大地图的弹出页面，以防误识别 #1466
 - 发送通知时，添加延迟让图片先发送，时间戳与事件之间添加换行 @MisakaAldrich
 - 修复提示框内容过长时，对话框无法完整显示的问题 (#1513) @breadgrocery
-- ��化一些报错和日志提示
+- 优��一些报错和日志提示
 - 支持5.6新角色的识别
 - 修复一个UI上数据绑定的问题 @FishmanTheMurloc
 
@@ -557,10 +557,10 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.44
 状态: 正式版本
 更新内容:
 > [!CAUTION]
-> 由于本次更新修改了底层截图器与任务调度，这并不是一个稳定的版本，请谨慎选择更新！
+> 由于本次更新修改了底层截图器与任务调度，这并不是一个稳定���版本，请谨慎选择更新！
 
 ## 截图器
-- **重构所有截图器的返回类型，减少���次内存拷贝，降低CPU消耗。**
+- **重构所有截图器的返回类型，减少一次内存拷贝，降低CPU消耗。**
 - 删除WGC的缓存模式选项，使用读写锁保证WGC的有序转换与返回。（也就是说本次更新后，WGC截图方式也能正常使用地图追踪等功能）
 - 删除实时任务和独立任务关于截图器占用的冗余逻辑
 
@@ -585,8 +585,8 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.44
 - 新增 genshin.relogin 可以重新登陆原神
 - 调度器的 Shell 功能支持更多配置 @Takaranoao
 - 日志分析页面修改与美化 @physligl 
-- 修复换队时爬七天神像导致换队失败的问题 @physligl 
-- 增加对WaypointForTrack的DisablePickupAround���性支持，可以关闭挖矿动作的周围拾取 @Takaranoao #1322
+- 修复换队���爬七天神像导致换队失败的问题 @physligl 
+- 增加对WaypointForTrack的DisablePickupAround属性支持，可以关闭挖矿动作的周围拾取 @Takaranoao #1322
 - 小改正则表达以支持JS脚本统计 @MisakaAldrich #1274
 - 优化一条路合成树脂时候容易失败的问题
 
@@ -642,9 +642,9 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 
 ## 地图追踪
 * 地图追踪中当前配队无法满足简易策略脚本时，日志提示所需角色
-* 地图追踪中异常场景处理添加 遇到 x 按钮时候 按下ESC返回主界面
+* 地图追踪中异常场景处理添加 遇到 x 按钮时候 按��ESC返回主界面
 * 更多七天神像回血相关的配置 @physligl
-* 自动战斗后、传送前��会释放所有按键，尝试解决TP神像后持续往前走的问题
+* 自动战斗后、传送前都会释放所有按键，尝试解决TP神像后持续往前走的问题
 * 修复火元素采集不生效的问题
 * 优化自动传送的稳定性 @physligl
 
@@ -1009,7 +1009,7 @@ BetterGI 距离第一个版本 0.10.0 的发布刚好已经过去了一年时间
 
 ### 路径追踪
 * 更新保存路径文件的命名格式 #600
-* **添���地图路径点位编辑器**
+* **添加地图路径点位编辑器**
 * 修复局部特征匹配在每次地图追踪的时候没有重置的问题 #619
 * 路径记录器添加关闭日志 #631
 * 路径追踪添加强制以配置点位传送的能力 #630
@@ -1043,7 +1043,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.35
 ## 新功能：自动采集
 
 > [!IMPORTANT]
-> **地图追踪功能**：自动传送到最近的锚点，然后根据小地图开始寻路。系统会根据任务文件的途径点和目标点进行导航。
+> **地图追踪���能**：自动传送到最近的锚点，然后根据小地图开始寻路。系统会根据任务文件的途径点和目标点进行导航。
 > **当前已实现自动采集功能，核心功能由 @lwh9346 参考 https://github.com/tignioj/minimap 开发完成**
 > **[minimap](https://github.com/tignioj/minimap) 是一个高精度原神自动采集工具，当然它的功能远不止这些，强烈推荐！！**
 
@@ -1051,7 +1051,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.35
 
 ## 新脚本： 自动跑狗粮
 
-**自动调查离传送点较近的狗粮。请使用琳妮特前���，双风共鸣。并保证所有传送点都已经激活！**
+**自动调查离传送点较近的狗粮。请使用琳妮特前台，双风共鸣。并保证所有传送点都已经激活！**
 
 由 @HZYgrandma 贡献，由于使用的是和自动晶蝶一样的自动传送+键鼠录制的方式，长距离可能无法精准到达点位。且由于键鼠录制不够稳定，出现无法正确拾取狗粮的情况属于正常情况。后续可能会通过地图追踪功能重写。
 
@@ -1159,7 +1159,7 @@ ONNX推理相关的模型都可以切换：
 
 Paddle 文字识别暂时不能切换（测试切换后效果非常差）。图像推理相关的速度有大幅提升。
 
-**感觉自动拾取有掉帧的朋友可以切换到GPU进行推理，然后自动拾取文字识别引擎选择 Yap，这样 CPU 占用会大幅降低。**
+**感觉自动拾取有掉帧的朋友可以切换到GPU进行推理，然后自动��取文字识别引擎选择 Yap，这样 CPU 占用会大幅降低。**
  
 ![image](https://github.com/babalae/better-genshin-impact/assets/15783049/f7f6085a-183d-4df3-a3fc-2ed5a635e003)
 
@@ -1197,7 +1197,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.31
 状态: 正式版本
 更新内容:
 ## 新功能
-**新增了自动烹饪的功能，在实时任务中开启（不用的时候请关闭，比较消耗性能）** #266
+**新增了自动烹饪的功能，在实时任务中开启（不用的时候请关��，比较消耗性能）** #266
 
 ## 自动伐木
 * OCR识别并统计伐木数量，加入限制伐木总量配置 @atiasn
@@ -1267,7 +1267,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.30
 | 一键进出尘歌壶    | 全16:9          |
 | 快捷点击确认/取消  | 全16:9          |
 
-#### 如果在游戏大小为2K、4K且截图方式为`WindowsGraphicsCapture`的情况下，出现卡顿、鼠标移动缓慢等问题， 参考：https://github.com/babalae/better-genshin-impact/issues/286 关闭位图缓存。或者直接切换截图方式为`BitBlt`，Win11 `BitBlt`不能用？参考设置：https://github.com/babalae/better-genshin-impact/issues/92
+#### 如果��游戏大小为2K、4K且截图方式为`WindowsGraphicsCapture`的情况下，出现卡顿、鼠标移动缓慢等问题， 参考：https://github.com/babalae/better-genshin-impact/issues/286 关闭位图缓存。或者直接切换截图方式为`BitBlt`，Win11 `BitBlt`不能用？参考设置：https://github.com/babalae/better-genshin-impact/issues/92
 
 ## 自动拾取新增OCR引擎
 
