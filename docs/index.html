@@ -43,7 +43,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <p>版本更新日志 - 静态页面</p>
 </div>
 <div class="info">
-<strong>最后更新:</strong> 2026/1/21 16:35:49 | <strong>版本数:</strong> 30 | <a href="changelog.json">JSON</a> | <a href="changelog.txt">TXT</a> | <a href="changelog.md">MD</a>
+<strong>最后更新:</strong> 2026/1/22 16:36:40 | <strong>版本数:</strong> 30 | <a href="changelog.json">JSON</a> | <a href="changelog.txt">TXT</a> | <a href="changelog.md">MD</a>
 </div>
 <div class="releases">
 <div class="release">
@@ -464,7 +464,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 
 **[点我查看 0.46.0 的更新日志](https://github.com/babalae/better-genshin-impact/releases/tag/0.46.0)**
 
-## 0.46 版本常见问题FAQ
+## 0.46 版本常见��题FAQ
 * 0.45 更新到 0.46 时报错存在文字：**Error: NO_HASH_ALGO_ERR: No hash algorithm specified**。
 ![image](https://github.com/user-attachments/assets/47b54ac1-b524-4f62-a7a0-8e2b83221cf0)
 
@@ -520,7 +520,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 地图追踪和JS脚本添加 README.md 的详情展示
 
 ## 底层改造
-* OCR平台改造。移除 PaddleSharp ，使用 ONNX 直接进行推理，支持更多推理环境 #1459 @Takaranoao 
+* OCR平台改造。移除 PaddleSharp ，使用 ONNX 直接��行推理，支持更多推理环境 #1459 @Takaranoao 
 * 截图器优化。 #1480 #1573 @shatyuka 
     * 提升BitBlt 效率，优化 Dwm 截图
     * BitBlt 支持多显示器窗口跨屏
@@ -578,7 +578,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 ## 地图追踪
 - 修复飞行过程中CPU飙升的问题
 - 修复4号位地图追踪时不切人的放技能的问题
-- **地图特征使用二进制文件存储，减小文件体积，大幅提升特征数据加载速度** @shatyuka
+- **地图特征使用二进制文件存储，减小文件体积，大幅提升特征数据��载速度** @shatyuka
 - 为凌晨4点领取月卡的逻辑添加了更多触发点 @mfkvfhpdx
 - 打开地图时判断是否存在探索奖励，并自动领取（需要在设置中打开） @mfkvfhpdx 
 - 战斗后拾取逻辑小优化 @Scarlet1ssimo 
@@ -598,7 +598,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 遮罩窗口UI优化支持缩放，日志窗口添加阴影 (#1477、#1478)  @shatyuka
 - 修复快速传送（手动触发）后自动拾取失效的问题 #1130
 - 自动剧情关闭弹出页前判断是否是大地图的弹出页面，以防误识别 #1466
-- 发送通知时，添加延迟让图片先发送，时间戳与事件之间添加换行 @MisakaAldrich
+- 发送通知时��添加延迟让图片先发送，时间戳与事件之间添加换行 @MisakaAldrich
 - 修复提示框内容过长时，对话框无法完整显示的问题 (#1513) @breadgrocery
 - 优化一些报错和日志提示
 - 支持5.6新角色的识别
@@ -615,7 +615,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <h2><a href="https://github.com/babalae/better-genshin-impact/releases/tag/0.44.4" target="_blank">0.44.4 圣遗物分解</a></h2>
 <div class="meta"><span class="version">版本: 0.44.4</span><span>发布: 2025/4/6 23:41:15</span></div>
 </div>
-<div class="body"><pre>* 修复手动设置cd不生效和快速跳过战斗时有时会导致刷屏的问题(#1410) @Takaranoao
+<div class="body"><pre>* 修复手动设置cd不生效和快速跳��战斗时有时会导致刷屏的问题(#1410) @Takaranoao
 * 优化BitBlt截图逻辑，增加失败重试机制以提高截图成功率 (#1407) @Takaranoao
 * 添加可以按照正则分解五星圣遗物的 (#1383) @FishmanTheMurloc
 * JS 脚本新增文件写入、输入文字的能力
@@ -648,7 +648,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <div class="meta"><span class="version">版本: 0.44</span><span>发布: 2025/4/1 08:46:42</span></div>
 </div>
 <div class="body"><pre>&gt; [!CAUTION]
-&gt; 由于本次更新修改了底层截图器与任务调度，这并不是一个稳定的版本，请谨慎选择更新！
+&gt; 由���本次更新修改了底层截图器与任务调度，这并不是一个稳定的版本，请谨慎选择更新！
 
 ## 截图器
 - **重构所有截图器的返回类型，减少一次内存拷贝，降低CPU消耗。**
@@ -730,7 +730,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 新增shell类型的任务可供添加（**请不要执行看不懂的命令**）#1248 @Takaranoao
 
 ## 地图追踪
-* 地图追踪中当前配队无法满足简易策略脚本时，日志提示所需角色
+* 地图追踪中当前配队无法满足简易策略脚本时，日志提示所���角色
 * 地图追踪中异常场景处理添加 遇到 x 按钮时候 按下ESC返回主界面
 * 更多七天神像回血相关的配置 @physligl
 * 自动战斗后、传送前都会释放所有按键，尝试解决TP神像后持续往前走的问题
@@ -813,7 +813,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 **📥在线安装版【推荐】：[BetterGI.OnlineInst.exe](https://77.cocogoat.cn/dfs/bgi/BetterGI.OnlineInst.exe)**
 **📥离线安装版：[BetterGI.Install.exe](https://77.cocogoat.cn/dfs/bgi/BetterGI.Install.exe)**
 
-* 感谢 @xyToki 提供的���动更新程序与服务，项目 [kachina-installer](https://github.com/YuehaiTeam/kachina-installer) ！
+* 感谢 @xyToki 提供的自动更新程序与服务，项目 [kachina-installer](https://github.com/YuehaiTeam/kachina-installer) ！
 * 感谢 @Womsxd 提供的额外流量节点！
 * 感谢 @qhy040404 编写的 Github Action！
 
@@ -836,7 +836,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 下落攻击触发的时候不再接近目标点
 * 新增 `dash` action 连续冲刺跑路
 * 添加 `log_output` 的 action 用于在指定点输出日志
-* **优化了自动拾取掉���物的逻辑** @Scarlet1ssimo
+* **优化了自动拾取掉落物的逻辑** @Scarlet1ssimo
 
 ### 传送相关 @physligl
 * 修复传送中地图移动的问题 
@@ -877,7 +877,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 </div>
 <div class="body"><pre>## 自动音游专辑
 
-**在自动音游的基础上，新增自动专辑功能。在专辑界面下运行可以自动演奏完所有未领取完奖励的��曲。**
+**在自动音游的基础上，新增自动专辑功能。在专辑界面下运行可以自动演奏完所有未领取完奖励的乐曲。**
 
 可以帮助你快速完成成就。
 
@@ -887,7 +887,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 ## 5.3 适配性更新
 
 * 七圣召唤更新 @haokaiyang
-* 支持新角色数据
+* 支持新角色���据
 
 ## 其他优化
 
@@ -923,7 +923,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 ## 路径追踪
 
 &gt; [!IMPORTANT]
-&gt; **非常感谢 @Limint 贡献的新的相机视角识��算法，解决了路径追踪时视角晃动的问题**
+&gt; **非常感谢 @Limint 贡献的新的相机视角识别算法，解决了路径追踪时视角晃动的问题**
 
 **现在已经存在部分挖矿、锄地脚本，但相关功能有待优化。**
 
@@ -1174,7 +1174,7 @@ BetterGI 通过 [ClearScript](https://github.com/microsoft/ClearScript) 内置 V
 - 启动时检查是否有关键文件缺失，缺失时提示 #468 @qhy040404 
 - 修复更新提示弹窗位置未适配高分屏DPI缩放 #446 @emako 
 - code clean up  @qhy040404 @Lightczx 
-- 修复了一些配置不生效的问题
+- ���复了一些配置不生效的问题
 - 优化内部地图匹配的代码</pre></div>
 <div class="download"><a href="https://github.com/babalae/better-genshin-impact/releases/download/0.33/BetterGI_Setup_v0.33.2.exe" target="_blank">下载此版本</a></div>
 </div>
@@ -1198,7 +1198,7 @@ BetterGI 通过 [ClearScript](https://github.com/microsoft/ClearScript) 内置 V
 1. **建议在游戏内配合快捷键使用**。
 2. 录制时遇到主界面和其他界面的切换时，不要操作，需要等待程序识别这个切换过程
 3. 尽量走平坦的路，每次碰撞都会出现不一样的结果
-4. 录制的距离越长，误差会更大
+4. 录制的距离越长，误��会更大
 
 分辨率比例相同的情况下，是可以互相分享并使用键鼠录制的脚本的。建议所有录制操作都在 16:9 的比例下完成
 
@@ -1234,7 +1234,7 @@ ONNX推理相关的模型都可以切换：
 * 角色分类模型
 * 秘境古树模型
 
-Paddle 文字识别暂��不能切换（测试切换后效果非常差）。图像推理相关的速度有大幅提升。
+Paddle 文字识别暂时不能切换（测试切换后效果非常差）。图像推理相关的速度有大幅提升。
 
 **感觉自动拾取有掉帧的朋友可以切换到GPU进行推理，然后自动拾取文字识别引擎选择 Yap，这样 CPU 占用会大幅降低。**
  
