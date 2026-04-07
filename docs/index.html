@@ -43,7 +43,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <p>版本更新日志 - 静态页面</p>
 </div>
 <div class="info">
-<strong>最后更新:</strong> 2026/4/6 17:12:16 | <strong>版本数:</strong> 30 | <a href="changelog.json">JSON</a> | <a href="changelog.txt">TXT</a> | <a href="changelog.md">MD</a>
+<strong>最后更新:</strong> 2026/4/7 17:06:39 | <strong>版本数:</strong> 30 | <a href="changelog.json">JSON</a> | <a href="changelog.txt">TXT</a> | <a href="changelog.md">MD</a>
 </div>
 <div class="releases">
 <div class="release">
@@ -473,7 +473,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 6.0新增传送点数据 @MisakaAldrich
 - 适配地图传送界面新出现“游逸旅闻：[地区名]”文字，对原有文字识别点击造成干扰的情况 @FishmanTheMurloc
 - 适配新版本激活石化古树识别树脂 @FishmanTheMurloc
-- 切换队伍适配新版本最大队伍数由15增加到20，并新增最后一个非空队伍判断 @FishmanTheMurloc
+- 切换队伍适配新版本最大队伍数由15增加到20，并���增最后一个非空队伍判断 @FishmanTheMurloc
 - 适配月绽放角色（菈乌玛）入队后，角色无法正常切换的问题。（右侧队伍下方出现草露进度条，会让整个队伍UI上移，后续换队后UI依旧保持原样）
 
 ## 其他优化
@@ -543,7 +543,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 </div>
 <div class="body"><pre>## 5.8 适配性优化
 - 5.8新角色识别
-- 5.8地��特征更新
+- 5.8地图特征更新
 - 5.6-5.8新增传送点 @MisakaAldrich
 - 5.8七圣元数据更新 @haokaiyang
 - **自动幽境危战适配5.8，并加入一条龙中（注意当前无需在开启钥匙后的界面上启动本功能！）**
@@ -577,7 +577,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 重构添加地图追踪任务页面的搜索功能，同时添加深度搜索功能。修复了搜索功能形同虚设，只能搜索最表面父文件夹的问题。 (#1980) @Datouyu666
 
 ## 地图追踪
-- **实现分层地图的识别，优化视角识别算法**@Limint
+- **实现分层地图的识别，优化视角识别算���**@Limint
 - 延长换队失败的判断时间 (#1792) @ddddng
 - 修改部分角色挖矿的方式 @RRRR623 @MisakaAldrich
 - 脚本仓库不再使用浅克隆，修复需要重置才能更新的问题
@@ -586,7 +586,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 地图追踪接口修改成多实例，JS调用的实例和地图追踪调用的实例不同
 - 修复简易策略偶发性不执行的问题 @physligl
 - 删除这两个选项：是否就近七天神像恢复血量、传送到七天神像之后是否需要移动后回血
-- 修复并���调用小地图识别时识别错误的Bug，修改并增加暴露给JS的小地图识别函数 (#1911) @Limint
+- 修复并发调用小地图识别时识别错误的Bug，修改并增加暴露给JS的小地图识别函数 (#1911) @Limint
 - 修复地图追踪配置中获取材料名称的问题 (#1919) @kaedelcb
 - 地图追踪版本要求修改为强制
 - 优化地图追踪的距离过远判断
@@ -598,7 +598,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 新增 Discord 通知 (#1903) @Small-Ku
 
 ## 其他
-- 修复自动拾取黑白名单在部分场景下找不到路径的问题
+- 修复自动拾取��白名单在部分场景下找不到路径的问题
 - 修复自动拾取对乐器误识别的问题
 - 规避 WPF 剪贴板卡顿，修复剪切不清除文本的问题 (#1839) @ABA2396
 - 调度器新增JS脚本界面支持搜索 @physligl
@@ -703,7 +703,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 修复合成台打开后，等待时间过短导致合成失败的问题 
 
 ## 地图追踪
-* 通过点位配置，支持在未��别点位情况下，从大地图中心点来识别坐标。 #1526 @mfkvfhpdx
+* 通过点位配置，支持在未识别点位情况下，从大地图中心点来识别坐标。 #1526 @mfkvfhpdx
 * 挖矿策略修改为只执行一个角色
 * 大剑挖矿策略修改，以及移除卡齐娜 @MisakaAldrich
 * 解决在回到主界面场景下卡复活界面的问题 @mfkvfhpdx 
@@ -715,7 +715,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 去除自动更新逻辑，改为手动更新，减少上游压力
 * 地图追踪和JS脚本添加 README.md 的详情展示
 
-## 底层改造
+## 底���改造
 * OCR平台改造。移除 PaddleSharp ，使用 ONNX 直接进行推理，支持更多推理环境 #1459 @Takaranoao 
 * 截图器优化。 #1480 #1573 @shatyuka 
     * 提升BitBlt 效率，优化 Dwm 截图
@@ -824,7 +824,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <h2><a href="https://github.com/babalae/better-genshin-impact/releases/tag/0.44.3" target="_blank">0.44.3 稳定性优化</a></h2>
 <div class="meta"><span class="version">版本: 0.44.3</span><span>发布: 2025/4/5 19:17:27</span></div>
 </div>
-<div class="body"><pre>* 依赖库OpenCvSharp4、PaddleOCR版本更新 @Takaranoao
+<div class="body"><pre>* ��赖库OpenCvSharp4、PaddleOCR版本更新 @Takaranoao
 * 修复 BitBlt 会崩溃的问题，以及 BitBlt 性能的极致优化 @Takaranoao
 * WGC帧率控制
 * WGC反复启停优化 @FishmanTheMurloc
@@ -923,10 +923,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 
 ## 调度器
 * 调度器清空所有任务添加询问提示
-* 新增shell类型的���务可供添加（**请不要执行看不懂的命令**）#1248 @Takaranoao
+* 新增shell类型的任务可供添加（**请不要执行看不懂的命令**）#1248 @Takaranoao
 
 ## 地图追踪
-* 地图追踪中当前配队无法满足简易策略脚本时，日志提示所需角色
+* 地��追踪中当前配队无法满足简易策略脚本时，日志提示所需角色
 * 地图追踪中异常场景处理添加 遇到 x 按钮时候 按下ESC返回主界面
 * 更多七天神像回血相关的配置 @physligl
 * 自动战斗后、传送前都会释放所有按键，尝试解决TP神像后持续往前走的问题
@@ -1011,7 +1011,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 
 * 感谢 @xyToki 提供的自动更新程序与服务，项目 [kachina-installer](https://github.com/YuehaiTeam/kachina-installer) ！
 * 感谢 @Womsxd 提供的额外流量节点！
-* 感谢 @qhy040404 编写的 Github Action！
+* 感�� @qhy040404 编写的 Github Action！
 
 ![72a520b00cd20aa4a33d8831c1403fce](https://github.com/user-attachments/assets/831ead1f-a905-44f3-b015-75e7a2e31634)
 
@@ -1036,7 +1036,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 
 ### 传送相关 @physligl
 * 修复传送中地图移动的问题 
-* 优化了影向山和太山府附近点错传送锚点的问题
+* 优化了影向山和太山府附近点错传送锚点��问题
 * 优化了传送到七天神像回血的体验
 * 新增了大地图传送相关的设置页
 
@@ -1047,7 +1047,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 ## 其他优化
 * 修复自动秘境在原神重启后不按w（或者冲刺一下不动）的问题
 * 领取历练点任务放在领取奖励的步骤中，并优化点击次数 #955
-* 独立��务一自动秘境下的目标秘境可以不选
+* 独立任务一自动秘境下的目标秘境可以不选
 * 触发器时间间隔禁止配置为0
 * 修复战斗策略部分校验提示不生效的问题 #988
 * 修复windows10 1909版本使用WGC会报错的问题 @masm611 #954
@@ -1062,13 +1062,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 修复 莱依拉、卡维 邀约中的错误选项 	#1043 #1044
 * 启动独立任务时会自动启动截图器 #1048
 * 快速传送支持纳塔的声望点
-* 修复七圣召唤策略解析错误时，未正确抛出错误的问题
+* 修复��圣召唤策略解析错误时，未正确抛出错误的问题
 * 自动秘境中的战斗策略存在火神的情况下，战斗结束后自动切人 #1052</pre></div>
 <div class="download"><a href="https://github.com/babalae/better-genshin-impact/releases/download/0.40/BetterGI.Install.0.40.0.exe" target="_blank">下载此版本</a></div>
 </div>
 <div class="release">
 <div class="release-header">
-<h2><a href="https://github.com/babalae/better-genshin-impact/releases/tag/0.39" target="_blank">0.39 自动��游专辑</a></h2>
+<h2><a href="https://github.com/babalae/better-genshin-impact/releases/tag/0.39" target="_blank">0.39 自动音游专辑</a></h2>
 <div class="meta"><span class="version">版本: 0.39</span><span>发布: 2025/1/2 23:00:50</span></div>
 </div>
 <div class="body"><pre>## 自动音游专辑
@@ -1080,7 +1080,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 ![image](https://github.com/user-attachments/assets/e6e69637-f822-4db7-ab86-c7507d8456ba)
 
 
-## 5.3 适配性更新
+## 5.3 ���配性更新
 
 * 七圣召唤更新 @haokaiyang
 * 支持新角色数据
