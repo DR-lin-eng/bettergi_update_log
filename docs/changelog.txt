@@ -1,5 +1,5 @@
 Better Genshin Impact 版本更新日志
-最后更新: 2026/6/4 19:16:43
+最后更新: 2026/6/5 19:29:46
 数据来源: https://github.com/babalae/better-genshin-impact/releases
 
 ================================================================================
@@ -113,8 +113,8 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.60
 - 捕获 OpenCV 异常并增强稳定性 (#2985) @physligl
 - 处理桌面组合禁用时的主题应用异常 (#2678) 
 - 优化 config.json 读写失败处理：读取失败自动备份并报错 
-- 回滚“文本识别模糊匹配”相关改动，解决自动拾取卡的问题 (#2799) 
-- 文档链接统���增加 www 前缀 (#2996) @1004452714
+- 回滚“文本识别模��匹配”相关改动，解决自动拾取卡的问题 (#2799) 
+- 文档链接统一增加 www 前缀 (#2996) @1004452714
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.60.0
 
 ================================================================================
@@ -398,7 +398,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.55
 - 战斗策略中，上一个命令和当前命令不是同一个角色时，直接切换角色 #2411
 - **修复自动秘境使用指定树脂数量超出实际树脂数量时，不会自动退出秘境的问题**
 - 修复重复退出秘境的问题
-- 优化战斗相关的���存释放 (#2416) @kaedelcb
+- 优化战斗相关的内存释放 (#2416) @kaedelcb
 - 优化自动战斗出战角色识别，修复部分场景下无法正常识别出战角色的问题
 - 延长秘境载入判断时间 #2470
 
@@ -410,7 +410,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.55
 
 ## JS脚本
 - JS文件添加路径校验，补回仓库地址边框 (#2412) @zaodonganqi
-- 退回到主界面函数支持识别更多场景
+- 退回到主界面函���支持识别更多场景
 - 暴露设置时间方法（跳过动画实测未生效） (#2426) @zaodonganqi
 - 脚本读取图片时支持调整到指定尺寸 (#2446) @breadgrocery
 - 时瞬方法的修改 (#2466) @jiegedabaobei
@@ -510,7 +510,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.53
 - **自动拾取添加模糊匹配的名单**
 - 自动圣遗物转化功能可识别并标记未激活副词条 (#2258) @bhbghghbgb
 - 圣遗物分解套装筛选的改进和JS引擎的约束 (#2319) @FishmanTheMurloc
-- 修复ItemsSource=' 1234' 导致XAML设计器报��的问题 #2039
+- 修复ItemsSource=' 1234' 导致XAML设计器报错的问题 #2039
 - 优化地图切换区域时的文本检测区域 (#2275) @ShadowLemoon
 - **自动剧情-增加对“小道具”及“角色”弹窗的识别与关闭** (#2308)  @1004452714
 - 修复键鼠文件夹不存在的问题 #2316
@@ -915,14 +915,14 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.44
 状态: 正式版本
 更新内容:
 * 依赖库OpenCvSharp4、PaddleOCR版本更新 @Takaranoao
-* 修复 BitBlt 会崩溃的问题，以及 BitBlt 性能的极致���化 @Takaranoao
+* 修复 BitBlt 会崩溃的问题，以及 BitBlt 性能的极致优化 @Takaranoao
 * WGC帧率控制
 * WGC反复启停优化 @FishmanTheMurloc
 * JS脚本能力添加 @physligl
     * 大地图操作
     * 发送通知
 * 修复左Ctrl名称错误 #1398 @kndxhz
-* 优化技能冷却处理逻辑 #1321 @Takaranoao
+* 优化技能冷却处理逻�� #1321 @Takaranoao
 * 修复地图追踪时其他界面关闭后没有延时，以及大地图界面不应该被关闭的问题
 * 修复树脂不足提示检测 #1385
 
@@ -935,11 +935,11 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.44
 状态: 正式版本
 更新内容:
 > [!CAUTION]
-> 由于本次更新修改了底层截图器与任务调��，这并不是一个稳定的版本，请谨慎选择更新！
+> 由于本次更新修改了底层截图器与任务调度，这并不是一个稳定的版本，请谨慎选择更新！
 
 ## 截图器
 - **重构所有截图器的返回类型，减少一次内存拷贝，降低CPU消耗。**
-- 删除WGC的缓存模式选项，使用读写锁保证WGC的有序转换与返回。（也就是说本次更新后，WGC截图方式也能正常使用地图追踪等功能）
+- 删除WGC的缓存模式选项，使用读写锁保证WGC的��序转换与返回。（也就是说本次更新后，WGC截图方式也能正常使用地图追踪等功能）
 - 删除实时任务和独立任务关于截图器占用的冗余逻辑
 
 ## 5.5 适配
@@ -965,7 +965,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.44
 - 日志分析页面修改与美化 @physligl 
 - 修复换队时爬七天神像导致换队失败的问题 @physligl 
 - 增加对WaypointForTrack的DisablePickupAround属性支持，可以关闭挖矿动作的周围拾取 @Takaranoao #1322
-- 小改正则表达以支持JS脚本统计 @MisakaAldrich #1274
+- 小改正则表达以支持JS��本统计 @MisakaAldrich #1274
 - 优化一条路合成树脂时候容易失败的问题
 
 ## 通知
@@ -1020,7 +1020,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.43
 
 ## 地图追踪
 * 地图追踪中当前配队无法满足简易策略脚本时，日志提示所需角色
-* 地图追踪中异常场景处理添�� 遇到 x 按钮时候 按下ESC返回主界面
+* 地图追踪中异常场景处理添加 遇到 x 按钮时候 按下ESC返回主界面
 * 更多七天神像回血相关的配置 @physligl
 * 自动战斗后、传送前都会释放所有按键，尝试解决TP神像后持续往前走的问题
 * 修复火元素采集不生效的问题
@@ -1132,7 +1132,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 
 ### 传送相关 @physligl
 * 修复传送中地图移动的问题 
-* 优化了影向山和太山府附近点错传送锚点的问题
+* 优化了影向山和太山府附近点错传��锚点的问题
 * 优化了传送到七天神像回血的体验
 * 新增了大地图传送相关的设置页
 
@@ -1182,7 +1182,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.40
 * 七圣召唤更新 @haokaiyang
 * 支持新角色数据
 
-## 其他优��
+## 其他优化
 
 * 修复自动启动游戏后自动点击月卡
 * 修复自动秘境部分秘境无法正常进入的问题
