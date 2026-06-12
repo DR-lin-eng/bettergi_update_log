@@ -1,5 +1,5 @@
 Better Genshin Impact 版本更新日志
-最后更新: 2026/6/11 20:11:14
+最后更新: 2026/6/12 19:44:39
 数据来源: https://github.com/babalae/better-genshin-impact/releases
 
 ================================================================================
@@ -9,7 +9,7 @@ Better Genshin Impact 版本更新日志
 状态: 正式版本
 更新内容:
 - **修复一键宏卡死问题** @cookie981
-- 优化一条龙每周秘���配置与下拉选择显示 (#3142) @ShadowLemoon
+- 优化一条龙每周秘境配置与下拉选择显示 (#3142) @ShadowLemoon
 - 自动幽境危战，增强状态机节点注册与重试兜底 (#3159) @ShadowLemoon
 - **自动剧情，通过Silero Vad识别对话结束，然后再选项选择 (#3130)** @ShadowLemoon
 - **修复隐藏日志窗口一段事件后，自动拾取卡住的问题  #3161**
@@ -62,7 +62,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.61
 - 原神 HDR 自动关闭功能
 - 一条龙任务新增"关闭软件"完成动作 (#3115) @lingse4
 - 优化一条龙任务添加弹窗 UI (#3068) @kaedelcb
-- 修���"出错啦"窗口显示版本号错误 (#3116) @emako
+- 修复"出错啦"窗口显示版本号错误 (#3116) @emako
 - 任务启动阶段可通过快捷键终止，强制关闭游戏时启动按钮可复位 (#3036) @zhousenyu
 - 跳过空月祝福使用硬件输入模拟，修复云原神不生效 (#3080) @KangKangTao
 - 提醒快捷键与游戏键位冲突 (#3083) @ddaodan
@@ -113,7 +113,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.60
 - 捕获 OpenCV 异常并增强稳定性 (#2985) @physligl
 - 处理桌面组合禁用时的主题应用异常 (#2678) 
 - 优化 config.json 读写失败处理：读取失败自动备份并报错 
-- 回滚“文本识别模糊匹配”相关改动，解决自动拾取卡的问题 (#2799) 
+- 回滚“文本识别模���匹配”相关改动，解决自动拾取卡的问题 (#2799) 
 - 文档链接统一增加 www 前缀 (#2996) @1004452714
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.60.0
 
@@ -180,7 +180,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.59
 更新内容:
 ## 月之五适配
 - 新角色（法尔伽）
-- 七圣召唤���数据 @haokaiyang
+- 七圣召唤元数据 @haokaiyang
 
 ## 地图遮罩
 - 大地图遮罩默认不开启
@@ -216,7 +216,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.59
 - 不再翻译日志相关内容
 - 更加细致的地图追踪传送延迟 (#2866) @JamisHoo
 - 删除一条龙配置的弹窗主题与主窗口保持一致 (#2887) @1004452714
-- 修复七圣召唤月之五伊涅芙会导致手牌不可调和的死循环 (#2848) @Guest-Liang
+- 修复七圣召唤月之五��涅芙会导致手牌不可调和的死循环 (#2848) @Guest-Liang
 - 为快速尘歌壶任务增加离开功能，支持进出双向操作 (#2822) @this-Fish
 - 支持任意游戏文件名的启动 (#2819)
 - 回滚 "自动拾取文本识别帧间连续性检查 (#2676)" 的改动 (#2817) @zaodonganqi
@@ -225,7 +225,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.59
 - 自动拾取排除：「月谕圣牌」收藏
 - 去除所有 Cv2.ImRead ，解决中文路径问题
 - 根据文件夹名字和内容重合度区分仓库；启动时自动更新仓库和订阅 (#2767) @ShadowLemoon
-- 文本识��的模糊匹配功能 (#2799) @Takaranoao
+- 文本识别的模糊匹配功能 (#2799) @Takaranoao
 - 尝试修复一些ROI越界 (#2808) @Takaranoao
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.58.0
 
@@ -257,7 +257,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.58
 - 优化换队拾取，仅在配置了万叶队伍时才执行换队操作 (#2748) @this-Fish
 - 优化二次拾取，万叶即使刚使用过技能也会强制拾取 (#2760) @this-Fish
 - 优化调整时间的点击操作，使用更短的延时 (#2738) @zaodonganqi
-- 修复传送���空月祝福偶发卡住的问题 (#2765) @Jamis
+- 修复传送时空月祝福偶发卡住的问题 (#2765) @Jamis
 
 ## 其他
 - 新增状态机模块，重构幽境危战任务 (#2712) @ShadowLemoon
@@ -303,7 +303,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.57
 
 
 ## 其他
-- 添加动态修改遮罩日志与状态位置的功能
+- 添加动态修改遮罩日志与状态位���的功能
 - **修复当前出战队伍是第五位时，无法正常下拉切换队伍的问题** #2633
 - tp.json 元数据更新，更新秘境选择的材料展示 @JamisHoo
 - 更新WPF-UI版本至最新，并修复主题展示问题
@@ -357,7 +357,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.56
 - 优化进入幽境危战的流程 (#2537)
 - 彻底解决出战角色识别不正常的问题
 - 幽境危战战斗结束后走一步，防止角色在地脉花上 #2068
-- 修改自动幽境危战的战斗终止检测，解决可能存在的误识别场景
+- 修改自动幽境危战的战斗终止检测，解决可能存在的误识别��景
 
 
 ## 其他
@@ -793,7 +793,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 * 通过点位配置，支持在未识别点位情况下，从大地图中心点来识别坐标。 #1526 @mfkvfhpdx
 * 挖矿策略修改为只执行一个角色
 * 大剑挖矿策略修改，以及移除卡齐娜 @MisakaAldrich
-* 解决在回到主界面场景下卡复活界面的问题 @mfkvfhpdx 
+* 解决在回到主界面场景下��复活界面的问题 @mfkvfhpdx 
 * 战斗后自动拾取优化 @Scarlet1ssimo
 * 将路径追踪相关的日志改为debug级别 (#1645) (#1684) @Patrick-Ze
 
@@ -842,7 +842,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 * 修复WGC关闭时候报错 #1419
 
 ## 自动拾取
-- **拾取列表已��时候，滑动滚轮（注意这个变更会会导致拾取变成从下往上拾取，对于尘歌壶收菜有一定影响）**
+- **拾取列表已满时候，滑动滚轮（注意这个变更会会导致拾取变成从下往上拾取，对于尘歌壶收菜有一定影响）**
 - 修复拾取过程中文字识别错误 (#1496) @shatyuka
 - 支持配置使用G键进行自动拾取 (#1502) @Patrick-Ze
 
@@ -1132,7 +1132,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 
 ### 传送相关 @physligl
 * 修复传送中地图移动的问题 
-* 优化了影向山和太山府附近点错传���锚点的问题
+* 优化了影向山和太山府附近点错传送锚点的问题
 * 优化了传送到七天神像回血的体验
 * 新增了大地图传送相关的设置页
 
