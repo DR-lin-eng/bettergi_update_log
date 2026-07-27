@@ -1,5 +1,5 @@
 Better Genshin Impact 版本更新日志
-最后更新: 2026/7/26 18:01:59
+最后更新: 2026/7/27 19:25:57
 数据来源: https://github.com/babalae/better-genshin-impact/releases
 
 ================================================================================
@@ -28,7 +28,7 @@ Better Genshin Impact 版本更新日志
 - 适配新版秘境交互快捷键流程 (#3230) @1004452714
 
 ### JS脚本
-- 新增材料合成与背包物品计数接口，支持材料筛选、数量设置、产物识别及多物品计数 (#3231) @1004452714
+- 新增材料合成与背��物品计数接口，支持材料筛选、数量设置、产物识别及多物品计数 (#3231) @1004452714
 - 完善 HTML 遮罩，修复不同 DPI 和虚拟机下的位置、本地资源路径问题，并新增 JS 请求响应接口 (#3200 #3183 #3220) @zaodonganqi
 - 修复复制配置组时 JS 自定义配置紊乱的问题 (#2797)
 - 调整 JS settings 持久化时机，在脚本结束后保存运行期修改 (#3215) @1004452714
@@ -43,7 +43,7 @@ Better Genshin Impact 版本更新日志
 - 启动调整 BetterGI 进程优先级为普通（解决windows计划任务启动软件时候变成低优先级进程的问题）
 - 修复地图遮罩空荧酒馆地图部分独立地图的数据筛选
 - 优化任务状态机的转场等待与当前节点重试判定，避免中间态超时被误计为当前节点重试 (#3182) @ShadowLemoon
-- 新增可配置遮罩指标栏，可显示游戏帧率、处理耗时、跳过次数及硬件占���，并支持选择指标和拖拽调整布局 (#3121) @ddaodan
+- 新增可配置遮罩指标栏，可显示游戏帧率、处理耗时、跳过次数及硬件占用，并支持选择指标和拖拽调整布局 (#3121) @ddaodan
 
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.62.0
 
@@ -192,7 +192,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.59
 
 ## 独立任务
 - 兼容从其他人尘歌壶传送回大地图多一个弹窗的场景 #1599 
-- **修复最小化时候截图失败导致截图器没法正常截图，导致主界面卡顿的问题** #2939  #2851 
+- **修��最小化时候截图失败导致截图器没法正常截图，导致主界面卡顿的问题** #2939  #2851 
 - 删除 Starward 协议注册 相关日志 
 - 自动地脉花支持领奖后扫描掉落物 (#2928) @Tristan-sdu
 - 增加对话区判定次数 #2936 
@@ -202,7 +202,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.59
 - 最后匹配自定义游戏进程名 #2909 
 - 修改check触发检查的时机 (#2904) @Bedrockx
 - 修改自动战斗ready指令的表现 
-- 修复命令行启动时自动更新阻塞导��� StartGameTask 跳过等待主界面的问题 (#2902) @Shadow-Lemon
+- 修复命令行启动时自动更新阻塞导致 StartGameTask 跳过等待主界面的问题 (#2902) @Shadow-Lemon
 - 选择鱼饵增加等待时间，以降低鱼饵尚未出现时执行动作的频率 (#2900) @FishmanTheMurloc
 
 ## 其他
@@ -213,7 +213,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.59
 - OCR修改默认强制推理配置 
 - 修复 E_ACCESSDENIED (0x80070005) 报错。 
 - 修复User目录清空后，无法自动创建目录的问题 
-- 修复同时存在多个脚本仓库文件夹时迁移优先级出错 (#2906) @Shadow-Lemon
+- 修复同时存在多��脚本仓库文件夹时迁移优先级出错 (#2906) @Shadow-Lemon
 
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.59.0
 
@@ -267,7 +267,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.59
 - 回滚 "自动拾取文本识别帧间连续性检查 (#2676)" 的改动 (#2817) @zaodonganqi
 - 自动拾取黑名单配置文本框复制剪切时UI短暂无响应 (#2818) @1004452714
 - 彻底删除 实验功能 遮罩以原神子窗体方式启动 UseSubform
-- 自动拾取排除：「月谕圣牌」收藏
+- 自动拾取���除：「月谕圣牌」收藏
 - 去除所有 Cv2.ImRead ，解决中文路径问题
 - 根据文件夹名字和内容重合度区分仓库；启动时自动更新仓库和订阅 (#2767) @ShadowLemoon
 - 文本识别的模糊匹配功能 (#2799) @Takaranoao
@@ -287,7 +287,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.58
 
 
 ## 新功能
-- **新增后台角色技能CD显��功能**，在遮罩窗口显示后台角色的技能冷却时间 (#2754) @zaodonganqi
+- **新增后台角色技能CD显示功能**，在遮罩窗口显示后台角色的技能冷却时间 (#2754) @zaodonganqi
 - **新增自动地脉花独立任务** (#2583) @ddaodan
 - **新增软件UI界面的多语言支持**
 
@@ -299,7 +299,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.58
 - UI变化后30s内所有触发器执行一遍，**解决地图遮罩控件部分场景下残留的问题（同时也修复了黑屏不点击的问题）**
 
 ## 地图追踪
-- 优化换队拾取，仅在配置了万叶队伍时才执行换队操作 (#2748) @this-Fish
+- 优化换队拾取，仅在配置了万叶队伍时才执行换���操作 (#2748) @this-Fish
 - 优化二次拾取，万叶即使刚使用过技能也会强制拾取 (#2760) @this-Fish
 - 优化调整时间的点击操作，使用更短的延时 (#2738) @zaodonganqi
 - 修复传送时空月祝福偶发卡住的问题 (#2765) @Jamis
@@ -309,7 +309,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.58
 - AutoDomain支持领奖时切换20/40原粹树脂，仅JS可用 (#2783) @DarkFlameMaster
 - 优化每日委托领奖，使用点击屏幕替代按ESC (#2761) @zaodonganqi
 - 自动跳过不再默认点击委托、派遣等橙色提示 (#2762) @zaodonganqi
-- 修�� JS 脚本 multi-checkbox 配置项删除后仍能读取到旧值的问题 (#2725) @bling-yshs
+- 修复 JS 脚本 multi-checkbox 配置项删除后仍能读取到旧值的问题 (#2725) @bling-yshs
 - 键鼠回调改为异步事件分发，添加队列限制与并行锁 (#2741) @zaodonganqi
 - 支持仓库使用公共资源 (#2716) @zaodonganqi
 - 修复 OCR RunMulti 中 Mat 所有权语义不明确导致的潜在 Dispose 问题 (#2730) @Ayu0K
@@ -341,7 +341,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.57
 - 新增一条龙配置的重命名与删除 (#2658) @1004452714
 - 简易策略支持中键滚动 (#2660) @zaodonganqi
 - JS的设置UI添加级联选择 (#2667) @1004452714
-- 添加bgi版本获取 (#2692) @zaodonganqi
+- 添加bgi版本获��� (#2692) @zaodonganqi
 - 修复切换队伍拾取初始队伍为空的异常识别 (#2688) @kaedelcb
 - 修复地图追踪触发自动剧情异常处理有时无法完成对话的问题 (#2684) @Anyrainel
 - 优化换队拾取和切换队伍 (#2729) @kaedelcb
@@ -399,7 +399,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.56
 - 新增 `round` 指令：支持按轮次激活部分战斗宏脚本 @NyaMisty (#2597)
 - 新增 `ready` 方法：等待角色技能处于完成态
 - 清理战斗策略，更新万能策略 @MisakaAldrich (#2606)
-- 优化进入幽境危战的流程 (#2537)
+- 优化进入幽境危战的流�� (#2537)
 - 彻底解决出战角色识别不正常的问题
 - 幽境危战战斗结束后走一步，防止角色在地脉花上 #2068
 - 修改自动幽境危战的战斗终止检测，解决可能存在的误识别场景
@@ -421,7 +421,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.56
 - 修复鼠标模拟点击一直多释放了一次鼠标的问题
 - 自动秘境选择秘境使用级联选择框，并添加秘境备注
 - 新增自动剧情点击对话框前的延迟设置
-- 减少配置组中两个任务中间的等待时间 @JamisHoo (#2590)
+- 减少配置组中两个任务中间的���待时间 @JamisHoo (#2590)
 
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.55.0
 
@@ -437,7 +437,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.55
 - 七圣召唤元数据更新 @haokaiyang
 - 适配联机相关UI (#2488) @kaedelcb
 - **文字菜单UI区域适配，修复自动领取尘歌壶在新版本报错的问题** (#2511) @kaedelcb
-- 每日奖励领取适配
+- 每日奖��领取适配
 
 ## 自动秘境/幽境/战斗
 - 战斗策略中，上一个命令和当前命令不是同一个角色时，直接切换角色 #2411
@@ -450,7 +450,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.55
 ## 地图追踪
 - 地图追踪异常处理支持自动关闭书页 (#2418) @JamisHoo
 - 优化是否在大地图UI界面的识别判断 (#2373) @JamisHoo
-- 优化地图追踪过程中各种打断的��理 (#2425) @JamisHoo
+- 优化地图追踪过程中各种打断的处理 (#2425) @JamisHoo
 - 修复TemplateMatch地图特征加载两次的问题 (#2434) @JamisHoo
 
 ## JS脚本
@@ -473,7 +473,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.55
 - 为过时的脚本仓库弹窗提醒，提供更新按钮并避免直接打开 (#2460) @ShadowLemoon
 - 记录仓库页面位置和大小，提供默认值 (#2458) @zaodonganqi
 - 添加JS脚本和地图追踪的右键删除功能 (#2455) @bling-yshs
-- 增加首页图片更换功��� (#2431) @Aether-1013
+- 增加首页图片更换功能 (#2431) @Aether-1013
 - 优化两处不致命的异常弹框展示 (#2464) @ShadowLemoon
 - 改进空月祝福页面处理逻辑，提升处理速度 (#2449) @JamisHoo
 - 修复部分UI样式问题 @ShadowLemoon
@@ -525,7 +525,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.53
 - 延长传送等待时间
 - 修复树脂不足情况下自动幽境危战无法正常退出的问题 #2241
 - 修复自动幽境危战停止时弹出错误提示窗口的问题
-- 调整浓缩树脂识别范围，解决V4模型无法准���识别浓缩树脂个数的问题 #2185
+- 调整浓缩树脂识别范围，解决V4模型无法准确识别浓缩树脂个数的问题 #2185
 
 ## 地图追踪 & 自动战斗
 - **新的队伍编号识别方式，解决菈乌玛UI造成角色切换相关的问题，修复一键宏无法正常使用的问题**
@@ -548,7 +548,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.53
 - 本地仓库使用全新版本
 - 优化渊下宫文字的识别，修复文本识别替换功能的问题 @JamisHoo
 - 优化对进入主界面的判断
-- 优化快��购买时候，对洞天的识别率
+- 优化快速购买时候，对洞天的识别率
 - 重构服务器重置时间处理 (#2160) @bhbghghbgb
 - 优化自动开门
 - **优化自动拾取对聚所的判断**
@@ -600,7 +600,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.51
 - 6.0新增传送点数据 @MisakaAldrich
 - 适配地图传送界面新出现“游逸旅闻：[地区名]”文字，对原有文字识别点击造成干扰的情况 @FishmanTheMurloc
 - 适配新版本激活石化古树识别树脂 @FishmanTheMurloc
-- 切换队伍适配新版本最大队伍数由15增加到20，并新增最后���个非空队伍判断 @FishmanTheMurloc
+- 切换队伍适配新版本最大队伍数由15增加到20，并新增最后一个非空队伍判断 @FishmanTheMurloc
 - 适配月绽放角色（菈乌玛）入队后，角色无法正常切换的问题。（右侧队伍下方出现草露进度条，会让整个队伍UI上移，后续换队后UI依旧保持原样）
 
 ## 其他优化
@@ -645,7 +645,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.50
 ## 其他
 - 修复 OpenVINO 缓存配置与描述冲突（注：当前正式版 OpenVINO 不能启用） @Luckylhz
 - 修复战斗脚本中注释存在分号无法正常解析的问题
-- 取消兑换码使用后不再弹出此剪切板内容的兑换码，新增兑换码剪切板监听的开关配置
+- 取消兑换码使用后不再弹出此剪���板内容的兑换码，新增兑换码剪切板监听的开关配置
 - 修复自定义的交互按键未对自动秘境生效的问题 (#2035) @Patrick-Ze
 - 地图追踪中新增使用小道具的action
 - 新增盾位优先功能和旋转寻敌优化 (#2039) @kaedelcb
@@ -673,7 +673,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.49
 ## 5.8 适配性优化
 - 5.8新角色识别
 - 5.8地图特征更新
-- 5.6-5.8新增传送点 @MisakaAldrich
+- 5.6-5.8新增传��点 @MisakaAldrich
 - 5.8七圣元数据更新 @haokaiyang
 - **自动幽境危战适配5.8，并加入一条龙中（注意当前无需在开启钥匙后的界面上启动本功能！）**
 
@@ -713,7 +713,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.49
 - 降低飞行检测时间，自由落体后进入飞行再下落攻击 (#1837) @MisakaAldrich
 - 修复迷烟主成员非飞行状态下四叶印识别失败的Bug，模板匹配的置信度修改为数组 @Limint
 - 地图追踪接口修改成多实例，JS调用的实例和地图追踪调用的实例不同
-- 修复��易策略偶发性不执行的问题 @physligl
+- 修复简易策略偶发性不执行的问题 @physligl
 - 删除这两个选项：是否就近七天神像恢复血量、传送到七天神像之后是否需要移动后回血
 - 修复并发调用小地图识别时识别错误的Bug，修改并增加暴露给JS的小地图识别函数 (#1911) @Limint
 - 修复地图追踪配置中获取材料名称的问题 (#1919) @kaedelcb
@@ -735,7 +735,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.49
 - 优化自动重新登录针对B服的登录框的操作，支持5.8版本的新登录框 @zaodonganqi
 - JS脚本暴露获取当前小地图角度和当前队伍角色的方法 (#1874)
 - 加入控制台日志输出
-- 脚本仓库更新支持自定义git地址 @Takaranoao
+- ���本仓库更新支持自定义git地址 @Takaranoao
 - 一键购买尘歌壶适配 #1908 @iris10086
 - 优化PromptDialog对话框布局以支持用户自由调整窗口大小 (#1953) @Datouyu666
 - 调整官服退出重进参数，对高ping玩家友好一点 (#1986) @Takaranoao
@@ -772,7 +772,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.48
 - 内嵌 VC++ 运行库 14.44.35208.0，**尝试彻底解决“Unable to load DLL 'onnxruntime'or one of its dependencies: 动态链接库(DLL)初始化例程失败” 的问题**
 - 缩短换队失败的判断时间 #1755 @physligl
 - 修复脚本仓库更新报错 repository path ' ' is not owned by current user #1746
-- 删除 “允许在jsScript脚本中使用此地图追踪配置” 和 “允许在此调度器中（一般在JS脚本中）调用自动战斗任务时，采��此追踪配置里的战斗策略” 配置。默认启用
+- 删除 “允许在jsScript脚本中使用此地图追踪配置” 和 “允许在此调度器中（一般在JS脚本中）调用自动战斗任务时，采用此追踪配置里的战斗策略” 配置。默认启用
 - 脚本仓库更新添加进度展示
 - 优化传送点点击的逻辑，增加退出重登的延时 (#1773) @physligl
 - 将自动秘境战斗失败复活次数从常量3修改为可更改的参数 @xiaokang00010
@@ -835,7 +835,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 * 修复合成台打开后，等待时间过短导致合成失败的问题 
 
 ## 地图追踪
-* 通过点位配置，支持在未识别点位��况下，从大地图中心点来识别坐标。 #1526 @mfkvfhpdx
+* 通过点位配置，支持在未识别点位情况下，从大地图中心点来识别坐标。 #1526 @mfkvfhpdx
 * 挖矿策略修改为只执行一个角色
 * 大剑挖矿策略修改，以及移除卡齐娜 @MisakaAldrich
 * 解决在回到主界面场景下卡复活界面的问题 @mfkvfhpdx 
@@ -871,7 +871,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 * 延长塞西莉亚苗圃的行走时间 #1620
 
 
-🌩️ [Github 下载太慢？ 点我访问更多更新渠道](https://bettergi.com/download.html)
+��️ [Github 下载太慢？ 点我访问更多更新渠道](https://bettergi.com/download.html)
 
 
 GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46.0
@@ -905,9 +905,9 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 - **新增自动前往领取尘歌壶奖励 (#1506)**  @iris10086
 
 ## 地图追踪
-- 修复飞行过程中CPU飙升的��题
+- 修复飞行过程中CPU飙升的问题
 - 修复4号位地图追踪时不切人的放技能的问题
-- **地图特征使用二进制文件存储，减小文件体积，大幅提升特征数据加载速度** @shatyuka
+- **地图特征使用二进制��件存储，减小文件体积，大幅提升特征数据加载速度** @shatyuka
 - 为凌晨4点领取月卡的逻辑添加了更多触发点 @mfkvfhpdx
 - 打开地图时判断是否存在探索奖励，并自动领取（需要在设置中打开） @mfkvfhpdx 
 - 战斗后拾取逻辑小优化 @Scarlet1ssimo 
@@ -926,7 +926,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.46
 - 修复自动秘境超时的时候重试
 - 遮罩窗口UI优化支持缩放，日志窗口添加阴影 (#1477、#1478)  @shatyuka
 - 修复快速传送（手动触发）后自动拾取失效的问题 #1130
-- 自动剧情关闭弹出页前判断是否是大地图的弹出页面，以防误识别 #1466
+- 自动剧情关闭弹出页前判断是否是大地图��弹出页面，以防误识别 #1466
 - 发送通知时，添加延迟让图片先发送，时间戳与事件之间添加换行 @MisakaAldrich
 - 修复提示框内容过长时，对话框无法完整显示的问题 (#1513) @breadgrocery
 - 优化一些报错和日志提示
@@ -988,7 +988,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.44
 - 删除实时任务和独立任务关于截图器占用的冗余逻辑
 
 ## 5.5 适配
-- 使用新的游戏退出判断，影响自���伐木，部分JS脚本等 @physligl 
+- 使用新的游戏退出判断，影响自动伐木，部分JS脚本等 @physligl 
 - 5.5 新地图添加，传送点未添加，但添加了新秘境
 - 5.5 新角色数据
 - 5.5 新七圣卡牌数据
@@ -1150,7 +1150,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 **📥在线安装版【推荐】：[BetterGI.OnlineInst.exe](https://77.cocogoat.cn/dfs/bgi/BetterGI.OnlineInst.exe)**
 **📥离线安装版：[BetterGI.Install.exe](https://77.cocogoat.cn/dfs/bgi/BetterGI.Install.exe)**
 
-* 感谢 @xyToki 提供的自动更新程序与��务，项目 [kachina-installer](https://github.com/YuehaiTeam/kachina-installer) ！
+* 感谢 @xyToki 提供的自动更新程序与服务，项目 [kachina-installer](https://github.com/YuehaiTeam/kachina-installer) ！
 * 感谢 @Womsxd 提供的额外流量节点！
 * 感谢 @qhy040404 编写的 Github Action！
 
@@ -1199,7 +1199,7 @@ GitHub页面: https://github.com/babalae/better-genshin-impact/releases/tag/0.41
 * **自动音游专辑支持所有难度都打满** #994 @atiasn
 * 安装包改成单层文件夹 #976  @Womsxd
 * **美化了部分窗口表现** #973  @chisato2233
-* **部分功能支持原神自定义按键绑定** #956 @Ayu0K
+* **部分��能支持原神自定义按键绑定** #956 @Ayu0K
 * 修复 莱依拉、卡维 邀约中的错误选项 	#1043 #1044
 * 启动独立任务时会自动启动截图器 #1048
 * 快速传送支持纳塔的声望点
