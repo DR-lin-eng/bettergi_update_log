@@ -43,15 +43,88 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <p>版本更新日志 - 静态页面</p>
 </div>
 <div class="info">
-<strong>最后更新:</strong> 2026/9/16 21:14:05 | <strong>版本数:</strong> 30 | <a href="changelog.json">JSON</a> | <a href="changelog.txt">TXT</a> | <a href="changelog.md">MD</a>
+<strong>最后更新:</strong> 2026/9/17 21:09:24 | <strong>版本数:</strong> 30 | <a href="changelog.json">JSON</a> | <a href="changelog.txt">TXT</a> | <a href="changelog.md">MD</a>
 </div>
 <div class="releases">
+<div class="release">
+<div class="release-header">
+<h2><a href="https://github.com/babalae/better-genshin-impact/releases/tag/0.65.0" target="_blank">0.65 适配与优化</a></h2>
+<div class="meta"><span class="version">版本: 0.65.0</span><span>发布: 2026/9/17 01:16:57</span></div>
+</div>
+<div class="body"><pre>近期为了支持后续功能扩展��和解决历史遗留问题，底层能力正在进行重构，版本BUG较多，请谨慎选择更新！
+
+&lt;img width=&quot;200&quot; src=&quot;https://github.com/user-attachments/assets/108d88d4-d2fb-4d88-bd56-bd30b12a93a4&quot; /&gt;
+
+
+适配原神 7.0 TemplateMatch 地图与分层地图资源。适配 7.0 鱼类。**修复传送频繁失败的问题**。
+
+新增实验性自动连招：识别队伍并调用 OpenAI 兼容 LLM 生成、执行战斗行为树，支持测试、暂停和自动秘境后台建树 (#3584 #3668) @FishmanTheMurloc
+
+
+
+### 自动钓鱼
+
+- 重构全自动钓鱼流程，细化举竿、抛竿、咬钩和提竿操作，并在停止或退出时可靠收尾 (#3492 #3561 #3665) @FishmanTheMurloc
+- 自动钓鱼支持至冬、挪德卡莱新增的雪鳍鱼、星花鱼和闪烁饵，并更新检测模型 (#3527) @lwh9346
+
+### 自动战斗
+
+- 战斗结束后默认启用掉落物光柱扫描与拾取 (#3521) @ShadowLemoon
+- 修复 JSON 战斗异常与复活恢复未触发当前路径段重试的问题 (#3623 #3647) @Bedrockx
+- 调整派蒙结束检测与角色切换逻辑，避免切换成功后重复发送按键 (#3529) @Bedrockx
+- 修复短队伍名称及已滚动角色筛选界面下的角色切换失败 (#3611 #3652) @Patrick-Ze
+
+### 地图追踪
+
+- 更新 6.x ~ 7.0 TemplateMatch 地图资源
+- 改善 WGC HDR 与至冬等浅色背景下的传送候选和地图缩放识别 (#3520 #3634) @Jac0b-Shi @guamian1337
+- 优化候选列表动画、截图和拖图时序，修复未开启锚点导致后续传送失败
+- 修复 TemplateMatch 空特征描述符可能导致的匹配异常 (#3534) @L0U0m0
+- 替换路径配置的多选框组件，改善选项显示与交互
+
+### 截图器
+
+- 新增 Windows Graphics Capture V2 截图模式，支持 GPU BGR 打包、CPU 转换回退和可选帧率限制 (#3630) @guamian1337
+- 新增“窗口类名优先检测”模式，未命中时自动回退进程窗口与原有检测方式 (#3569) @guamian1337
+
+
+### 多语言
+
+- 重构界面多语言机制，改用 XAML 直接翻译并支持切换语言后即时刷新 (#3566)
+- 新增意大利语、俄语，完善英文热键与遮罩、日语及秘境 OCR 多语言支持 (#3399 #3404 #3472 #3596 #3656) @L0U0m0  @antajl @himais0giiiin @Kelsiito
+
+### 通知
+
+- 新增 QQ 官方通知，支持私聊与群聊、文字与截图，并可自动绑定 OpenID (#3530 #3547 #3581) @tianshan233
+- 新增微信 Clawbot 通知，支持扫码绑定、文字与截图，并改善图片推送与会话过期提示 (#3542 #3558 #3573) @tianshan233
+- 一条龙结束后可推送原粹树脂、浓缩树脂和每��委托奖励汇总及截图，识别失败时降级为部分结果 (#3540) @antecanis8
+
+
+### 其他
+
+- 新增“根据提升指南选择秘境”，可识别培养目标并选择含需求角色的最高难度关卡 (#3632) @lele
+- 自动地脉花修复按星期配置与至冬地域切换，统一通过冒险之证定位地脉花并细分通知事件 (#3523 #3605) @ddaodan
+- 自动邀约修复目标分支选择和已选状态干扰，并改善分支下拉列表滚动 (#3517) @Yukinoshita52
+- 容忍角色名称 OCR 的相近字误识别，提高角色选择稳定性 (#3613) @1004452714
+- 修复寻找阿圆时异步任务提前结束与取消链路失效的问题
+- 优化遮罩窗口性能与状态切换：未启用指标时不再采样，日志框隐藏后仍可用快捷键恢复 (#3606 #3638) @guamian1337 @RRRR623
+- 修复自定义按键注册表读取，支持自动判断或手动选择国服、国际服配置来源 (#3239)
+- 修复多实例日志分析无法识别 fakeLog 的问题（也就是日志分析无法分析JS日志的问题）
+- 主窗口支持本地自定义背景，可调整透明度和填充方式，并提供旋转、裁剪与预览 (#3533) @Serendipty1251
+- 修复“AI 推理设备设置 - 更多”无法打开及部分按钮前景色异常 (#3604 #3664) @loosheng @zaodonganqi
+- 修复背包数量 OCR 首尾空白和物品图标后台保存时的对象释放问题 (#3532) @taozhe6
+- 修正 BgiWorld 模型缓存命名，避免与其他模型缓存混淆 (#3553) @DZXH-TX
+- 关闭桌面分身时展示等待进度并暂停交互，普通与小窗模式分别记忆窗口位置
+- 自动首领讨伐新增至冬的“不灭衍生造物”和“嵌合翼骏狮”，并优化无相之草路线与战后重新接近流程 (#3612) @1004452714
+</pre></div>
+<div class="download"><a href="https://github.com/babalae/better-genshin-impact/releases/download/0.65.0/BetterGI.Install.0.65.0.exe" target="_blank">下载此版本</a></div>
+</div>
 <div class="release">
 <div class="release-header">
 <h2><a href="https://github.com/babalae/better-genshin-impact/releases/tag/0.64.0" target="_blank">0.64 原神 7.0 适配</a></h2>
 <div class="meta"><span class="version">版本: 0.64.0</span><span>发布: 2026/8/23 16:25:33</span></div>
 </div>
-<div class="body"><pre>本次适配原神7.0至冬内容，���增自动演奏和自动拾取白名单，优化地图传送稳定性。
+<div class="body"><pre>本次适配原神7.0至冬内容，新增自动演奏和自动拾取白名单，优化地图传送稳定性。
 
 **新增自动演奏，支持多种曲谱格式、筛选播放与自动切换乐器 (#3419)**
 
@@ -71,13 +144,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 补全路径执行时火元素采集动作的元素前置校验 (#3411) @columhypnia
 
 ### 自动战斗
-- 优化战斗结束检测，支持派蒙辅助识别和更灵活的检查时机配置 (#3378) @Bedrockx
+- 优化战斗结束检测，支持派蒙辅助识别和更灵��的检查时机配置 (#3378) @Bedrockx
 - 修复游泳检测提前释放截图对象导致的异常
 
 ### 秘境
 - 修复树脂次数输入框内容被清空按钮遮挡
 - 修复秘境树脂次数输入框内容被清空按钮遮挡 (#3468)
-- 优化奖励页就绪检测与数���识别，减少奖励汇总遗漏 (#3476 #3494) @1004452714
+- 优化奖励页就绪检测与数量识别，减少奖励汇总遗漏 (#3476 #3494) @1004452714
 
 ### 桌面分身
 - 新增独立静音，切换后自动重新连接 RDP (#3406)
@@ -94,7 +167,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 ### 其他
 - 完善截图、图像识别和窗口订阅的资源释放，修复多处内存泄漏 (#3421)
 - 优化 PaddleOCR 文本检测后处理与旋转文本裁剪，避免识别区域越界
-- 优化全局异常处理和启动失败兜底，修复非 UI 线程弹窗造成的内存泄漏 (#3454 #3461) @guamian1337
+- 优化全局异常处理和启动失败兜��，修复非 UI 线程弹窗造成的内存泄漏 (#3454 #3461) @guamian1337
 - 修复主窗口最大化时部分对话框未相对父窗口居中的问题 (#3487) @breadgrocery
 - 新增禁用键鼠监听选项 (#3503) @guamian1337
 - 获取剪贴板兑换码时忽略 URL，避免把链接内容误识别为兑换码 (#3470) @girl-dream
@@ -118,7 +191,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 
 
 
-**新增[桌面分身](https://www.bettergi.com/feats/command/session.html)功能，你可以在桌面分身中启动 BetterGI 与游戏，可以做到游戏不占用前台鼠标！注意该功能设置上存在难度，请仔细阅读相关文档。**
+**新增[桌面分身](https://www.bettergi.com/feats/command/session.html)功能，你可以在桌面分身中启�� BetterGI 与游戏，可以做到游戏不占用前台鼠标！注意该功能设置上存在难度，请仔细阅读相关文档。**
 
 
 
@@ -149,7 +222,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 扩展地图脚本接口，支持读取订阅路线文本、点击大地图坐标并返回标准摄像机角度 (#3252 #3317) @Patrick-Ze @1004452714
 - 新增共享战斗策略执行接口，并修复任务间取消令牌和当前角色状态污染 (#3288 #3353) @Bedrockx
 - 拆分前往合成台与合成树脂接口，新增 `genshin.GoCraftResin` (#3364) @1004452714
-- 扩展视觉脚本 API，新增 `BvFlow` ���式流程、模板匹配得分 (#3340 #3389) @1004452714 
+- 扩展视觉脚本 API，新增 `BvFlow` 链式流程、模板匹配得分 (#3340 #3389) @1004452714 
 
 ### 其他
 - 完善首领讨伐的一条龙配置与战斗超时设置，并修复特殊地图体力识别、树脂弹窗和路线等待 (#3265 #3309 #3343 #3387) @1004452714 @Kirito520Asuna
@@ -164,7 +237,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 恢复一键强化宏点击详情菜单的操作 (#3272)
 - **自定义背景支持网络图片及可刷新图片 API** (#3368) @a701651
 - **重构截图与识别资源管理，底层支持跨分辨率识别** (#3250 #3290 #3370)
-- 统一页面排版、边距和滚���交互，并修复主导航容器显示细节 (#3303) @Arkadegong
+- 统一页面排版、边距和滚动交互，并修复主导航容器显示细节 (#3303) @Arkadegong
 - 新增 WinUI 风格导航选中动画并重写 Markdown 渲染组件 (#3369)</pre></div>
 <div class="download"><a href="https://github.com/babalae/better-genshin-impact/releases/download/0.63.0/BetterGI.Install.0.63.0.exe" target="_blank">下载此版本</a></div>
 </div>
@@ -206,7 +279,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - **新增 PP-OCRv6 模型，优化 Paddle OCR 的小图、缩放与检测框坐标处理** (#3202) @zaodonganqi
 - Windows Graphics Capture HDR 模式下传送选项使用阈值后OCR (#3134) @Jac0b-Shi
 - 启动调整 BetterGI 进程优先级为普通（解决windows计划任务启动软件时候变成低优先级进程的问题）
-- 修复地图��罩空荧酒馆地图部分独立地图的数据筛选
+- 修复地图遮罩空荧酒馆地图��分独立地图的数据筛选
 - 优化任务状态机的转场等待与当前节点重试判定，避免中间态超时被误计为当前节点重试 (#3182) @ShadowLemoon
 - 新增可配置遮罩指标栏，可显示游戏帧率、处理耗时、跳过次数及硬件占用，并支持选择指标和拖拽调整布局 (#3121) @ddaodan
 </pre></div>
@@ -219,7 +292,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 </div>
 <div class="body"><pre>- **修复一键宏卡死问题** @cookie981
 - 优化一条龙每周秘境配置与下拉选择显示 (#3142) @ShadowLemoon
-- 自动幽境危战，增强状��机节点注册与重试兜底 (#3159) @ShadowLemoon
+- 自动幽境危战，增强状态机节点注册与重试兜底 (#3159) @ShadowLemoon
 - **自动剧情，通过Silero Vad识别对话结束，然后再选项选择 (#3130)** @ShadowLemoon
 - **修复隐藏日志窗口一段事件后，自动拾取卡住的问题  #3161**
 - 尝试修复发送webhook请求时，screenshot字段值为空的问题 #2506</pre></div>
@@ -248,12 +321,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 
 ### 地图追踪
 - 使用 YOLO 进行莉奈娅挖矿，优化配置与容错 (#3058) @zaodonganqi
-- 重构万叶战后长 E 拾取逻辑，增强防卡��保护 (#3101 #3108) @火山
+- 重构万叶战后长 E 拾取逻辑，增强防卡键保护 (#3101 #3108) @火山
 - 扩展地图编辑器功能，支持直接运行和导出去除 BOM (#3090 #3092) @zaodonganqi
 - 修复地图追踪中自动战斗配置读取问题 (#3099)
 
 ### 独立任务
-- 地脉花新增&quot;蒙德8-风车镇&quot;路径，补充战斗中寻敌配置，修复战后切队与结束检测问题 (#3029 #3059 #3088) @ddaodan
+- 地脉花新增&quot;蒙德8-风车镇&quot;路径，补充���斗中寻敌配置，修复战后切队与结束检测问题 (#3029 #3059 #3088) @ddaodan
 - 增强幽境危战鲁棒性 (#3050) @ShadowLemoon
 
 ### JS脚本
@@ -271,10 +344,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 一条龙任务新增&quot;关闭软件&quot;完成动作 (#3115) @lingse4
 - 优化一条龙任务添加弹窗 UI (#3068) @kaedelcb
 - 修复&quot;出错啦&quot;窗口显示版本号错误 (#3116) @emako
-- 任务启动阶���可通过快捷键终止，强制关闭游戏时启动按钮可复位 (#3036) @zhousenyu
+- 任务启动阶段可通过快捷键终止，强制关闭游戏时启动按钮可复位 (#3036) @zhousenyu
 - 跳过空月祝福使用硬件输入模拟，修复云原神不生效 (#3080) @KangKangTao
 - 提醒快捷键与游戏键位冲突 (#3083) @ddaodan
-- 修改调度器配置默认值，提供新建配置组预设参数 (#3077) @RRRR623
+- 修改调度器配置默���值，提供新建配置组预设参数 (#3077) @RRRR623
 - 优化后台对话结束后自动切回游戏前台的时机
 - 复活按键改为跟随快捷使用小道具键位 (#2930)
 - 实时任务中对遮罩的操作异步化</pre></div>
@@ -307,7 +380,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 修复自动地脉花追踪按钮识别与奖励页树脂点击异常 (#2971) @ddaodan
 - 修复自动地脉花领奖流程误判与队伍切换回退问题 (#2981) @ddaodan
 - 修复纪行可选奖励导致流程卡住问题，并补充日志提醒 (#2995) @ddaodan
-- 自动地脉花优化挪德卡莱 3「月矩力试验设��局」路径 (#2991) @ddaodan
+- 自动地脉花优化挪德卡莱 3「月矩力试验设计局」路径 (#2991) @ddaodan
 - 优化新版自动秘境奖励通知时机
 
 ### 其他
@@ -355,7 +428,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 删除 Starward 协议注册 相关日志 
 - 自动地脉花支持领奖后扫描掉落物 (#2928) @Tristan-sdu
 - 增加对话区判定次数 #2936 
-- 优化TpTask惯性导航（误识别），处理初始未识别 (#2920) @physligl
+- 优化TpTask惯性��航（误识别），处理初始未识别 (#2920) @physligl
 - 切换角色问题测试用代码 
 - 一条龙结束后关闭开书 #2686 
 - 最后匹配自定义游戏进程名 #2909 
@@ -365,7 +438,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 选择鱼饵增加等待时间，以降低鱼饵尚未出现时执行动作的频率 (#2900) @FishmanTheMurloc
 
 ## 其他
-- **修复JSON序列化问题，本���原因是OCR模块指针指向的内存出现错误，感谢群友 焦糖玛奇朵
+- **修复JSON序列化问题，本质原因是OCR模块指针指向的内存出现错误，感谢群友 焦糖玛奇朵
  提供环境协助定位！**。
 - **删除多余的启动游戏逻辑，解决启动一条龙时弹出多游戏启动失败的警告的问题** #2943 #2942 
 - 检查游戏内小地图锁定配置 #1371 
@@ -386,7 +459,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 七圣召唤元数据 @haokaiyang
 
 ## 地图遮罩
-- 大地图遮罩默认不开启
+- 大地图遮罩默认��开启
 - **加入小地图遮罩(#2830) （注意在地下环境、独立地图不可用）**
 - 地图遮罩实时任务内匹配操作异步化，不再阻塞自动拾取等其他触发器
 - 修复UI线程死锁的问题
@@ -411,7 +484,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 开放JS调用自动幽境危战 (#2882) @Kirito520Asuna
 - 开放JS调用自动地脉花 (#2789) @Kirito520Asuna
 - JS级联选择 和 秘境选择 滚轮事件禁止穿透至其他窗口 (#2828) @1004452714
-- 地图追踪增加读取目录下的内容等方法 (#2875) @1004452714
+- 地图追踪增加读取目录下的内容等���法 (#2875) @1004452714
 
 ## 其他
 - **Yap 的推理对象改为懒加载。index_2_word.json 修改成 Newtonsoft.Json 反序列化。修复 #2890 （也就是修复了这个报错：System.NotSupportedException: The type &#039;System.Int32&#039; is not a supported dictionary key...）**
@@ -459,7 +532,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 优化换队拾取，仅在配置了万叶队伍时才执行换队操作 (#2748) @this-Fish
 - 优化二次拾取，万叶即使刚使用过技能也会强制拾取 (#2760) @this-Fish
 - 优化调整时间的点击操作，使用更短的延时 (#2738) @zaodonganqi
-- 修复传送时空月祝福��发卡住的问题 (#2765) @Jamis
+- 修复传送时空月祝福偶发卡住的问题 (#2765) @Jamis
 
 ## 其他
 - 新增状态机模块，重构幽境危战任务 (#2712) @ShadowLemoon
@@ -489,7 +562,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 &lt;img width=&quot;800&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/d45cd3f1-4456-4b23-a8c5-c3266d640247&quot; /&gt;
 
 
-当前只支持提瓦特区域地表地图，不支持分层与独立���图。仅支持16:9的游戏分辨率
+当前只支���提瓦特区域地表地图，不支持分层与独立地图。仅支持16:9的游戏分辨率
 
 
 
@@ -514,7 +587,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 点击完毕后加入延时，解决部分TP失败的问题 #2672 #2670
 - 自动拾取文本识别帧间连续性检查 (#2676) @zaodonganqi
 - **添加进出千星以刷新木材CD的能力** #2677 #2682 @zaodonganqi
-- 七圣召唤���再等待吞星之鲸加血 (#2679)
+- 七圣召唤不再等待吞星之鲸加血 (#2679)
 - 修复部分组件未随主题变更颜色 #2644 @emako
 - 优化更新界面UI与交互</pre></div>
 <div class="download"><a href="https://github.com/babalae/better-genshin-impact/releases/download/0.56.2/BetterGI.Install.0.56.2.exe" target="_blank">下载此版本</a></div>
@@ -547,10 +620,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 为JS配置页面增加分隔符和多复选框 (#2535) @JamisHoo
 - 暴露键鼠回调给js层 (#2571) @1004452714
 - 修复使用ESM时，仅使用同步代码报错 (#2592) @breadgrocery
-- JS添加自动剧情的实时任务时，支持传入参数 (#2591) @1004452714
+- JS添加自动剧情的实时任务时���支持传入参数 (#2591) @1004452714
 
 
-## ��动战斗/秘境/幽境危战
+## 自动战斗/秘境/幽境危战
 - 新增 `round` 指令：支持按轮次激活部分战斗宏脚本 @NyaMisty (#2597)
 - 新增 `ready` 方法：等待角色技能处于完成态
 - 清理战斗策略，更新万能策略 @MisakaAldrich (#2606)
@@ -571,7 +644,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 添加对Wine平台的兼容 (#2572) @saya-ashen
 - **极大加快脚本仓库的拉取速度** (#2359) @ShadowLemoon
 - 非原神窗口打印窗口名称 (#2610)  @A-Little-AnQi
-- 修复模糊黑名单读取错误的文件路径 (#2635) @yanmofeixi
+- 修复模糊黑��单读取错误的文件路径 (#2635) @yanmofeixi
 - 一条龙冒险家协会添加挪德卡莱
 - 修复鼠标模拟点击一直多释放了一次鼠标的问题
 - 自动秘境选择秘境使用级联选择框，并添加秘境备注
@@ -610,7 +683,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 ## JS脚本
 - JS文件添加路径校验，补回仓库地址边框 (#2412) @zaodonganqi
 - 退回到主界面函数支持识别更多场景
-- 暴露设置时间方法（跳过动画实测未生效） (#2426) @zaodonganqi
+- 暴露设置时间方法（跳过动��实测未生效） (#2426) @zaodonganqi
 - 脚本读取图片时支持调整到指定尺寸 (#2446) @breadgrocery
 - 时瞬方法的修改 (#2466) @jiegedabaobei
 - UseGadgetHandler 支持最大CD参数
@@ -621,7 +694,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 优化自动剧情-可提交物品的识别方法 (#2477) @1004452714
 - 修复领取尘歌壶奖励相关问题 (#2437) @breadgrocery
 - 自动分解圣遗物功能优化 @FishmanTheMurloc
-- 支持���整遮罩文本透明度 (#2454) @bling-yshs
+- 支持调整遮罩文本透明度 (#2454) @bling-yshs
 - 给没有跟随主题的弹窗UI加上跟随主题的功能 (#2461) @ShadowLemoon
 - 给消息框添加标题栏图标 (#2463) @ShadowLemoon
 - 为过时的脚本仓库弹窗提醒，提供更新按钮并避免直接打开 (#2460) @ShadowLemoon
@@ -674,7 +747,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 
 
 ## 幽境危战
-- 延长传送等待时间
+- 延长��送等待时间
 - 修复树脂不足情况下自动幽境危战无法正常退出的问题 #2241
 - 修复自动幽境危战停止时弹出错误提示窗口的问题
 - 调整浓缩树脂识别范围，解决V4模型无法准确识别浓缩树脂个数的问题 #2185
@@ -694,7 +767,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 提供自定义参数的 自动秘境 与 自动战斗 方法 (#2299) @1004452714
 - 重构邮件通知器以支持 465 端口和 587端口 (#2327) @xdd-bubble-tea
 - 支持自定义脚本仓库地址 @ddaodan
-- 支持在脚本中进行 HTTP 请求，并实现 URL 级别细粒度控制和 UI 提示  (#2331)
+- 支持在脚本中进行 HTTP 请求，并实现 URL 级��细粒度控制和 UI 提示  (#2331)
 
 ## 其他
 - 本地仓库使用全新版本
@@ -707,7 +780,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - **自动拾取添加模糊匹配的名单**
 - 自动圣遗物转化功能可识别并标记未激活副词条 (#2258) @bhbghghbgb
 - 圣遗物分解套装筛选的改进和JS引擎的约束 (#2319) @FishmanTheMurloc
-- 修复ItemsSource=&#039; 1234&#039; 导致XAML设���器报错的问题 #2039
+- 修复ItemsSource=&#039; 1234&#039; 导致XAML设计器报错的问题 #2039
 - 优化地图切换区域时的文本检测区域 (#2275) @ShadowLemoon
 - **自动剧情-增加对“小道具”及“角色”弹窗的识别与关闭** (#2308)  @1004452714
 - 修复键鼠文件夹不存在的问题 #2316
@@ -765,7 +838,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 使用 更小体积 的脚本仓库源，提高下载速度
 - 脚本仓库手动导入功能修改入口，添加更多提示
 - 添加火元素采集选项到条件定义 #2159
-- 优化 地图��踪任务添加窗口 性能，修复了索引时文件树复选框不被记忆的BUG (#2157) @Datouyu666
+- 优化 地图追踪任务添加窗口 性能，修复了索引时文件树复选框不被记忆的BUG (#2157) @Datouyu666
 - 提高SetTimeTask的稳定性 (#2161) @JamisHoo
 - 复苏提示识别支持多语言 #1608 @FishmanTheMurloc
 - 尘歌壶领取好感角色为空时不领好感 #2092 @kaedelcb</pre></div>
@@ -785,7 +858,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 当前活动已经结束，所以暂时没用了
 
 - 修复传送进入秘境等待时间过短的问题 #2031
-- 修改延时，减少幽境危战���入时候可能识别队伍角色失败的问题
+- 修改延时，减少幽境危战进入时候可能识别队伍角色失败的问题
 - 修复打开活动一览操作可能提前的问题
 - 修复幽境危战活动不在首位无法正常传送的问题 #2059 #2060
 - 修复一条龙中幽境危战自定义战斗策略不生效的问题
@@ -795,7 +868,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 修复 OpenVINO 缓存配置与描述冲突（注：当前正式版 OpenVINO 不能启用） @Luckylhz
 - 修复战斗脚本中注释存在分号无法正常解析的问题
 - 取消兑换码使用后不再弹出此剪切板内容的兑换码，新增兑换码剪切板监听的开关配置
-- 修复自定义的交互按键未对自动秘境生效的问题 (#2035) @Patrick-Ze
+- 修复自定义的交���按键未对自动秘境生效的问题 (#2035) @Patrick-Ze
 - 地图追踪中新增使用小道具的action
 - 新增盾位优先功能和旋转寻敌优化 (#2039) @kaedelcb
 - Bark通知设置自定义图标 (#2042) @MLChinoo
@@ -805,7 +878,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 新增自动走向附近地脉花（宝箱图标）的Task，暂未对外 (#2073) @iris10086
 - JS脚本、地图追踪页面markdown文件加载修改为WPF原生的展示方式 (#2017) @Datouyu666
 - **修复B服登录无法使用的问题** (#2037) @zaodonganqi
-- 独立任务七圣召唤，支持 js 端传��自定义策略 #1972
+- 独立任务七圣召唤，支持 js 端传入自定义策略 #1972
 - JS脚本中 KeyPress 语法针对功能键也采取直接触发的方式 #2071
 - 新增更多更新渠道，拆分原来的默认渠道，提升更新速度与稳定性
 
@@ -848,7 +921,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 ## 调度器
 - 调度器-名称-添加鼠标悬浮显示文件夹 @qwecxzpoi
 - 修复配置组名称前半段有同名不显示的问题 (#1858) @kaedelcb
-- 调度器添加地图追踪文件时自动聚焦搜索框 (#1916) @Arkadegong
+- ���度器添加地图追踪文件时自动聚焦搜索框 (#1916) @Arkadegong
 - 调度器配置中增加执行成功任务跳过执行配置 (#1893) @mfkvfhpdx
 - 解决调度器为空时程序假死问题 (#1947) @Datouyu666
 - 重构添加地图追踪任务页面的搜索功能，同时添加深度搜索功能。修复了搜索功能形同虚设，只能搜索最表面父文件夹的问题。 (#1980) @Datouyu666
@@ -864,7 +937,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 修复简易策略偶发性不执行的问题 @physligl
 - 删除这两个选项：是否就近七天神像恢复血量、传送到七天神像之后是否需要移动后回血
 - 修复并发调用小地图识别时识别错误的Bug，修改并增加暴露给JS的小地图识别函数 (#1911) @Limint
-- 修复地图追踪配置中获取材料名称的问题 (#1919) @kaedelcb
+- 修复地图追��配置中获取材料名称的问题 (#1919) @kaedelcb
 - 地图追踪版本要求修改为强制
 - 优化地图追踪的距离过远判断
 - 修复地图追踪中角色公转的场景，持续角度一直未在5度内时，直接强制等到转向到目标位置 #1644
@@ -906,7 +979,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 ## 自动拾取
 * 优化文字识别功能，使用新的文字区域检测方式减少CPU消耗（**不会出现 100% CPU的情况了**）
 * 默认不开启拾取白名单机制，减少无用的OCR识别
-* 软件自带默认黑名单与用户配置黑名单拆分，不会再出现用户配置的黑名单被覆盖的情况了
+* 软件自带默���黑名单与用户配置黑名单拆分，不会再出现用户配置的黑名单被覆盖的情况了
 * 配置黑白名单可实时生效
 * 修复自动拾取展示文本可能缺失标点的问题
 * 更新自动拾取默认黑名单列表 @RRRR623 
@@ -923,7 +996,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 脚本仓库更新添加进度展示
 - 优化传送点点击的逻辑，增加退出重登的延时 (#1773) @physligl
 - 将自动秘境战斗失败复活次数从常量3修改为可更改的参数 @xiaokang00010
-- 日志输出优化
+- 日志��出优化
 
 🌩️ [Github 下载太慢？ 点我访问更多更新渠道](https://bettergi.com/download.html)</pre></div>
 <div class="download"><a href="https://github.com/babalae/better-genshin-impact/releases/download/0.47.0/BetterGI.Install.0.47.0.exe" target="_blank">下载此版本</a></div>
@@ -972,7 +1045,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * **秘境领取奖励适配，并加入能够刷取指定树脂次数的功能**
 
 ## 一条龙
-* 自动秘境：添加周日材料本三种奖���选择、优化进入秘境横幅点击 @kaedelcb
+* 自动秘境：添加周日材料本三种奖励选择、优化进入秘境横幅点击 @kaedelcb
 * 合成浓缩树脂：添加合成浓缩后保留原粹树脂数量的功能 @kaedelcb
 * 尘歌壶：优化阿园寻找的成功率，购买商品添加设置 @kaedelcb
 * 部分功能优化 @kaedelcb
@@ -996,7 +1069,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * OCR平台改造。移除 PaddleSharp ，使用 ONNX 直接进行推理，支持更多推理环境 #1459 @Takaranoao 
 * 截图器优化。 #1480 #1573 @shatyuka 
     * 提升BitBlt 效率，优化 Dwm 截图
-    * BitBlt 支持多���示器窗口跨屏
+    * BitBlt 支持多显示器窗口跨屏
     * DWM 不捕获最小化窗口
     * WGC 优化窗口大小检测优化
     * “选择捕获窗口”优化，置顶原神等
@@ -1031,7 +1104,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 修复WGC关闭时候报错 #1419
 
 ## 自动拾取
-- **拾取列表已满时候，滑动滚轮（注意这个变更会会导致拾取变成从下往上拾取，对于尘歌��收菜有一定影响）**
+- **拾取列表已满时候，滑动滚轮（注意这个变更会会导致拾取变成从下往上拾取，对于尘歌壶收菜有一定影响）**
 - 修复拾取过程中文字识别错误 (#1496) @shatyuka
 - 支持配置使用G键进行自动拾取 (#1502) @Patrick-Ze
 
@@ -1044,7 +1117,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 
 ## 一条龙
 - 延长合成树脂的等待时间 #1432
-- **一条龙支持增加配置组** @kaedelcb
+- **一���龙支持增加配置组** @kaedelcb
 - 一条龙内的自动秘境支持每周7天单独配置 @kaedelcb
 - **新增自动前往领取尘歌壶奖励 (#1506)**  @iris10086
 
@@ -1065,7 +1138,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 如果首个点是非TP点位，强制设置在这个点位附近优先做局部匹配，提升匹配速度
 
 ## 其他优化
-- 优化新版本更新日志窗口的背景显示(未完全解决) (#1413) @richex-cn
+- 优化新版本更新日志窗口的背景显示(未完��解决) (#1413) @richex-cn
 - 添加OneBot通知 (#1418) @Qian23333
 - 修复自动秘境超时的时候重试
 - 遮罩窗口UI优化支持缩放，日志窗口添加阴影 (#1477、#1478)  @shatyuka
@@ -1075,7 +1148,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 修复提示框内容过长时，对话框无法完整显示的问题 (#1513) @breadgrocery
 - 优化一些报错和日志提示
 - 支持5.6新角色的识别
-- 修��一个UI上数据绑定的问题 @FishmanTheMurloc
+- 修复一个UI上数据绑定的问题 @FishmanTheMurloc
 
 
 🌩️ [Github 下载太慢？ 点我访问更多更新渠道](https://bettergi.com/download.html)
@@ -1091,7 +1164,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <div class="body"><pre>* 修复手动设置cd不生效和快速跳过战斗时有时会导致刷屏的问题(#1410) @Takaranoao
 * 优化BitBlt截图逻辑，增加失败重试机制以提高截图成功率 (#1407) @Takaranoao
 * 添加可以按照正则分解五星圣遗物的 (#1383) @FishmanTheMurloc
-* JS 脚本新增文���写入、输入文字的能力
+* JS 脚本新增文件写入、输入文字的能力
 * 修复 关闭截图器，切换分辨率，开启截图器后遮罩窗口位置不正常 的问题
 </pre></div>
 <div class="download"><a href="https://github.com/babalae/better-genshin-impact/releases/download/0.44.4/BetterGI.Install.0.44.4.exe" target="_blank">下载此版本</a></div>
@@ -1121,7 +1194,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <div class="meta"><span class="version">版本: 0.44</span><span>发布: 2025/4/1 08:46:42</span></div>
 </div>
 <div class="body"><pre>&gt; [!CAUTION]
-&gt; 由于本次更新修改了底层截图器与任务调度，这并不��一个稳定的版本，请谨慎选择更新！
+&gt; 由于本次更新修改了底层截图器与任务调度，这并不是一个稳定的版本，请谨慎��择更新！
 
 ## 截图器
 - **重构所有截图器的返回类型，减少一次内存拷贝，降低CPU消耗。**
@@ -1149,7 +1222,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 - 新增 genshin.relogin 可以重新登陆原神
 - 调度器的 Shell 功能支持更多配置 @Takaranoao
 - 日志分析页面修改与美化 @physligl 
-- 修复换队时爬七天神像导致换队失败的问题 @physligl 
+- 修复换队时爬七天神像导��换队失败的问题 @physligl 
 - 增加对WaypointForTrack的DisablePickupAround属性支持，可以关闭挖矿动作的周围拾取 @Takaranoao #1322
 - 小改正则表达以支持JS脚本统计 @MisakaAldrich #1274
 - 优化一条路合成树脂时候容易失败的问题
@@ -1221,19 +1294,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 * 文案与UI优化
 * 添加了首次运行的界面，只会出现一次</pre></div>
 <div class="download"><a href="https://github.com/babalae/better-genshin-impact/releases/download/0.43/BetterGI.Install.0.43.0.exe" target="_blank">下载此版本</a></div>
-</div>
-<div class="release">
-<div class="release-header">
-<h2><a href="https://github.com/babalae/better-genshin-impact/releases/tag/0.42" target="_blank">0.42 地图传送修复</a></h2>
-<div class="meta"><span class="version">版本: 0.42</span><span>发布: 2025/2/13 00:52:20</span></div>
-</div>
-<div class="body"><pre>* **修复 5.4 版本地图UI变动导致传送失效的问题** @Scarlet1ssimo 
-* TP时扩展右上角的不可点击区域，适配新地图UI
-* **修复启动调度器时完全卡死的问题（只会在独占全屏时出现）**
-* **修复通知导致的截图失败报错提示**
-* 使 JS脚本 中的 keyDown(), keyUp(), keyPress() 方法 和 战斗策略脚本 中的 keydown(), keyup(), keypress() 方法 可以直接使用 虚拟键代码 来执行 鼠标操作 #1124 @2696791698
-* 5.4 七圣召唤卡牌元数据更新 @haokaiyang</pre></div>
-<div class="download"><a href="https://github.com/babalae/better-genshin-impact/releases/download/0.42/BetterGI.Install.0.42.0.exe" target="_blank">下载此版本</a></div>
 </div>
 </div>
 </div>
